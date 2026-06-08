@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+title: "Materials Demand Model: Monte Carlo simulation of critical material demand and supply-chain risk for US energy infrastructure"
+message: "If you use this software, please cite both the software (this file) and the associated manuscript when it is published."
+type: software
+authors:
+  - family-names: Griffiths
+    given-names: "P. J."
+    affiliation: "Thayer School of Engineering, Dartmouth College"
+    email: pjgriffiths2022@gmail.com
+repository-code: "https://github.com/PJGriff26/materials-demand"
+version: 3.0.0
+date-released: 2026-05-12
+license: MIT
+keywords:
+  - critical materials
+  - Monte Carlo simulation
+  - energy transition
+  - material flow analysis
+  - supply chain risk
+  - NREL Standard Scenarios
+abstract: >-
+  This repository implements a stock-flow Monte Carlo simulation framework
+  for estimating critical-material demand under the NREL Standard Scenarios
+  2024 (10,000 iterations × 61 scenarios × 9 reporting years × 31 materials
+  × 19 generation technologies). Material-intensity uncertainty is sampled
+  from forced-lognormal distributions with tail validation and CV borrowing
+  for small samples. Supply-chain risk is layered on top using OECD CRC
+  weighting, USGS Mineral Commodity Summaries 2025 production and reserves,
+  and US Census Bureau import-partner shares. The framework supports four
+  cadence treatments for the 3-yr NREL reporting interval (default: PCHIP
+  monotone cubic Hermite interpolation; Fritsch & Carlson 1980).
+preferred-citation:
+  type: article
+  title: "[Manuscript title — placeholder, update on publication]"
+  authors:
+    - family-names: Griffiths
+      given-names: "P. J."
+    - family-names: Mayfield
+      given-names: "Erin"
+      affiliation: "Thayer School of Engineering, Dartmouth College"
+  year: 2026
+  notes: "Manuscript in preparation; update DOI and journal on acceptance."

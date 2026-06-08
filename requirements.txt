@@ -1,0 +1,16 @@
+# Materials Demand Model — Python dependencies
+# =============================================
+# Python 3.11+ (developed and tested on 3.12).
+# Versions pinned to those used to produce the published results.
+# Install with:  pip install -r requirements.txt
+
+numpy==2.3.1
+pandas==2.3.0
+scipy==1.16.0
+matplotlib==3.10.3
+
+# Only used to refresh the US Census import-share cache from the live API.
+# The cache is shipped (data/census_trade/import_shares_cache.json), so the
+# figures reproduce fully offline; requests is imported but the network is
+# not contacted unless you delete the cache.
+requests>=2.31

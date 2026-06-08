@@ -1,0 +1,1327 @@
+technology,Material,value,source,authors,publish_year,year_of_data
+a-Si,Silicon,150.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+a-Si,Germanium,48.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+a-Si,Germanium,73.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+a-Si,Cadmium,6.61,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+a-Si,Chromium,634.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+a-Si,Indium,13.41,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+a-Si,Molybdenum,10.62,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+a-Si,Nickel,334.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+a-Si,Tellurium,7.8,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+a-Si,Tin,143.21,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+a-Si,Copper,100.5,liang_2022,"Fizaine, F., & Court, V.",2015,2019
+a-Si,Germanium,73.0,liang_2022,"Fthenakis, V.",2009,2008
+a-Si,Germanium,73.0,liang_2022,"Fthenakis, V.",2012,2010
+a-Si,Germanium,42.0,liang_2022,"Fthenakis, V.",2009,2020
+a-Si,Germanium,42.0,liang_2022,"Fthenakis, V.",2012,2020
+a-Si,Copper,1005.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+a-Si,Indium,5.32,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+a-Si,Indium,5.32,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+a-Si,Tin,0.714,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+a-Si,Germanium,73.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+a-Si,Germanium,36.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+a-Si,Germanium,41.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+a-Si,Germanium,48.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+a-Si,Germanium,6.9,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2000
+a-Si,Germanium,42.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2009
+a-Si,Germanium,3.4,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+a-Si,Germanium,6.9,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2013
+a-Si,Germanium,14.8,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+a-Si,Indium,4.0,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2015
+a-Si,Germanium,73.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2013
+ASIGE,Copper,7000.0,wang_2023,BBF Associates 2011,2011,2010
+ASIGE,Aluminum,31300.0,wang_2023,Bodeker et al 2010,2010,-1
+ASIGE,Glass,53400.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+ASIGE,Steel,56000.0,wang_2023,IRENA 2017,2017,-1
+ASIGE,Glass,70000.0,wang_2023,IRENA 2017,2017,-1
+ASIGE,Copper,7000.0,wang_2023,IRENA 2017,2017,-1
+ASIGE,Cement,4847.0,wang_2023,IRENA 2017,2017,-1
+ASIGE,Cement,7520.0,wang_2023,IRENA 2017,2017,-1
+ASIGE,Aluminum,15390.0,wang_2023,IRENA 2017,2017,-1
+ASIGE,Steel,55900.0,wang_2023,Mason et al 2006,2006,-1
+ASIGE,Copper,7530.0,wang_2023,Mason et al 2006,2006,-1
+ASIGE,Cement,6775.0,wang_2023,Mason et al 2006,2006,-1
+ASIGE,Cement,10512.0,wang_2023,Mason et al 2006,2006,-1
+ASIGE,Aluminum,15390.0,wang_2023,Mason et al 2006,2006,-1
+ASIGE,Glass,66700.0,wang_2023,"Rigby et al., 2011",2011,-1
+Biomass,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+Biomass,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+Biomass,Copper,471.0,wang_2023,Albers et al 1976,1976,-1
+Biomass,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+Biomass,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+Biomass,Copper,500.0,wang_2023,El-Bassioni 1980,1980,-1
+Biomass,Copper,538.0,wang_2023,El-Bassioni 1980,1980,-1
+Biomass,Steel,52000.0,wang_2023,Sullivan et al 2010,2010,-1
+Biomass,Cement,16397.0,wang_2023,Sullivan et al 2010,2010,-1
+Biomass,Cement,25440.0,wang_2023,Sullivan et al 2010,2010,-1
+Biomass,Aluminum,1300.0,wang_2023,Sullivan et al 2010,2010,-1
+Biomass,Nickel,10.0,wang_2023,White + Kulcinski 1998,1998,-1
+Biomass,Manganese,112.0,wang_2023,White + Kulcinski 1998,1998,-1
+Biomass,Copper,454.0,wang_2023,White + Kulcinski 1998,1998,-1
+Bio CCS,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+Bio CCS,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+Bio CCS,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+Bio CCS,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+Bio CCS,Copper,600.0,wang_2023,El-Bassioni 1980,1980,-1
+Bio CCS,Copper,645.0,wang_2023,El-Bassioni 1980,1980,-1
+Bio CCS,Steel,79560.0,wang_2023,Sullivan et al 2010,2010,-1
+Bio CCS,Cement,25087.0,wang_2023,Sullivan et al 2010,2010,-1
+Bio CCS,Cement,38923.0,wang_2023,Sullivan et al 2010,2010,-1
+Bio CCS,Aluminum,1300.0,wang_2023,Sullivan et al 2010,2010,-1
+Bio CCS,Nickel,10.0,wang_2023,White + Kulcinski 1998,1998,-1
+Bio CCS,Manganese,112.0,wang_2023,White + Kulcinski 1998,1998,-1
+Bio CCS,Copper,545.0,wang_2023,White + Kulcinski 1998,1998,-1
+CDTE,Copper,7000.0,wang_2023,BBF Associates 2011,2011,2010
+CDTE,Aluminum,31300.0,wang_2023,Bodeker et al 2010,2010,-1
+CdTe,Cadmium,35.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CdTe,Cadmium,50.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CdTe,Cadmium,85.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CdTe,Tellurium,35.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CdTe,Tellurium,95.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CdTe,Tellurium,52.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CdTe,Cadmium,138.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+CdTe,Tellurium,156.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+CdTe,Cadmium,85.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+CdTe,Tellurium,97.5,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+CdTe,Tellurium,97.5,liang_2022,"Fizaine, F. ",2013,2013
+CdTe,Cadmium,85.0,liang_2022,"Fizaine, F. ",2013,2013
+CdTe,Cadmium,244.26,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CdTe,Chromium,61.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CdTe,Lead,7.8,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CdTe,Molybdenum,0.5,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CdTe,Tellurium,242.87,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CdTe,Copper,518.07,liang_2022,"Fizaine, F., & Court, V.",2015,2019
+CDTE,Glass,53400.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+CdTe,Tellurium,176.0,liang_2022,"Fthenakis, V.",2009,2008
+CdTe,Tellurium,106.0,liang_2022,"Fthenakis, V.",2012,2010
+CdTe,Tellurium,55.0,liang_2022,"Fthenakis, V.",2009,2020
+CdTe,Tellurium,56.0,liang_2022,"Fthenakis, V.",2012,2020
+CDTE,Steel,56000.0,wang_2023,IRENA 2017,2017,-1
+CDTE,Glass,70000.0,wang_2023,IRENA 2017,2017,-1
+CDTE,Copper,7000.0,wang_2023,IRENA 2017,2017,-1
+CDTE,Cement,4847.0,wang_2023,IRENA 2017,2017,-1
+CDTE,Cement,7520.0,wang_2023,IRENA 2017,2017,-1
+CDTE,Aluminum,15390.0,wang_2023,IRENA 2017,2017,-1
+CdTe,Cadmium,80.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Cadmium,17.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Cadmium,62.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Cadmium,138.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Tellurium,90.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Tellurium,19.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Tellurium,70.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Tellurium,156.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CdTe,Copper,5181.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+CdTe,Tellurium,70.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+CdTe,Tellurium,130.0,liang_2022,"Marwede, M., & Reller, A.",2012,2021
+CDTE,Steel,55900.0,wang_2023,Mason et al 2006,2006,-1
+CDTE,Copper,7530.0,wang_2023,Mason et al 2006,2006,-1
+CDTE,Cement,6775.0,wang_2023,Mason et al 2006,2006,-1
+CDTE,Cement,10512.0,wang_2023,Mason et al 2006,2006,-1
+CDTE,Aluminum,15390.0,wang_2023,Mason et al 2006,2006,-1
+CdTe,Tellurium,69.0,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2013
+CdTe,Tellurium,97.5,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2016
+CdTe,Cadmium,79.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CdTe,Cadmium,89.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CdTe,Cadmium,116.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CdTe,Tellurium,89.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CdTe,Tellurium,101.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CdTe,Tellurium,132.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CdTe,Cadmium,21.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CdTe,Cadmium,36.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CdTe,Cadmium,77.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CdTe,Tellurium,23.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CdTe,Tellurium,41.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CdTe,Tellurium,87.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CdTe,Tellurium,260.0,liang_2022,"Ravikumar, D., & Malghan, D.",2013,2007
+CdTe,Tellurium,500.0,liang_2022,"Ravikumar, D., & Malghan, D.",2013,2007
+CdTe,Tellurium,120.0,liang_2022,"Ravikumar, D., & Malghan, D.",2013,2010
+CDTE,Glass,66700.0,wang_2023,"Rigby et al., 2011",2011,-1
+CdTe,Cadmium,138.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+CdTe,Cadmium,17.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CdTe,Cadmium,138.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CdTe,Tellurium,156.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+CdTe,Tellurium,19.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CdTe,Tellurium,156.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CdTe,Cadmium,63.3,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2000
+CdTe,Tellurium,55.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2009
+CdTe,Cadmium,85.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2010
+CdTe,Copper,42.8,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2010
+CdTe,Tellurium,97.5,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2010
+CdTe,Cadmium,49.2,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+CdTe,Molybdenum,100.5,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+CdTe,Tellurium,47.2,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+CdTe,Tin,6.6,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+CdTe,Cadmium,63.3,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2013
+CdTe,Indium,15.9,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2013
+CdTe,Tellurium,61.9,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2013
+CdTe,Cadmium,65.2,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+CdTe,Tellurium,65.4,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+CdTe,Indium,15.5,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2011
+CdTe,Tellurium,99.7,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2011
+CdTe,Cadmium,116.7,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2013
+CdTe,Cadmium,63.8,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+CdTe,Indium,15.5,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+CdTe,Tellurium,43.1,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+CdTe,Cadmium,63.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2000
+CdTe,Tellurium,63.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2000
+CdTe,Cadmium,85.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+CdTe,Tellurium,98.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+CdTe,Tellurium,17.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+CdTe,Tellurium,74.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+CdTe,Tellurium,106.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+CdTe,Tellurium,69.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+CdTe,Cadmium,6.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+CdTe,Copper,1000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+CdTe,Copper,5181.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+CdTe,Cadmium,138.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Cadmium,62.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Cadmium,17.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Lead,8.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Molybdenum,109.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Tellurium,19.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Tellurium,70.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Tellurium,156.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Tellurium,243.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CdTe,Tellurium,98.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+CdTe,Cadmium,84.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+CdTe,Tellurium,90.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+CdTe,Cadmium,244.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CdTe,Cadmium,87.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CdTe,Copper,3091.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CdTe,Nickel,16.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CdTe,Tellurium,92.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CdTe,Cadmium,85.0,liang_2022,"Watari, T., McLellan, B. C., Ogata, S., & Tezuka, T. ",2018,2010
+CdTe,Tellurium,97.5,liang_2022,"Watari, T., McLellan, B. C., Ogata, S., & Tezuka, T. ",2018,2010
+CdTe,Cadmium,63.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2017
+CdTe,Tellurium,47.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2017
+CdTe,Cadmium,53.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2020
+CdTe,Tellurium,41.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2020
+CdTe,Cadmium,40.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2025
+CdTe,Tellurium,34.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2025
+CIGS,Copper,7000.0,wang_2023,BBF Associates 2011,2011,2010
+CIGS,Aluminum,31300.0,wang_2023,Bodeker et al 2010,2010,-1
+CIGS,Copper,20.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Copper,22.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Copper,24.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Indium,10.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Indium,15.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Indium,27.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Gallium,3.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Gallium,4.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Gallium,7.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Selenium,22.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Selenium,35.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Selenium,60.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+CIGS,Gallium,9.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+CIGS,Indium,28.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+CIGS,Selenium,161.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+CIGS,Indium,6.3,liang_2022,"Duan, H., Wang, J., Liu, L., Huang, Q., & Li, J. ",2015,2008
+CIGS,Indium,8.0,liang_2022,"Duan, H., Wang, J., Liu, L., Huang, Q., & Li, J. ",2015,2008
+CIGS,Indium,11.0,liang_2022,"Duan, H., Wang, J., Liu, L., Huang, Q., & Li, J. ",2015,2008
+CIGS,Gallium,7.5,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+CIGS,Indium,23.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+CIGS,Selenium,45.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+CIGS,Gallium,7.5,liang_2022,"Fizaine, F. ",2013,2013
+CIGS,Gallium,2.34,liang_2022,"Fizaine, F. ",2013,2013
+CIGS,Selenium,45.0,liang_2022,"Fizaine, F. ",2013,2013
+CIGS,Selenium,9.56,liang_2022,"Fizaine, F. ",2013,2013
+CIGS,Indium,22.5,liang_2022,"Fizaine, F. ",2013,2013
+CIGS,Indium,18.99,liang_2022,"Fizaine, F. ",2013,2013
+CIGS,Cadmium,265.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CIGS,Gallium,124.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CIGS,Indium,55.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CIGS,Molybdenum,109.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CIGS,Selenium,110.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CIGS,Zinc,121.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+CIGS,Copper,450.0,liang_2022,"Fizaine, F., & Court, V.",2015,2019
+CIGS,Glass,53400.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+CIGS,Indium,83.0,liang_2022,"Fthenakis, V.",2009,2008
+CIGS,Indium,83.0,liang_2022,"Fthenakis, V.",2012,2010
+CIGS,Indium,15.5,liang_2022,"Fthenakis, V.",2009,2020
+CIGS,Indium,15.5,liang_2022,"Fthenakis, V.",2012,2020
+CIGS,Indium,44155.0,liang_2022,"Fthenakis, V.",2009,2020
+CIGS,Gallium,12.0,liang_2022,"Hashimoto, S., & Moriguchi, Y.",2013,2013
+CIGS,Gallium,6.7,liang_2022,"Hashimoto, S., & Moriguchi, Y.",2013,2013
+CIGS,Indium,63.25,liang_2022,"Hashimoto, S., & Moriguchi, Y.",2013,2013
+CIGS,Indium,16.3,liang_2022,"Hashimoto, S., & Moriguchi, Y.",2013,2013
+CIGS,Steel,56000.0,wang_2023,IRENA 2017,2017,-1
+CIGS,Glass,70000.0,wang_2023,IRENA 2017,2017,-1
+CIGS,Copper,7000.0,wang_2023,IRENA 2017,2017,-1
+CIGS,Cement,4847.0,wang_2023,IRENA 2017,2017,-1
+CIGS,Cement,7520.0,wang_2023,IRENA 2017,2017,-1
+CIGS,Aluminum,15390.0,wang_2023,IRENA 2017,2017,-1
+CIGS,Gallium,2.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Gallium,4.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Gallium,9.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Indium,20.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Indium,28.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Indium,13.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Indium,7.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Selenium,90.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Selenium,17.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Selenium,41.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Selenium,161.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+CIGS,Copper,450.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+CIGS,Gallium,4.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+CIGS,Indium,13.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+CIGS,Steel,55900.0,wang_2023,Mason et al 2006,2006,-1
+CIGS,Copper,7530.0,wang_2023,Mason et al 2006,2006,-1
+CIGS,Cement,6775.0,wang_2023,Mason et al 2006,2006,-1
+CIGS,Cement,10512.0,wang_2023,Mason et al 2006,2006,-1
+CIGS,Aluminum,15390.0,wang_2023,Mason et al 2006,2006,-1
+CIGS,Indium,83.0,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2010
+CIGS,Indium,22.5,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2016
+CIGS,Copper,250.0,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2016
+CIGS,Indium,44155.0,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2020
+CIGS,Copper,21.02,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+CIGS,Gadium,2.34,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+CIGS,Indium,18.99,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+CIGS,Indium,9.56,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+CIGS,Gallium,6.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Gallium,8.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Gallium,11.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Indium,23.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Indium,29.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Indium,43.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Selenium,48.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Selenium,67.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Selenium,107.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+CIGS,Gallium,2.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Gallium,3.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Gallium,6.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Indium,8.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Indium,12.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Indium,22.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Selenium,15.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Selenium,26.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Selenium,51.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+CIGS,Glass,66700.0,wang_2023,"Rigby et al., 2011",2011,-1
+CIGS,Indium,25.0,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2000
+CIGS,Indium,30.0,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2000
+CIGS,Indium,40.0,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2000
+CIGS,Indium,24.1,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2010
+CIGS,Indium,29.0,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2010
+CIGS,Indium,39.1,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2010
+CIGS,Indium,22.6,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2015
+CIGS,Indium,27.5,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2015
+CIGS,Indium,37.6,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2015
+CIGS,Indium,19.6,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2020
+CIGS,Indium,24.4,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2020
+CIGS,Indium,34.6,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2020
+CIGS,Indium,15.0,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2025
+CIGS,Indium,19.5,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2025
+CIGS,Indium,30.0,liang_2022,"Stamp, A., Wäger, P. A., & Hellweg, S.",2014,2025
+CIGS,Gallium,9.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+CIGS,Gallium,2.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CIGS,Gallium,9.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CIGS,Indium,28.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+CIGS,Indium,7.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CIGS,Indium,28.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CIGS,Selenium,161.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+CIGS,Selenium,17.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CIGS,Selenium,161.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+CIGS,Gallium,7.2,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2011
+CIGS,Indium,55.5,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2011
+CIGS,Cadmium,1.3,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2013
+CIGS,Selenium,39.3,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2013
+CIGS,Cadmium,1.3,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+CIGS,Gallium,3.2,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+CIGS,Indium,45.0,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+CIGS,Selenium,17.4,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+CIGS,Gadium,11.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2011
+CIGS,Gadium,10.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2019
+CIGS,Indium,13.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2019
+CIGS,Gallium,5.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2000
+CIGS,Indium,27.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2000
+CIGS,Selenium,45.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2000
+CIGS,Gallium,8.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+CIGS,Indium,23.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+CIGS,Selenium,45.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+CIGS,Gallium,12.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+CIGS,Gallium,29.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+CIGS,Indium,15.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+CIGS,Indium,23.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+CIGS,Gallium,8.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+CIGS,Indium,83.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+CIGS,Indium,23.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+CIGS,Gallium,0.12,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+CIGS,Indium,5.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+CIGS,Indium,23.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+CIGS,Indium,28.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+CIGS,Indium,38.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+CIGS,Gallium,2.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Gallium,4.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Gallium,9.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Gallium,124.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Indium,7.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Indium,13.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Indium,28.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Indium,55.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Molybdenum,1.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Selenium,17.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Selenium,41.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Selenium,161.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Selenium,110.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+CIGS,Indium,23.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+CIGS,Selenium,45.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+CIGS,Copper,17.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+CIGS,Copper,450.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+CIGS,Gallium,6.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+CIGS,Indium,84.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+CIGS,Selenium,84.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+CIGS,Copper,233.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CIGS,Gallium,19.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CIGS,Indium,31.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CIGS,Selenium,61.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CIGS,Gallium,7.5,liang_2022,"Watari, T., McLellan, B. C., Ogata, S., & Tezuka, T. ",2018,2012
+CIGS,Indium,23.0,liang_2022,"Watari, T., McLellan, B. C., Ogata, S., & Tezuka, T. ",2018,2012
+CIGS,Selenium,45.0,liang_2022,"Watari, T., McLellan, B. C., Ogata, S., & Tezuka, T. ",2018,2016
+CIGS,Indium,23.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2017
+CIGS,Gallium,5.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2017
+CIGS,Selenium,45.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2017
+CIGS,Indium,12.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2020
+CIGS,Gallium,3.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2020
+CIGS,Selenium,26.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2020
+CIGS,Indium,10.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2025
+CIGS,Gallium,2.7,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2025
+CIGS,Selenium,22.0,liang_2022,"Zhou, Y., Li, J., Rechberger, H., Wang, G., Chen, S., Xing, W., & Li, P.",2020,2025
+Coal,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+Coal,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+Coal,Copper,471.0,wang_2023,Albers et al 1976,1976,-1
+Coal,Cement,10572.0,wang_2023,Albers et al 1976,1976,-1
+Coal,Cement,16403.0,wang_2023,Albers et al 1976,1976,-1
+Coal,Steel,44425.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Copper,500.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Copper,538.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Cement,4668.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Cement,6749.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Cement,11315.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Cement,16361.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Aluminum,281.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal,Steel,51340.0,wang_2023,Spath et al 1999,1999,-1
+Coal,Cement,16372.0,wang_2023,Spath et al 1999,1999,-1
+Coal,Cement,25401.0,wang_2023,Spath et al 1999,1999,-1
+Coal,Aluminum,419.0,wang_2023,Spath et al 1999,1999,-1
+Coal,Steel,62200.0,wang_2023,Tahara et al 1997,1997,-1
+Coal,Cement,18389.0,wang_2023,Tahara et al 1997,1997,-1
+Coal,Cement,28531.0,wang_2023,Tahara et al 1997,1997,-1
+Coal,Aluminum,624.0,wang_2023,Tahara et al 1997,1997,-1
+Coal,Nickel,10.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal,Manganese,112.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal,Copper,454.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal,Cement,7658.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal,Cement,11881.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal,Aluminum,255.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal CCS,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+Coal CCS,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+Coal CCS,Copper,565.0,wang_2023,Albers et al 1976,1976,-1
+Coal CCS,Cement,16175.0,wang_2023,Albers et al 1976,1976,-1
+Coal CCS,Cement,25096.0,wang_2023,Albers et al 1976,1976,-1
+Coal CCS,Steel,67695.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Copper,600.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Copper,645.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Cement,7141.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Cement,10326.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Cement,17313.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Cement,25033.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Aluminum,281.0,wang_2023,El-Bassioni 1980,1980,-1
+Coal CCS,Steel,78550.0,wang_2023,Spath et al 1999,1999,-1
+Coal CCS,Cement,25049.0,wang_2023,Spath et al 1999,1999,-1
+Coal CCS,Cement,38864.0,wang_2023,Spath et al 1999,1999,-1
+Coal CCS,Aluminum,419.0,wang_2023,Spath et al 1999,1999,-1
+Coal CCS,Steel,95166.0,wang_2023,Tahara et al 1997,1997,-1
+Coal CCS,Cement,9814.0,wang_2023,Tahara et al 1997,1997,-1
+Coal CCS,Cement,43653.0,wang_2023,Tahara et al 1997,1997,-1
+Coal CCS,Aluminum,624.0,wang_2023,Tahara et al 1997,1997,-1
+Coal CCS,Steel,61648.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal CCS,Nickel,10.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal CCS,Manganese,112.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal CCS,Copper,545.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal CCS,Cement,11716.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal CCS,Cement,18178.0,wang_2023,White + Kulcinski 1998,1998,-1
+Coal CCS,Aluminum,255.0,wang_2023,White + Kulcinski 1998,1998,-1
+utility-scale solar pv,Copper,7000.0,wang_2023,BBF Associates 2011,2011,2010
+utility-scale solar pv,Aluminum,38500.0,wang_2023,Bodeker et al 2010,2010,-1
+utility-scale solar pv,Silicon,4.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+utility-scale solar pv,Silver,20.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+utility-scale solar pv,Silver,35.6,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+utility-scale solar pv,Silicon,6629.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+utility-scale solar pv,Silver,11.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2025
+utility-scale solar pv,Silver,80.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+utility-scale solar pv,Lead,5.53,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+utility-scale solar pv,Lead,6.32,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+utility-scale solar pv,Nickel,1.3,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+utility-scale solar pv,Silver,59.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+utility-scale solar pv,Silver,68.17,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+utility-scale solar pv,Copper,825.0,liang_2022,"Fizaine, F., & Court, V.",2015,2019
+utility-scale solar pv,Copper,943.0,liang_2022,"Fizaine, F., & Court, V.",2015,2019
+utility-scale solar pv,Silicon,2930.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+utility-scale solar pv,Silicon,3450.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+utility-scale solar pv,Glass,53400.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+utility-scale solar pv,Steel,56000.0,wang_2023,IRENA 2017,2017,-1
+utility-scale solar pv,Silicon,7000.0,wang_2023,IRENA 2017,2017,-1
+utility-scale solar pv,Glass,70000.0,wang_2023,IRENA 2017,2017,-1
+utility-scale solar pv,Copper,7000.0,wang_2023,IRENA 2017,2017,-1
+utility-scale solar pv,Cement,4847.0,wang_2023,IRENA 2017,2017,-1
+utility-scale solar pv,Cement,7520.0,wang_2023,IRENA 2017,2017,-1
+utility-scale solar pv,Aluminum,19000.0,wang_2023,IRENA 2017,2017,-1
+utility-scale solar pv,Cement,6497.0,wang_2023,Jean et al 2015,2015,-1
+utility-scale solar pv,Cement,10080.0,wang_2023,Jean et al 2015,2015,-1
+utility-scale solar pv,Silicon,3347.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+utility-scale solar pv,Silicon,638.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+utility-scale solar pv,Silicon,2882.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+utility-scale solar pv,Silicon,6629.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+utility-scale solar pv,Silver,54.8125,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+utility-scale solar pv,Silver,38.36875,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+utility-scale solar pv,Silver,32.53125,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+utility-scale solar pv,Silver,29.45625,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+utility-scale solar pv,Silver,10.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2012
+utility-scale solar pv,Copper,884.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+utility-scale solar pv,Steel,55900.0,wang_2023,Mason et al 2006,2006,-1
+utility-scale solar pv,Copper,7530.0,wang_2023,Mason et al 2006,2006,-1
+utility-scale solar pv,Cement,6775.0,wang_2023,Mason et al 2006,2006,-1
+utility-scale solar pv,Cement,10512.0,wang_2023,Mason et al 2006,2006,-1
+utility-scale solar pv,Aluminum,19000.0,wang_2023,Mason et al 2006,2006,-1
+utility-scale solar pv,Aluminum,10953.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+utility-scale solar pv,Copper,2741.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+utility-scale solar pv,Lead,336.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+utility-scale solar pv,Magnesium,53.5,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+utility-scale solar pv,Silicon,3653.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+utility-scale solar pv,Silver,24.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+utility-scale solar pv,Tin,577.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+utility-scale solar pv,Silver,13.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+utility-scale solar pv,Silver,15.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+utility-scale solar pv,Silver,18.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+utility-scale solar pv,Glass,66700.0,wang_2023,"Rigby et al., 2011",2011,-1
+utility-scale solar pv,Nickel,1.0,wang_2023,Rischknecht et al 2015,2015,-1
+utility-scale solar pv,Silver,84.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2010
+utility-scale solar pv,Silicon,6630.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+utility-scale solar pv,Silver,36.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+utility-scale solar pv,Silver,19.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+utility-scale solar pv,Silver,36.0,liang_2022,"Valero, A., Valero, A., Calvo, G., Ortego, A., Ascaso, S., & Palacios, J. L.",2018,2015
+utility-scale solar pv,Copper,300.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+utility-scale solar pv,Nickel,1.1,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+utility-scale solar pv,Silicon,3653.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+utility-scale solar pv,Silver,19.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+utility-scale solar pv,Silver,10.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+utility-scale solar pv,Silver,20.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+utility-scale solar pv,Silver,80.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+utility-scale solar pv,Lead,6.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+utility-scale solar pv,Nickel,1.3,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+utility-scale solar pv,Silicon,6630.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+utility-scale solar pv,Silver,4.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+utility-scale solar pv,Silver,47.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+utility-scale solar pv,Silver,57.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+utility-scale solar pv,Silver,17.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+utility-scale solar pv,Copper,250.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+utility-scale solar pv,Lead,72.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+utility-scale solar pv,Silver,5.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+utility-scale solar pv,Silicon,9000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2018
+utility-scale solar pv,Copper,825.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+utility-scale solar pv,Copper,458.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+utility-scale solar pv,Lead,39.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+utility-scale solar pv,Nickel,1.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+utility-scale solar pv,Silicon,6428.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+utility-scale solar pv,Silver,36.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+utility-scale solar pv,Silver,30.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+CSP,Steel,240000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Steel,400000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Nickel,940.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Nickel,1900.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Manganese,2000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Manganese,5700.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Glass,130000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Glass,110000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Copper,3200.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Copper,1400.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Cement,250000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Cement,72000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Aluminum,0.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Aluminum,11000.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Silver,13.0,wang_2023,Pihl et al 2012,2012,-1
+CSP,Silver,16.0,wang_2023,Pihl et al 2012,2012,-1
+NGCC,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+NGCC,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+NGCC,Copper,471.0,wang_2023,Albers et al 1976,1976,-1
+NGCC,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+NGCC,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+NGCC,Copper,500.0,wang_2023,El-Bassioni 1980,1980,-1
+NGCC,Copper,538.0,wang_2023,El-Bassioni 1980,1980,-1
+NGCC,Steel,31030.0,wang_2023,Spath + Mann 2000,2000,-1
+NGCC,Cement,11403.0,wang_2023,Spath + Mann 2000,2000,-1
+NGCC,Cement,15640.0,wang_2023,Spath + Mann 2000,2000,-1
+NGCC,Aluminum,204.0,wang_2023,Spath + Mann 2000,2000,-1
+NGCC,Steel,51130.0,wang_2023,Tahara et al 1997,1997,-1
+NGCC,Cement,7350.0,wang_2023,Tahara et al 1997,1997,-1
+NGCC,Cement,10080.0,wang_2023,Tahara et al 1997,1997,-1
+NGCC,Aluminum,230.0,wang_2023,Tahara et al 1997,1997,-1
+NGCC,Nickel,10.0,wang_2023,White + Kulcinski 1998,1998,-1
+NGCC,Manganese,112.0,wang_2023,White + Kulcinski 1998,1998,-1
+NGCC,Copper,454.0,wang_2023,White + Kulcinski 1998,1998,-1
+Gas CCS,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+Gas CCS,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+Gas CCS,Copper,565.0,wang_2023,Albers et al 1976,1976,-1
+Gas CCS,Nickel,10.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas CCS,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas CCS,Manganese,112.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas CCS,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas CCS,Copper,600.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas CCS,Copper,645.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas CCS,Steel,47476.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas CCS,Cement,15423.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas CCS,Cement,23929.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas CCS,Aluminum,204.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas CCS,Steel,78229.0,wang_2023,Tahara et al 1997,1997,-1
+Gas CCS,Cement,8067.0,wang_2023,Tahara et al 1997,1997,-1
+Gas CCS,Cement,17447.0,wang_2023,Tahara et al 1997,1997,-1
+Gas CCS,Aluminum,230.0,wang_2023,Tahara et al 1997,1997,-1
+Gas CCS,Copper,545.0,wang_2023,White + Kulcinski 1998,1998,-1
+Geothermal,Steel,147420.0,wang_2023,Basosi et al 2020,2020,-1
+Geothermal,Copper,2518.0,wang_2023,Basosi et al 2020,2020,-1
+Geothermal,Cement,271666.0,wang_2023,Basosi et al 2020,2020,-1
+Geothermal,Aluminum,1448.0,wang_2023,Basosi et al 2020,2020,-1
+Geothermal,Steel,140347.0,wang_2023,Karlsdottir et al 2015,2015,-1
+Geothermal,Copper,597.0,wang_2023,Karlsdottir et al 2015,2015,-1
+Geothermal,Cement,76061.0,wang_2023,Karlsdottir et al 2015,2015,-1
+Geothermal,Aluminum,2386.0,wang_2023,Karlsdottir et al 2015,2015,-1
+Geothermal,Steel,912972.0,wang_2023,Pratiwi et al 2018,2018,-1
+Geothermal,Cement,196486.0,wang_2023,Pratiwi et al 2018,2018,-1
+Geothermal,Aluminum,9729.0,wang_2023,Pratiwi et al 2018,2018,-1
+Geothermal,Steel,295000.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Steel,356000.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Steel,1206000.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Steel,1175000.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Cement,232000.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Cement,87400.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Cement,988000.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Cement,987000.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Aluminum,1600.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Aluminum,45200.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Aluminum,42600.0,wang_2023,Sullivan et al 2010,2010,-1
+Geothermal,Steel,124933.0,wang_2023,Tosti et al 2020,2020,-1
+Geothermal,Copper,18885.0,wang_2023,Tosti et al 2020,2020,-1
+Geothermal,Cement,311984.0,wang_2023,Tosti et al 2020,2020,-1
+Geothermal,Aluminum,10198.0,wang_2023,Tosti et al 2020,2020,-1
+Hydro,Copper,1050.0,wang_2023,Fizaine + Court 2015,2015,-1
+Hydro,Steel,78000.0,wang_2023,Flury + Frischknecht 2012,2012,-1
+Hydro,Steel,177000.0,wang_2023,Flury + Frischknecht 2012,2012,-1
+Hydro,Copper,2970.0,wang_2023,Flury + Frischknecht 2012,2012,-1
+Hydro,Cement,1086216.0,wang_2023,Flury + Frischknecht 2012,2012,-1
+Hydro,Cement,594619.0,wang_2023,Flury + Frischknecht 2012,2012,-1
+Hydro,Cement,922560.0,wang_2023,Flury + Frischknecht 2012,2012,-1
+Hydro,Cement,1685280.0,wang_2023,Flury + Frischknecht 2012,2012,-1
+Hydro,Steel,24800.0,wang_2023,Pacca + Horvath 2002,2002,-1
+Hydro,Cement,1223040.0,wang_2023,Pacca + Horvath 2002,2002,-1
+Hydro,Cement,788288.0,wang_2023,Pacca + Horvath 2002,2002,-1
+Hydro,Aluminum,52.0,wang_2023,Pacca + Horvath 2002,2002,-1
+Hydro,Steel,54500.0,wang_2023,Rule 2009,2009,-1
+Hydro,Copper,1502.0,wang_2023,Rule 2009,2009,-1
+Hydro,Cement,1068800.0,wang_2023,Rule 2009,2009,-1
+Hydro,Cement,688875.0,wang_2023,Rule 2009,2009,-1
+Nuclear New,Steel,50400.0,wang_2023,Andreades et al 2014,2014,-1
+Nuclear New,Cement,39590.0,wang_2023,Andreades et al 2014,2014,-1
+Nuclear New,Cement,61420.0,wang_2023,Andreades et al 2014,2014,-1
+Nuclear New,Steel,36068.0,wang_2023,Bryan + Dudley 1974,1974,-1
+Nuclear New,Nickel,484.0,wang_2023,Bryan + Dudley 1974,1974,-1
+Nuclear New,Manganese,467.0,wang_2023,Bryan + Dudley 1974,1974,-1
+Nuclear New,Copper,726.0,wang_2023,Bryan + Dudley 1974,1974,-1
+Nuclear New,Cement,30133.0,wang_2023,Bryan + Dudley 1974,1974,-1
+Nuclear New,Aluminum,18.0,wang_2023,Bryan + Dudley 1974,1974,-1
+Nuclear New,Silver,1.0,wang_2023,Bryan + Dudley 1974,1974,-1
+Nuclear New,Steel,10000.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Nickel,49.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Nickel,100.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Manganese,209.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Manganese,400.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Copper,907.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Copper,2000.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Cement,19600.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Cement,30400.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Aluminum,54.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Aluminum,45.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Silver,1.0,wang_2023,El-Bassioni 1980,1980,-1
+Nuclear New,Nickel,300.0,wang_2023,Fizaine + Court 2015,2015,-1
+Nuclear New,Copper,1345.0,wang_2023,Fizaine + Court 2015,2015,-1
+Nuclear New,Steel,44821.0,wang_2023,Peterson et al 2005,2005,-1
+Nuclear New,Steel,43206.0,wang_2023,Peterson et al 2005,2005,-1
+Nuclear New,Cement,22872.0,wang_2023,Peterson et al 2005,2005,-1
+Nuclear New,Cement,55447.0,wang_2023,Peterson et al 2005,2005,-1
+Nuclear New,Cement,21089.0,wang_2023,Peterson et al 2005,2005,-1
+Nuclear New,Cement,51125.0,wang_2023,Peterson et al 2005,2005,-1
+Nuclear New,Steel,7407.0,wang_2023,USNRC 1977,1977,-1
+Nuclear New,Nickel,74.0,wang_2023,USNRC 1977,1977,-1
+Nuclear New,Manganese,296.0,wang_2023,USNRC 1977,1977,-1
+Nuclear New,Copper,1481.0,wang_2023,USNRC 1977,1977,-1
+Nuclear New,Aluminum,33.0,wang_2023,USNRC 1977,1977,-1
+Nuclear New,Silver,1.0,wang_2023,USNRC 1977,1977,-1
+offshore wind,Aluminum,300.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Aluminum,700.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Aluminum,3100.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Aluminum,5300.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Copper,1800.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Copper,2000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Copper,4800.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Copper,5900.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Steel,125000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Steel,156000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Steel,210000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Steel,253000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+offshore wind,Aluminum,9400.0,liang_2022,"Capellán-Pérez, I., de Castro, C., & Miguel González, L. J.",2019,2019
+offshore wind,Steel,400000.0,liang_2022,"Capellán-Pérez, I., de Castro, C., & Miguel González, L. J.",2019,2019
+offshore wind,Copper,22200.0,liang_2022,"Capellán-Pérez, I., de Castro, C., & Miguel González, L. J.",2019,2019
+offshore wind,Copper,1143.0,liang_2022,"Deetman, S., Pauliuk, S., Van Vuuren, D. P., Van Der Voet, E., & Tukker, A.",2018,2012
+offshore wind,Copper,10000.0,liang_2022,"Deetman, S., Pauliuk, S., Van Vuuren, D. P., Van Der Voet, E., & Tukker, A.",2018,2013
+offshore wind,Neodymium,119.0,liang_2022,"Deetman, S., Pauliuk, S., Van Vuuren, D. P., Van Der Voet, E., & Tukker, A.",2018,2012
+offshore wind,Neodymium,198.0,liang_2022,"Deetman, S., Pauliuk, S., Van Vuuren, D. P., Van Der Voet, E., & Tukker, A.",2018,2015
+offshore wind,Aluminum,370.0,liang_2022,"Elshkaki, A., & Graedel, T. E.",2014,2012
+offshore wind,Copper,10000.0,liang_2022,"Elshkaki, A., & Graedel, T. E.",2014,2013
+offshore wind,Dysprosium,22.0,liang_2022,"Elshkaki, A., & Graedel, T. E.",2014,2011
+offshore wind,Lead,6720.0,liang_2022,"Elshkaki, A., & Graedel, T. E.",2014,2013
+offshore wind,Neodymium,124.0,liang_2022,"Elshkaki, A., & Graedel, T. E.",2014,2011
+offshore wind,Nickel,111.0,liang_2022,"Elshkaki, A., & Graedel, T. E.",2014,2013
+offshore wind,Steel,132000.0,liang_2022,"Elshkaki, A., & Graedel, T. E.",2014,2012
+offshore wind,Dysprosium,22.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2010
+offshore wind,Lead,6720.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2000
+offshore wind,Neodymium,124.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2010
+offshore wind,Nickel,111.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2013
+offshore wind,Steel,132000.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2012
+offshore wind,Aluminum,370.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2012
+offshore wind,Copper,10000.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2012
+offshore wind,Neodymium,175.5,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2018
+offshore wind,Neodymium,162.4,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2013
+offshore wind,Neodymium,164.3,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2013
+offshore wind,Neodymium,165.7,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2013
+offshore wind,Neodymium,124.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2011
+offshore wind,Neodymium,186.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2011
+offshore wind,Neodymium,180.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2013
+offshore wind,Neodymium,198.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2013
+offshore wind,Neodymium,186.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2010
+offshore wind,Neodymium,116.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2010
+offshore wind,Neodymium,54.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2010
+offshore wind,Neodymium,171.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2020
+offshore wind,Neodymium,102.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2020
+offshore wind,Neodymium,34.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2020
+offshore wind,Neodymium,170.4,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2019
+offshore wind,Neodymium,216.0,liang_2022,"Fishman, T., & Graedel, T. E.",2019,2011
+offshore wind,Chromium,293.56,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Copper,1484.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Dysprosium,21.56,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Molybdenum,75.315,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Neodymium,150.92,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Nickel,376.57,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Niobium,37.657,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Praseodymium,30.8,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Terbium,6.16,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Vanadium,7000.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+offshore wind,Copper,10000.0,liang_2022,"García-Olivares, A., Ballabrera-Poy, J., García-Ladona, E., & Turiel, A.",2012,2012
+offshore wind,Aluminum,420.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2007
+offshore wind,Copper,2750.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2007
+offshore wind,Lead,3790.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2007
+offshore wind,Neodymium,150.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2006
+offshore wind,Steel,148000.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2007
+offshore wind,Steel,183000.0,liang_2022,"Li, F., Ye, Z., Xiao, X., Xu, J., & Liu, G. ",2020,2010
+offshore wind,Copper,3400.0,liang_2022,"Li, F., Ye, Z., Xiao, X., Xu, J., & Liu, G. ",2020,2010
+offshore wind,Aluminum,1900.0,liang_2022,"Li, F., Ye, Z., Xiao, X., Xu, J., & Liu, G. ",2020,2010
+offshore wind,Copper,4000.0,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2016
+offshore wind,Dysprosium,33.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2013
+offshore wind,Neodymium,186.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2011
+offshore wind,Aluminum,560.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Copper,11500.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Copper,15800.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Dysprosium,4.86,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Dysprosium,14.58,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Neodymium,60.92,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Neodymium,182.75,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Nickel,111.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Steel,232670.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Steel,292100.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+offshore wind,Aluminum,3000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Aluminum,260.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+offshore wind,Aluminum,1060.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+offshore wind,Aluminum,3930.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+offshore wind,Aluminum,2063.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Boron,7.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+offshore wind,Chromium,450.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Chromium,294.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Chromium,372.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Copper,20000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Copper,11500.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+offshore wind,Copper,4500.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Copper,1484.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Copper,9371.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Dysprosium,3.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Dysprosium,25.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+offshore wind,Dysprosium,10.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Dysprosium,24.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Dysprosium,28.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Dysprosium,13.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Dysprosium,14.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Dysprosium,13.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Dysprosium,18.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+offshore wind,Dysprosium,22.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Dysprosium,16.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Neodymium,186.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+offshore wind,Neodymium,203.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+offshore wind,Neodymium,180.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Neodymium,41.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Neodymium,140.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Neodymium,187.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Neodymium,40.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Neodymium,43.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+offshore wind,Neodymium,166.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+offshore wind,Neodymium,150.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+offshore wind,Neodymium,200.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Neodymium,195.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Neodymium,186.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+offshore wind,Neodymium,151.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Neodymium,148.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Praseodymium,35.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+offshore wind,Praseodymium,31.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Praseodymium,33.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Steel,350000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+offshore wind,Steel,317000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+offshore wind,Steel,333500.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Terbium,7.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+offshore wind,Terbium,6.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Vanadium,7000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+offshore wind,Copper,2440.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,2514.285714,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,1566.666667,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,1570.833333,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,5560.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,5642.857143,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,4916.666667,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,4895.833333,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,2520.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,3057.142857,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,891.6666667,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,1066.666667,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,3057.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,892.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,1067.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,2514.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,1567.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,1571.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,5643.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,4917.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Copper,4896.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+offshore wind,Steel,147576.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Steel,803094.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Steel,917224.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Steel,530417.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Fiberglass,5823.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Fiberglass,5833.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Fiberglass,10551.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Copper,1650.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Copper,5218.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Copper,9601.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Aluminum,1000.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Aluminum,898.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Aluminum,556.0,wang_2023,Chipindula et al 2018,2018,-1
+offshore wind,Steel,193257.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Fiberglass,10921.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Copper,2337.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Cement,142.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Cement,220.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Aluminum,2140.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Copper,9580.0,wang_2023,Falconer 2009,2009,-1
+offshore wind,Neodymium,186.0,wang_2023,DOE 2011,2011,2025
+offshore wind,Dysprosium,12.0,wang_2023,DOE 2011,2011,2025
+offshore wind,Steel,193257.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Fiberglass,10921.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Copper,2337.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Cement,142.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Cement,220.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Aluminum,2140.0,wang_2023,Elsam Engineering 2004,2004,-1
+offshore wind,Copper,9580.0,wang_2023,Falconer 2009,2009,-1
+onshore wind,Aluminum,300.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Aluminum,700.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Aluminum,3100.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Aluminum,5300.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Copper,1400.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Copper,1800.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Copper,3700.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Copper,6100.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Steel,54000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Steel,105000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Steel,160000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Steel,204000.0,liang_2022,"Beylot, A., Guyonnet, D., Muller, S., Vaxelaire, S., & Villeneuve, J.",2019,2019
+onshore wind,Steel,148000.0,liang_2022,"Capellán-Pérez, I., de Castro, C., & Miguel González, L. J.",2019,2019
+onshore wind,Copper,1143.0,liang_2022,"Deetman, S., Pauliuk, S., Van Vuuren, D. P., Van Der Voet, E., & Tukker, A.",2018,2012
+onshore wind,Copper,4318.0,liang_2022,"Deetman, S., Pauliuk, S., Van Vuuren, D. P., Van Der Voet, E., & Tukker, A.",2018,2011
+onshore wind,Neodymium,41.0,liang_2022,"Deetman, S., Pauliuk, S., Van Vuuren, D. P., Van Der Voet, E., & Tukker, A.",2018,2011
+onshore wind,Nickel,111.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2013
+onshore wind,Dysprosium,22.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2010
+onshore wind,Lead,6720.0,liang_2022,"Elshkaki, A., & Graedel, T. E. ",2013,2000
+onshore wind,Aluminum,260.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Chromium,359.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Copper,2000.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Dysprosium,0.9,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Neodymium,6.2,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Nickel,111.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Praseodymium,1.3,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Steel,132000.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Chromium,358.9,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Copper,1012.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Dysprosium,0.9,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Molybdenum,75.3,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Neodymium,6.2,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Nickel,376.6,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Niobium,37.7,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Praseodymium,1.3,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Terbium,0.3,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Vanadium,90.4,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+onshore wind,Aluminum,370.0,liang_2022,"García-Olivares, A., Ballabrera-Poy, J., García-Ladona, E., & Turiel, A.",2012,2012
+onshore wind,Copper,2000.0,liang_2022,"García-Olivares, A., Ballabrera-Poy, J., García-Ladona, E., & Turiel, A.",2012,2012
+onshore wind,Aluminum,260.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2007
+onshore wind,Copper,1830.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2007
+onshore wind,Steel,135000.0,liang_2022,"Kleijn, R., & Van der Voet, E.",2010,2007
+onshore wind,Steel,132500.0,liang_2022,"Li, F., Ye, Z., Xiao, X., Xu, J., & Liu, G. ",2020,2010
+onshore wind,Copper,2750.0,liang_2022,"Li, F., Ye, Z., Xiao, X., Xu, J., & Liu, G. ",2020,2010
+onshore wind,Aluminum,1900.0,liang_2022,"Li, F., Ye, Z., Xiao, X., Xu, J., & Liu, G. ",2020,2010
+onshore wind,Copper,4000.0,liang_2022,"McLellan, B. C., Yamasue, E., Tezuka, T., Corder, G., Golev, A., & Giurco, D.",2016,2016
+onshore wind,Aluminum,560.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Copper,2700.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Copper,7000.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Dysprosium,4.86,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Dysprosium,14.58,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Neodymium,60.92,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Neodymium,182.75,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Nickel,111.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Steel,112670.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Steel,172100.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2018
+onshore wind,Aluminum,3000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+onshore wind,Aluminum,50.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+onshore wind,Aluminum,260.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+onshore wind,Aluminum,3530.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+onshore wind,Aluminum,560.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+onshore wind,Aluminum,830.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2005
+onshore wind,Aluminum,1372.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+onshore wind,Boron,1.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+onshore wind,Chromium,789.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+onshore wind,Chromium,902.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+onshore wind,Chromium,359.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+onshore wind,Chromium,683.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+onshore wind,Copper,1143.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+onshore wind,Copper,3000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+onshore wind,Copper,4000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+onshore wind,Copper,2000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+onshore wind,Copper,2000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+onshore wind,Copper,2500.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+onshore wind,Copper,3000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+onshore wind,Copper,1745.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2009
+onshore wind,Copper,1200.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+onshore wind,Copper,5500.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+onshore wind,Copper,4700.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+onshore wind,Copper,1750.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2009
+onshore wind,Copper,1408.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2005
+onshore wind,Copper,2700.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+onshore wind,Copper,2300.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+onshore wind,Copper,1012.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+onshore wind,Copper,2497.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+onshore wind,Praseodymium,4.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+onshore wind,Praseodymium,1.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+onshore wind,Praseodymium,3.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+onshore wind,Steel,103000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+onshore wind,Steel,115000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2011
+onshore wind,Steel,140000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2010
+onshore wind,Steel,150000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+onshore wind,Steel,98000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+onshore wind,Steel,148000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2012
+onshore wind,Steel,120000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+onshore wind,Steel,89840.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2009
+onshore wind,Steel,138000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+onshore wind,Steel,119985.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+onshore wind,Terbium,1.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+onshore wind,Vanadium,90.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+onshore wind,Copper,2733.333333,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2520.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2500.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,4800.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,4608.695652,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,5066.666667,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2242.424242,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2478.26087,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2333.333333,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2242.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2478.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2333.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2733.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,4609.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,5067.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Steel,107000.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Steel,113000.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Aluminum,1600.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Aluminum,1400.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Boron,1.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Chromium,580.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Chromium,470.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Copper,1400.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Copper,950.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Dysprosium,6.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Dysprosium,2.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Manganese,800.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Manganese,780.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Molybdenum,119.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Molybdenum,99.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Neodymium,12.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Neodymium,51.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Nickel,440.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Nickel,430.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Praseodymium,4.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Terbium,1.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Zinc,5500.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Neodymium,36.0,liang_2022,"Ciacci, L., Vassura, I., Cao, Z., Liu, G., & Passarini, F. ",2019,2019
+onshore wind,Copper,1500.0,liang_2022,"Habib, K., & Wenzel, H.",2016,2016
+onshore wind,Steel,84900.0,liang_2022,"Habib, K., & Wenzel, H.",2016,2016
+onshore wind,Copper,4982.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+onshore wind,Nickel,377.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+onshore wind,Steel,120480.0,wang_2023,Razdan + Garrett 2015a,2015,-1
+onshore wind,Fiberglass,8980.0,wang_2023,Razdan + Garrett 2015a,2015,-1
+onshore wind,Copper,1700.0,wang_2023,Razdan + Garrett 2015a,2015,-1
+onshore wind,Cement,41388.0,wang_2023,Razdan + Garrett 2015a,2015,-1
+onshore wind,Cement,64214.0,wang_2023,Razdan + Garrett 2015a,2015,-1
+onshore wind,Aluminum,4900.0,wang_2023,Razdan + Garrett 2015a,2015,-1
+onshore wind,Steel,130480.0,wang_2023,Razdan + Garrett 2015b,2015,-1
+onshore wind,Fiberglass,7400.0,wang_2023,Razdan + Garrett 2015b,2015,-1
+onshore wind,Copper,1740.0,wang_2023,Razdan + Garrett 2015b,2015,-1
+onshore wind,Cement,47099.0,wang_2023,Razdan + Garrett 2015b,2015,-1
+onshore wind,Cement,73075.0,wang_2023,Razdan + Garrett 2015b,2015,-1
+onshore wind,Aluminum,5080.0,wang_2023,Razdan + Garrett 2015b,2015,-1
+onshore wind,Aluminum,830.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2004
+onshore wind,Copper,1200.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+onshore wind,Copper,1750.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2009
+onshore wind,Copper,1408.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2005
+onshore wind,Copper,2500.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+onshore wind,Nickel,111.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2013
+onshore wind,Steel,148000.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2012
+onshore wind,Steel,89840.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2009
+onshore wind,Aluminum,560.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2016
+onshore wind,Dysprosium,1.4,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+onshore wind,Dysprosium,1.8,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2012
+onshore wind,Dysprosium,3.7,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2012
+onshore wind,Dysprosium,2.9,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+onshore wind,Neodymium,49.6,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2012
+onshore wind,Neodymium,40.0,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+onshore wind,Neodymium,24.8,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2012
+onshore wind,Neodymium,20.0,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+onshore wind,Dysprosium,1.6,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2019
+onshore wind,Dysprosium,3.3,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2019
+onshore wind,Dysprosium,1.6,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Dysprosium,3.3,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Neodymium,20.4,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2019
+onshore wind,Neodymium,40.8,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2020
+onshore wind,Neodymium,16.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Neodymium,24.8,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Neodymium,32.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Neodymium,49.6,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Steel,108667.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,181200.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,117667.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,114266.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,101176.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,105120.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,129333.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,131150.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,120040.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,133300.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,2000.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,3200.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,1765.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,1680.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,2133.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,2150.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,1960.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,2200.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,2000.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,3200.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,1867.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,1529.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,1920.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,2066.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,2200.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,2242.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2478.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2333.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2520.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,3057.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,892.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,1067.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,5761.0,wang_2023,BBF Associates 2011,2011,2010
+onshore wind,Copper,2994.0,wang_2023,BBF Associates 2011,2011,2010
+onshore wind,Copper,6759.0,wang_2023,BBF Associates 2011,2011,2010
+onshore wind,Copper,2540.0,wang_2023,BBF Associates 2011,2011,2010
+onshore wind,Copper,3538.0,wang_2023,BBF Associates 2011,2011,2010
+onshore wind,Dysprosium,21.0,liang_2022,"Buchholz, P., & Brandenburg, T. ",2018,2018
+onshore wind,Neodymium,202.5,liang_2022,"Buchholz, P., & Brandenburg, T. ",2018,2018
+onshore wind,Steel,132000.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Steel,119500.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Aluminum,500.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Aluminum,700.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Boron,6.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Chromium,525.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Copper,5000.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Copper,3000.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Dysprosium,6.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Dysprosium,17.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Manganese,790.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Molybdenum,109.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Neodymium,28.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Neodymium,180.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Nickel,340.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Nickel,240.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Praseodymium,35.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Praseodymium,9.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Terbium,1.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Terbium,7.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Zinc,5500.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+onshore wind,Neodymium,180.5,liang_2022,"Ciacci, L., Vassura, I., Cao, Z., Liu, G., & Passarini, F. ",2019,2019
+onshore wind,Neodymium,186.0,wang_2023,DOE 2011,2011,2025
+onshore wind,Dysprosium,12.0,wang_2023,DOE 2011,2011,2025
+onshore wind,Aluminum,1060.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Chromium,239.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Copper,10000.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Dysprosium,29.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Lead,6720.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Neodymium,183.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Nickel,111.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Praseodymium,48.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Steel,132000.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Terbium,1.3,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+onshore wind,Copper,4200.0,liang_2022,"García-Olivares, A., Ballabrera-Poy, J., García-Ladona, E., & Turiel, A.",2012,2012
+onshore wind,Steel,122780.0,wang_2023,Garrett + Ronde 2011,2011,-1
+onshore wind,Fiberglass,9580.0,wang_2023,Garrett + Ronde 2011,2011,-1
+onshore wind,Copper,3320.0,wang_2023,Garrett + Ronde 2011,2011,-1
+onshore wind,Cement,38717.0,wang_2023,Garrett + Ronde 2011,2011,-1
+onshore wind,Cement,60070.0,wang_2023,Garrett + Ronde 2011,2011,-1
+onshore wind,Aluminum,13200.0,wang_2023,Garrett + Ronde 2011,2011,-1
+onshore wind,Copper,4700.0,liang_2022,"Habib, K., & Wenzel, H.",2016,2016
+onshore wind,Dysprosium,14.0,liang_2022,"Habib, K., & Wenzel, H.",2014,2011
+onshore wind,Dysprosium,13.3,liang_2022,"Habib, K., & Wenzel, H.",2016,2016
+onshore wind,Neodymium,150.0,liang_2022,"Habib, K., & Wenzel, H.",2014,2011
+onshore wind,Neodymium,200.0,liang_2022,"Habib, K., & Wenzel, H.",2016,2016
+onshore wind,Steel,76160.0,liang_2022,"Habib, K., & Wenzel, H.",2016,2016
+onshore wind,Dysprosium,24.0,liang_2022,"Hoenderdaal, S., Espinoza, L. T., Marscheider-Weidemann, F., & Graus, W.",2013,2012
+onshore wind,Dysprosium,27.7,liang_2022,"Hoenderdaal, S., Espinoza, L. T., Marscheider-Weidemann, F., & Graus, W.",2013,2012
+onshore wind,Dysprosium,28.0,liang_2022,"Hoenderdaal, S., Espinoza, L. T., Marscheider-Weidemann, F., & Graus, W.",2013,2012
+onshore wind,Neodymium,180.0,liang_2022,"Hoenderdaal, S., Espinoza, L. T., Marscheider-Weidemann, F., & Graus, W.",2013,2013
+onshore wind,Neodymium,198.0,liang_2022,"Hoenderdaal, S., Espinoza, L. T., Marscheider-Weidemann, F., & Graus, W.",2013,2013
+onshore wind,Dysprosium,8.1,liang_2022,"Imholte, D. D., Nguyen, R. T., Vedantam, A., Brown, M., Iyer, A., Smith, B. J., ... & O’Kelley, B.",2018,2018
+onshore wind,Neodymium,117.45,liang_2022,"Imholte, D. D., Nguyen, R. T., Vedantam, A., Brown, M., Iyer, A., Smith, B. J., ... & O’Kelley, B.",2018,2018
+onshore wind,Dysprosium,14.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2011
+onshore wind,Dysprosium,28.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2013
+onshore wind,Dysprosium,21.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2019
+onshore wind,Neodymium,150.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2013
+onshore wind,Neodymium,220.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2013
+onshore wind,Neodymium,185.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2013
+onshore wind,Terbium,6.2,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2013
+onshore wind,Terbium,9.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2013
+onshore wind,Terbium,7.6,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2013
+onshore wind,Terbium,8.0,liang_2022,"Leader, A., Gaustad, G., & Babbitt, C.",2019,2019
+onshore wind,Copper,4700.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+onshore wind,Dysprosium,13.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+onshore wind,Neodymium,200.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+onshore wind,Nickel,377.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+onshore wind,Neodymium,203.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+onshore wind,Dysprosium,14.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+onshore wind,Neodymium,310.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Neodymium,166.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Neodymium,56.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Neodymium,244.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Neodymium,127.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Neodymium,38.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Praseodymium,75.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Praseodymium,17.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Praseodymium,3.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Praseodymium,59.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Praseodymium,13.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Praseodymium,2.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Dysprosium,50.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Dysprosium,17.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Dysprosium,3.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Dysprosium,39.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Dysprosium,13.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Dysprosium,2.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Terbium,30.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Terbium,9.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Terbium,2.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2010
+onshore wind,Terbium,24.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Terbium,7.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Terbium,1.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+onshore wind,Dysprosium,7.3,liang_2022,"Pavel, C. C., Lacal-Arántegui, R., Marmier, A., Schüler, D., Tzimas, E., Buchert, M., ... & Blagoeva, D.",2017,2017
+onshore wind,Neodymium,105.85,liang_2022,"Pavel, C. C., Lacal-Arántegui, R., Marmier, A., Schüler, D., Tzimas, E., Buchert, M., ... & Blagoeva, D.",2017,2017
+onshore wind,Yttrium,0.45,liang_2022,"Pavel, C. C., Lacal-Arántegui, R., Marmier, A., Schüler, D., Tzimas, E., Buchert, M., ... & Blagoeva, D.",2017,2017
+onshore wind,Yttrium,2.0,liang_2022,"Shammugam, S., Gervais, E., Schlegl, T., & Rathgeber, A.",2019,2019
+onshore wind,Copper,5500.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2011
+onshore wind,Copper,4700.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2016
+onshore wind,Dysprosium,14.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2016
+onshore wind,Dysprosium,13.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2015
+onshore wind,Dysprosium,18.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2016
+onshore wind,Dysprosium,13.3,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2016
+onshore wind,Neodymium,150.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2014
+onshore wind,Neodymium,200.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2016
+onshore wind,Neodymium,195.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2015
+onshore wind,Neodymium,186.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2010
+onshore wind,Nickel,112.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2013
+onshore wind,Steel,98900.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2012
+onshore wind,Steel,120000.0,liang_2022,"Valero, A., Valero, A., Calvo, G., & Ortego, A.",2018,2019
+onshore wind,Dysprosium,11.7,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+onshore wind,Dysprosium,15.0,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2012
+onshore wind,Neodymium,201.5,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2012
+onshore wind,Neodymium,162.5,liang_2022,"Viebahn, P., Lechon, Y., & Trieb, F.",2015,2025
+onshore wind,Dysprosium,13.4,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2019
+onshore wind,Dysprosium,13.4,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Neodymium,165.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2019
+onshore wind,Neodymium,165.0,liang_2022,"Wang, P., Chen, L. Y., Ge, J. P., Cai, W., & Chen, W. Q.",2019,2012
+onshore wind,Dysprosium,27.7,liang_2022,"Watari, T., McLellan, B. C., Ogata, S., & Tezuka, T. ",2018,2013
+onshore wind,Neodymium,198.0,liang_2022,"Watari, T., McLellan, B. C., Ogata, S., & Tezuka, T. ",2018,2013
+onshore wind,Steel,115133.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,116250.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,108920.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Steel,117900.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,1733.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,1750.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,1640.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Aluminum,1800.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,15267.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,15350.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,12680.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,14233.0,liang_2022,"Yang, J., Zhang, L., Chang, Y., Hao, Y., Liu, G., Yan, Q., & Zhao, Y.",2020,2020
+onshore wind,Copper,2733.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2520.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2500.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,4800.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,4609.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,5067.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2440.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,2514.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,1567.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,1571.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,5560.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,5643.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,4917.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+onshore wind,Copper,4896.0,liang_2022,"Zimmermann, T., Rehberger, M., & Gößling-Reisemann, S.",2013,2013
+Solar Distributed,Copper,7000.0,wang_2023,BBF Associates 2011,2011,2010
+Solar Distributed,Aluminum,38500.0,wang_2023,Bodeker et al 2010,2010,-1
+Solar Distributed,Silicon,4.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+Solar Distributed,Silver,20.0,liang_2022,"Carrara S, Dias, P., Plazzotta, B., & Pavel., C.",2020,2018
+Solar Distributed,Silver,35.6,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+Solar Distributed,Silicon,6629.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2014
+Solar Distributed,Silver,11.0,liang_2022,"Davidsson, S., & Höök, M. ",2017,2025
+Solar Distributed,Silver,80.0,liang_2022,"Elshkaki, A., & Shen, L.",2019,2019
+Solar Distributed,Lead,5.53,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+Solar Distributed,Lead,6.32,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+Solar Distributed,Nickel,1.3,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+Solar Distributed,Silver,59.0,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+Solar Distributed,Silver,68.17,liang_2022,"Fizaine, F., & Court, V.",2015,2015
+Solar Distributed,Copper,825.0,liang_2022,"Fizaine, F., & Court, V.",2015,2019
+Solar Distributed,Copper,943.0,liang_2022,"Fizaine, F., & Court, V.",2015,2019
+Solar Distributed,Silicon,2930.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+Solar Distributed,Silicon,3450.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+Solar Distributed,Glass,53400.0,wang_2023,"Fthenakis et al., 2011",2011,-1
+Solar Distributed,Steel,56000.0,wang_2023,IRENA 2017,2017,-1
+Solar Distributed,Silicon,7000.0,wang_2023,IRENA 2017,2017,-1
+Solar Distributed,Glass,70000.0,wang_2023,IRENA 2017,2017,-1
+Solar Distributed,Copper,7000.0,wang_2023,IRENA 2017,2017,-1
+Solar Distributed,Cement,4847.0,wang_2023,IRENA 2017,2017,-1
+Solar Distributed,Cement,7520.0,wang_2023,IRENA 2017,2017,-1
+Solar Distributed,Aluminum,19000.0,wang_2023,IRENA 2017,2017,-1
+Solar Distributed,Cement,6497.0,wang_2023,Jean et al 2015,2015,-1
+Solar Distributed,Cement,10080.0,wang_2023,Jean et al 2015,2015,-1
+Solar Distributed,Silicon,3347.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+Solar Distributed,Silicon,638.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+Solar Distributed,Silicon,2882.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+Solar Distributed,Silicon,6629.0,liang_2022,"Kavlak, G., McNerney, J., Jaffe, R. L., & Trancik, J. E.",2015,2015
+Solar Distributed,Silver,54.8125,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+Solar Distributed,Silver,38.36875,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+Solar Distributed,Silver,32.53125,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+Solar Distributed,Silver,29.45625,liang_2022,"Li, W., & Adachi, T. ",2019,2018
+Solar Distributed,Silver,10.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2012
+Solar Distributed,Copper,884.0,liang_2022,"Månberger, A., & Stenqvist, B.",2018,2018
+Solar Distributed,Steel,55900.0,wang_2023,Mason et al 2006,2006,-1
+Solar Distributed,Copper,7530.0,wang_2023,Mason et al 2006,2006,-1
+Solar Distributed,Cement,6775.0,wang_2023,Mason et al 2006,2006,-1
+Solar Distributed,Cement,10512.0,wang_2023,Mason et al 2006,2006,-1
+Solar Distributed,Aluminum,19000.0,wang_2023,Mason et al 2006,2006,-1
+Solar Distributed,Aluminum,10953.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+Solar Distributed,Copper,2741.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+Solar Distributed,Lead,336.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+Solar Distributed,Magnesium,53.5,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+Solar Distributed,Silicon,3653.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+Solar Distributed,Silver,24.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+Solar Distributed,Tin,577.0,liang_2022,"Moss, R. L., Tzimas, E., Kara, H., Willis, P., & Kooroshy, J.",2013,2013
+Solar Distributed,Silver,13.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+Solar Distributed,Silver,15.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+Solar Distributed,Silver,18.0,liang_2022,"Nassar, N. T., Wilburn, D. R., & Goonan, T. G.",2016,2020
+Solar Distributed,Glass,66700.0,wang_2023,"Rigby et al., 2011",2011,-1
+Solar Distributed,Nickel,1.0,wang_2023,Rischknecht et al 2015,2015,-1
+Solar Distributed,Silver,84.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2010
+Solar Distributed,Silicon,6630.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+Solar Distributed,Silver,36.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2017,2015
+Solar Distributed,Silver,19.0,liang_2022,"Tokimatsu, K., Wachtmeister, H., McLellan, B., Davidsson, S., Murakami, S., Höök, M., ... & Nishio, M.",2018,2015
+Solar Distributed,Silver,36.0,liang_2022,"Valero, A., Valero, A., Calvo, G., Ortego, A., Ascaso, S., & Palacios, J. L.",2018,2015
+Solar Distributed,Copper,300.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+Solar Distributed,Nickel,1.1,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+Solar Distributed,Silicon,3653.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+Solar Distributed,Silver,19.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+Solar Distributed,Silver,10.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+Solar Distributed,Silver,20.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2013
+Solar Distributed,Silver,80.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2014
+Solar Distributed,Lead,6.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+Solar Distributed,Nickel,1.3,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+Solar Distributed,Silicon,6630.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+Solar Distributed,Silver,4.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+Solar Distributed,Silver,47.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+Solar Distributed,Silver,57.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+Solar Distributed,Silver,17.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2015
+Solar Distributed,Copper,250.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2016
+Solar Distributed,Lead,72.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+Solar Distributed,Silver,5.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2017
+Solar Distributed,Silicon,9000.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2018
+Solar Distributed,Copper,825.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+Solar Distributed,Copper,458.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+Solar Distributed,Lead,39.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+Solar Distributed,Nickel,1.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+Solar Distributed,Silicon,6428.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+Solar Distributed,Silver,36.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+Solar Distributed,Silver,30.0,liang_2022,"Watari, T., McLellan, B. C., Giurco, D., Dominish, E., Yamasue, E., & Nansai, K.",2019,2019
+NGGT,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+NGGT,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+NGGT,Copper,471.0,wang_2023,Albers et al 1976,1976,-1
+NGGT,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+NGGT,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+NGGT,Copper,500.0,wang_2023,El-Bassioni 1980,1980,-1
+NGGT,Copper,538.0,wang_2023,El-Bassioni 1980,1980,-1
+NGGT,Steel,31030.0,wang_2023,Spath + Mann 2000,2000,-1
+NGGT,Cement,11403.0,wang_2023,Spath + Mann 2000,2000,-1
+NGGT,Cement,15640.0,wang_2023,Spath + Mann 2000,2000,-1
+NGGT,Aluminum,204.0,wang_2023,Spath + Mann 2000,2000,-1
+NGGT,Steel,51130.0,wang_2023,Tahara et al 1997,1997,-1
+NGGT,Cement,7350.0,wang_2023,Tahara et al 1997,1997,-1
+NGGT,Cement,10080.0,wang_2023,Tahara et al 1997,1997,-1
+NGGT,Aluminum,230.0,wang_2023,Tahara et al 1997,1997,-1
+NGGT,Nickel,10.0,wang_2023,White + Kulcinski 1998,1998,-1
+NGGT,Manganese,112.0,wang_2023,White + Kulcinski 1998,1998,-1
+NGGT,Copper,454.0,wang_2023,White + Kulcinski 1998,1998,-1
+Gas,Nickel,8.0,wang_2023,Albers et al 1976,1976,-1
+Gas,Manganese,199.0,wang_2023,Albers et al 1976,1976,-1
+Gas,Copper,471.0,wang_2023,Albers et al 1976,1976,-1
+Gas,Nickel,11.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas,Manganese,124.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas,Copper,500.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas,Copper,538.0,wang_2023,El-Bassioni 1980,1980,-1
+Gas,Steel,31030.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas,Cement,11403.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas,Cement,15640.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas,Aluminum,204.0,wang_2023,Spath + Mann 2000,2000,-1
+Gas,Steel,51130.0,wang_2023,Tahara et al 1997,1997,-1
+Gas,Cement,7350.0,wang_2023,Tahara et al 1997,1997,-1
+Gas,Cement,10080.0,wang_2023,Tahara et al 1997,1997,-1
+Gas,Aluminum,230.0,wang_2023,Tahara et al 1997,1997,-1
+Gas,Nickel,10.0,wang_2023,White + Kulcinski 1998,1998,-1
+Gas,Manganese,112.0,wang_2023,White + Kulcinski 1998,1998,-1
+Gas,Copper,454.0,wang_2023,White + Kulcinski 1998,1998,-1

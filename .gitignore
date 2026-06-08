@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# Throwaway comparison outputs from `python src/interpolation.py` /
+# `simulate.py --interpolation {linear,mean-preserving}` (not part of the
+# shipped result set; regenerable).
+outputs/data/experimental/
+outputs/data/interpolated/
+
+# NOTE: the canonical results in outputs/data/*.csv and the manuscript
+# figures in outputs/figures/manuscript/ ARE tracked on purpose, so the
+# repository reproduces the paper without re-running the simulation.
