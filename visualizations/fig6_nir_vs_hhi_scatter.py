@@ -1,9 +1,9 @@
-"""Manuscript Figure 7: supply-risk scatter (Net Import Reliance vs production
+"""Manuscript Figure 6: supply-risk scatter (Net Import Reliance vs production
 HHI), marker size = peak US demand / global production, color = material class.
 
 Reuses the table-assembly helpers in peak_demand_vs_nir_scatter.py (per-material
 peak demand, global production, NIR, and HHI) and reshapes the visual encoding
-into the NIR-by-HHI supply-risk plane. Writes fig7_nir_vs_hhi_scatter.{png,pdf}.
+into the NIR-by-HHI supply-risk plane. Writes fig6_nir_vs_hhi_scatter.{png,pdf}.
 """
 
 import sys
@@ -84,13 +84,17 @@ LABEL_OVERRIDES = {
 
 
 # Categorical palette: the locked manuscript material-class palette, used
-# consistently wherever materials are colored by class (Figures 3, 4, and 7).
-CLASS_COLORS = {
-    "Bulk commodities":    "#00693E",  # Dartmouth green
-    "Base & alloying":     "#3B6E8F",  # steel blue
-    "Specialty metals":    "#C97B3A",  # warm ochre
-    "Rare earth elements": "#8E3A62",  # plum
-}
+# consistently wherever materials are colored by class (this figure and the
+# SI tornado, figS3_sensitivity_tornado.CATEGORY_COLORS; keep in sync).
+# 2026-07-13 figure revision: REE now carries the same navy used for the
+# REE labels in Figs 4/5 (supply_tiers_variants.REE_HIGHLIGHT_COLOR) so the REE
+# set reads consistently across figures; Base & alloying takes the plum that
+# REE freed up (navy would have collided with the old steel blue).
+from src.material_classes import CLASS_COLORS, CLASS_LABELS  # noqa: E402
+
+# Display-only legend labels from the canonical taxonomy; MATERIAL_GROUPS
+# keys stay canonical (src/material_classes.py via supply_chain/config.py).
+LEGEND_LABELS = dict(CLASS_LABELS)
 
 # Continuous log->area sizing with a floor clip at 1%. Materials below
 # 1% (Steel, Cement, Cr, Mn, Mg, Ni, Y, B) all render at the same small
@@ -223,15 +227,23 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
     df = df.dropna(subset=["material_class"]).reset_index(drop=True)
 
     df["color"] = df["material_class"].map(CLASS_COLORS)
-    df["size"] = size_from_ratio(df["ratio"], scale=scale)
 
-    # --docx: render at PRINT SIZE rather than the large default canvas.
-    # Width = 5.5 in (target Word insert width); height keeps the original
-    # 11 x 8.5 aspect ratio. Because the figure is rendered at print width,
-    # absolute point sizes set later read as true on-page pt at the saved
-    # width. Default (no --docx) keeps the original (11, 8.5) canvas.
-    _PRINT_W = 5.5
-    _fig_w, _fig_h = (_PRINT_W, _PRINT_W * 8.5 / 11.0) if docx else (11, 8.5)
+    # --docx: this is a bubble chart whose marker areas ENCODE data (absolute
+    # pt^2), so shrinking the canvas to a small print width would force the
+    # bubbles to overlap. Instead — like Figs 2 and 3 — keep the figure at its
+    # natural large canvas (markers untouched, no overlap) and only enlarge the
+    # text, so it stays legible when the figure is inserted into Word at page
+    # width. Default (no --docx) keeps the original sizes.
+    _FULL_W, _FULL_H = 11.0, 8.5
+    _fig_w, _fig_h = _FULL_W, _FULL_H
+    _F = 1.35 if docx else 1.0   # print variant: text-only enlargement
+
+    # Reserve a little more right-hand legend room under --docx, because the
+    # enlarged legend labels are physically wider on the same canvas.
+    _MARGINS = dict(left=0.08, right=(0.75 if docx else 0.78),
+                    top=0.93, bottom=0.10)
+
+    df["size"] = size_from_ratio(df["ratio"], scale=scale)
     fig, ax = plt.subplots(figsize=(_fig_w, _fig_h))
 
     # Render NIR on a 0-100 percent axis.
@@ -278,7 +290,7 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
             label,
             xy=(px, py),
             xytext=(px + dx, py + dy),
-            fontsize=10, color="black", zorder=5,
+            fontsize=11 * _F, color="black", zorder=5,
             ha="left" if dx >= 0 else "right",
             va="bottom" if dy >= 0 else "top",
             arrowprops=dict(arrowstyle="-", color="gray", lw=0.4, alpha=0.5)
@@ -289,8 +301,10 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
     ax.set_xlim(-4, 104)
     ax.set_ylim(-0.04, 1.08)
     ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:.0f}%"))
-    ax.set_xlabel("Net Import Reliance", fontsize=11)
-    ax.set_ylabel("Production HHI", fontsize=11)
+    # Review item C27: larger axis/tick text for on-page legibility.
+    ax.set_xlabel("Net Import Reliance", fontsize=13 * _F)
+    ax.set_ylabel("Production HHI", fontsize=13 * _F)
+    ax.tick_params(axis="both", labelsize=12 * _F)
 
     scenario_name = df["scenario"].iloc[0] if "scenario" in df.columns else DEFAULT_SCENARIO
     yrs = df["peak_year"].astype(int)
@@ -301,19 +315,7 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
         yr_phrase = f"peak year {modal_yr}"
     else:
         yr_phrase = f"peak year per material, {modal_yr} ({n_modal}/{len(df)}); range {yr_min}–{yr_max}"
-    _title_text = (
-        "Supply risk scatter: NIR vs HHI, US to Global Demand Ratio by material class."
-    )
-    # LAYOUT FIX (docx only): at the 5.5 in print width a one-line 12 pt
-    # title is ~6.45 in wide — wider than the whole canvas — so it would
-    # clip. Wrap onto two lines (same words, only a line break added) so it
-    # fits. Default output keeps the original single-line title untouched.
-    if docx:
-        _title_text = (
-            "Supply risk scatter: NIR vs HHI,\n"
-            "US to Global Demand Ratio by material class."
-        )
-    ax.set_title(_title_text, fontsize=11, pad=8, loc="left")
+    # No figure title (the caption carries it).
     ax.grid(True, which="major", axis="both", linestyle=":",
             linewidth=0.4, alpha=0.4)
     ax.set_axisbelow(True)
@@ -322,13 +324,13 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
     class_handles = [
         Line2D([0], [0], marker="o", linestyle="",
                markerfacecolor=col, markeredgecolor="black",
-               markersize=10, label=cls)
+               markersize=10 * _F, label=LEGEND_LABELS.get(cls, cls))
         for cls, col in CLASS_COLORS.items()
     ]
     leg1 = ax.legend(
         handles=class_handles, title="Material class",
         loc="upper left", bbox_to_anchor=(1.01, 1.0),
-        frameon=False, fontsize=9, title_fontsize=10,
+        frameon=False, fontsize=11 * _F, title_fontsize=12 * _F,
         handletextpad=0.6, borderaxespad=0.0,
     )
     ax.add_artist(leg1)
@@ -352,36 +354,26 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
     # neighbors — Line2D `labelspacing` is in units of font height,
     # which is too tight when the diameter ratio between adjacent
     # legend dots exceeds ~3x (happens on the linear scale top end).
-    # LAYOUT FIX (docx only): the size-legend markers are absolute-pt
-    # encodings (up to ~0.59 in across) and must not shrink. On the short
-    # 4.25 in print canvas the 4.2-font-height row spacing pushes the
-    # bottom markers off the page, so under --docx we tighten labelspacing
-    # and handletextpad (explicitly sanctioned legend-spacing tweak) and
-    # anchor the legend a little higher so all six rows stay on-canvas.
-    # Default output keeps the original spacing/anchor untouched.
-    _leg2_anchor_y = 0.66 if docx else 0.78
-    _leg2_labelspacing = 1.6 if docx else 4.2
-    _leg2_handletextpad = 1.4 if docx else 1.8
+    # `labelspacing` is in font-height units, so the enlarged --docx text would
+    # make all six rows taller and push the bottom (100%) marker off the
+    # canvas. Divide by _F so the ABSOLUTE row spacing matches the full-size
+    # figure (the markers are the same natural size in both modes, so the
+    # legend keeps the full-size vertical extent and all rows stay on-canvas).
     leg2 = ax.legend(
         handles=size_handles, title="Peak US demand /\nglobal production",
-        loc="upper left", bbox_to_anchor=(1.01, _leg2_anchor_y),
-        frameon=False, fontsize=9, title_fontsize=10,
-        handletextpad=_leg2_handletextpad, labelspacing=_leg2_labelspacing,
+        loc="upper left", bbox_to_anchor=(1.01, 0.78),
+        frameon=False, fontsize=11 * _F, title_fontsize=12 * _F,
+        handletextpad=1.8, labelspacing=4.2 / _F,
         borderaxespad=0.0,
     )
 
-    # LAYOUT FIX (docx only): at the 5.5 in print width the legend column
-    # is narrower in absolute inches, so the longest label ("Rare earth
-    # elements") overflowed the canvas right edge. Pull the right margin in
-    # (more reserved legend space) so nothing clips. Default layout is
-    # untouched, keeping the non-docx output byte-for-byte identical.
-    if docx:
-        plt.subplots_adjust(left=0.10, right=0.66, top=0.88, bottom=0.11)
-    else:
-        plt.subplots_adjust(left=0.08, right=0.78, top=0.93, bottom=0.10)
+    # Under --docx the right margin is pulled in slightly (see _MARGINS) to
+    # reserve room for the enlarged legend labels; the non-docx layout is
+    # byte-for-byte unchanged.
+    plt.subplots_adjust(**_MARGINS)
     suffix = "" if scale == "log" else f"_{scale}"
-    png = out_dir / f"fig7_nir_vs_hhi_scatter{suffix}.png"
-    pdf = out_dir / f"fig7_nir_vs_hhi_scatter{suffix}.pdf"
+    png = out_dir / f"fig6_nir_vs_hhi_scatter{suffix}.png"
+    pdf = out_dir / f"fig6_nir_vs_hhi_scatter{suffix}.pdf"
 
     # --docx: set in-plot text to ABSOLUTE point sizes by role. Because the
     # figure is rendered at the 5.5 in print width above, these absolute pt

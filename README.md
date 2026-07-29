@@ -55,20 +55,28 @@ python reproduce.py --simulate
 ## Figures and tables
 
 Each generator is a standalone script; `reproduce.py` runs them with the exact
-flags below. Output filenames retain the generators' internal names; the mapping
-to the manuscript numbering is given here and in
+flags below. Script and output filenames follow the manuscript numbering
+(Environmental Research: Energy, 7-23 revision); the full mapping is in
 [docs/figure_map.md](docs/figure_map.md).
 
 | Manuscript | Output file (`outputs/figures/manuscript/`) | Generator |
 |---|---|---|
-| **Figure 1** capacity additions & retirements | `fig1_capacity_additions.png` | `visualizations/fig1_capacity_additions_ensemble.py` |
-| **Figure 2** annual material demand projections | `fig2_demand_projections.png` | `visualizations/fig1_demand_projections.py` |
-| **Figure 3** cumulative demand by family | `fig3_cumulative_by_family.png` | `visualizations/scenario_cum_by_family_tonnage.py` |
-| **Figure 4** demand-uncertainty tornado | `fig4_sensitivity_tornado.png` | `visualizations/fig4_sensitivity_tornado.py` |
-| **Figure 5** US supply tiers | `fig5_supply_tiers_us.png` | `visualizations/fig5_supply_chain_4panel.py` |
-| **Figure 6** global supply tiers | `fig6_supply_tiers_global.png` | `visualizations/fig5_supply_chain_4panel.py` |
-| **Figure 7** supply-risk scatter (NIR × HHI) | `fig7_nir_vs_hhi_scatter_linear.png` | `visualizations/nir_vs_hhi_scatter.py` |
-| **Table 1** peak annual demand | `outputs/data/table1_peak_demand.{csv,md}` | `visualizations/table1_peak_demand.py` |
+| **Figure 1** annual capacity additions (15-panel facet) | `fig1_capacity_additions_facet.png` | `visualizations/fig1_capacity_additions_facet.py` |
+| **Figure 2** annual material demand projections | `fig2_demand_projections.png` | `visualizations/fig2_demand_projections.py` |
+| **Figure 3** cumulative demand by material class | `fig3_cumulative_by_family.png` | `visualizations/fig3_cumulative_by_family.py` |
+| **Figure 4** US supply tiers | `fig4_supply_tiers_us.png` | `visualizations/fig4_fig5_supply_tiers.py` |
+| **Figure 5** global supply tiers | `fig5_supply_tiers_global.png` | `visualizations/fig4_fig5_supply_tiers.py` |
+| **Figure 6** supply-risk scatter (NIR × HHI) | `fig6_nir_vs_hhi_scatter_linear.png` | `visualizations/fig6_nir_vs_hhi_scatter.py` |
+| **Figure S1** demand across technologies | `figS1_demand_by_technology.png` | `visualizations/figS1_demand_by_technology.py` |
+| **Figure S2** per-material sensitivity | `figS2_per_material_sensitivity.png` | `visualizations/si_figures.py` |
+| **Figure S3** demand-uncertainty tornado | `figS3_sensitivity_tornado.png` | `visualizations/figS3_sensitivity_tornado.py` |
+| **Tables S1–S9** supplementary tables | `outputs/data/tables/table_s{1..9}.csv` | `visualizations/gen_si_tables.py` |
+| (peak-demand source for S7/S8) | `outputs/data/table1_peak_demand.{csv,md}` | `visualizations/table1_peak_demand.py` |
+
+Two diagnostics figures (Monte Carlo convergence, interpolation robustness)
+render to `outputs/figures/diagnostics/`; they back Methods claims but are not
+part of the SI figure set. Retired generators live in
+`visualizations/retired/`.
 
 Every generator also accepts a `--docx` flag that renders a print-sized variant
 (absolute point sizes for direct insertion into the Word manuscript). The chart

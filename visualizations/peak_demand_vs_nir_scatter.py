@@ -1,9 +1,9 @@
-"""Manuscript Figure 7 library: data assembly and rendering for the supply-risk
+"""Manuscript Figure 6 library: data assembly and rendering for the supply-risk
 scatter (Net Import Reliance vs demand/production ratio, colored by production
 HHI).
 
-nir_vs_hhi_scatter.py imports the table-assembly helpers here (assemble_table,
-load_global_production) to build Figure 7; running this file directly emits a
+fig6_nir_vs_hhi_scatter.py imports the table-assembly helpers here (assemble_table,
+load_global_production) to build Figure 6; running this file directly emits a
 standalone scatter plus its companion CSV. The y-axis defaults to the Mid_Case
 NREL Standard Scenario MC-mean; pass --scenario to override.
 """
@@ -31,6 +31,8 @@ except ImportError:
 # numbers used elsewhere in the manuscript.
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR / "supply_chain"))
+sys.path.insert(0, str(BASE_DIR))
+from src.scenario_config import REFERENCE_SCENARIO  # noqa: E402
 from feature_engineering import (  # noqa: E402
     load_mcs2025_world_data,
     _mcs2025_country_production,
@@ -45,7 +47,7 @@ from feature_engineering import (  # noqa: E402
 _country_production_tonnes = _mcs2025_country_production
 
 DEMAND_BY_SCENARIO_CSV = BASE_DIR / "outputs" / "data" / "material_demand_by_scenario.csv"
-DEFAULT_SCENARIO = "Mid_Case"
+DEFAULT_SCENARIO = REFERENCE_SCENARIO
 # Per-material supply-chain features (import_dependency, production_hhi),
 # written by supply_chain/build_material_features.py from the live
 # feature_engineering functions. (Previously read from a CSV emitted by the
@@ -135,7 +137,7 @@ def load_global_production():
     "Rare earths" 390 kt REO total, which makes Y, Nd, Pr, Dy, Tb all
     plot against the same denominator and badly understates per-element
     supply stress. The override below swaps in the canonical per-element
-    production values from fig4_supply_chain.RE_ELEMENT_DATA (DOE 2023
+    production values from supply_tiers_shared.RE_ELEMENT_DATA (DOE 2023
     Critical Materials Assessment Appendix A for Nd/Pr/Dy/Tb; USGS MCS
     multi-vintage median for Y; Gadium dropped because it has zero demand
     in the simulation per technology_mapping CIGS=0%). Values are tonnes
@@ -170,7 +172,7 @@ def load_global_production():
     # Per-element REE override (DOE 2023 App A + USGS Y).
     # Import here to avoid circular-import surprises at module load.
     sys.path.insert(0, str(BASE_DIR / "visualizations"))
-    from fig4_supply_chain import RE_ELEMENT_DATA  # noqa: E402
+    from supply_tiers_shared import RE_ELEMENT_DATA  # noqa: E402
     for re_elem, data in RE_ELEMENT_DATA.items():
         rows.append((re_elem, float(data["global_t"]),
                      "RE_ELEMENT_DATA (DOE 2023 App A / USGS MCS)"))
@@ -390,7 +392,7 @@ def plot_scatter(df, out_dir, show_errorbars=False,
     # the figure is self-describing in a slide deck or SI caption. Materials
     # peak at different years (per-material argmax of mean_annual within the
     # scenario), so we report the modal peak year with a hint at the spread.
-    scenario_name = df["scenario"].iloc[0] if "scenario" in df.columns else "Mid_Case"
+    scenario_name = df["scenario"].iloc[0] if "scenario" in df.columns else REFERENCE_SCENARIO
     yrs = df["peak_year"].astype(int)
     modal_yr = int(yrs.mode().iloc[0])
     n_modal = int((yrs == modal_yr).sum())

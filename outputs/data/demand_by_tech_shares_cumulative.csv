@@ -1,0 +1,298 @@
+material,family,tech,demand_t,share_pct,mode
+Aluminum,Bulk commodities,Utility solar PV,17422559.347802177,87.51084758394283,cumulative
+Aluminum,Bulk commodities,Distributed solar,1255572.1577424395,6.306546675113007,cumulative
+Aluminum,Bulk commodities,CSP,349.4096870306765,0.0017550313507729246,cumulative
+Aluminum,Bulk commodities,Onshore wind,1034197.8248042429,5.194617301131832,cumulative
+Aluminum,Bulk commodities,Offshore wind,108177.58046381446,0.5433594207938679,cumulative
+Aluminum,Bulk commodities,Hydro,272.8032814536653,0.0013702491067538094,cumulative
+Aluminum,Bulk commodities,Geothermal,45659.26903468975,0.22933951628599406,cumulative
+Aluminum,Bulk commodities,Biomass,193.0748776340939,0.0009697855436524613,cumulative
+Aluminum,Bulk commodities,Nuclear,170.64752705783914,0.0008571363961414289,cumulative
+Aluminum,Bulk commodities,Natural gas,36972.10328288558,0.18570521303200727,cumulative
+Aluminum,Bulk commodities,Coal,4904.009214256377,0.024632087303130816,cumulative
+Boron,Base & alloying,Utility solar PV,0.0,0.0,cumulative
+Boron,Base & alloying,Distributed solar,0.0,0.0,cumulative
+Boron,Base & alloying,CSP,0.0,0.0,cumulative
+Boron,Base & alloying,Onshore wind,953.2700487753322,80.84783788556759,cumulative
+Boron,Base & alloying,Offshore wind,225.82153079738947,19.152162114432407,cumulative
+Boron,Base & alloying,Hydro,0.0,0.0,cumulative
+Boron,Base & alloying,Geothermal,0.0,0.0,cumulative
+Boron,Base & alloying,Biomass,0.0,0.0,cumulative
+Boron,Base & alloying,Nuclear,0.0,0.0,cumulative
+Boron,Base & alloying,Natural gas,0.0,0.0,cumulative
+Boron,Base & alloying,Coal,0.0,0.0,cumulative
+Cadmium,Specialty metals,Utility solar PV,13580.528488749662,100.0,cumulative
+Cadmium,Specialty metals,Distributed solar,0.0,0.0,cumulative
+Cadmium,Specialty metals,CSP,0.0,0.0,cumulative
+Cadmium,Specialty metals,Onshore wind,0.0,0.0,cumulative
+Cadmium,Specialty metals,Offshore wind,0.0,0.0,cumulative
+Cadmium,Specialty metals,Hydro,0.0,0.0,cumulative
+Cadmium,Specialty metals,Geothermal,0.0,0.0,cumulative
+Cadmium,Specialty metals,Biomass,0.0,0.0,cumulative
+Cadmium,Specialty metals,Nuclear,0.0,0.0,cumulative
+Cadmium,Specialty metals,Natural gas,0.0,0.0,cumulative
+Cadmium,Specialty metals,Coal,0.0,0.0,cumulative
+Cement,Bulk commodities,Utility solar PV,5859934.015826065,12.769578049415786,cumulative
+Cement,Bulk commodities,Distributed solar,420901.66736972425,0.9172008896501656,cumulative
+Cement,Bulk commodities,CSP,9729.035339247403,0.02120086604636124,cumulative
+Cement,Bulk commodities,Onshore wind,31255932.76587998,68.11084764491714,cumulative
+Cement,Bulk commodities,Offshore wind,9438.073859324673,0.020566822161701036,cumulative
+Cement,Bulk commodities,Hydro,5026177.488766991,10.95271133765131,cumulative
+Cement,Bulk commodities,Geothermal,1058046.4618172706,2.3056244042330327,cumulative
+Cement,Bulk commodities,Biomass,4521.389284006106,0.009852710490933598,cumulative
+Cement,Bulk commodities,Nuclear,159518.81775687783,0.34761278679856145,cumulative
+Cement,Bulk commodities,Natural gas,1841034.8452768887,4.011860557638597,cumulative
+Cement,Bulk commodities,Coal,244566.91189704562,0.5329439309964092,cumulative
+Chromium,Base & alloying,Utility solar PV,9905.577716780143,2.954313978386369,cumulative
+Chromium,Base & alloying,Distributed solar,0.0,0.0,cumulative
+Chromium,Base & alloying,CSP,0.0,0.0,cumulative
+Chromium,Base & alloying,Onshore wind,306851.8387659188,91.5177996154664,cumulative
+Chromium,Base & alloying,Offshore wind,18534.559564834,5.52788640614723,cumulative
+Chromium,Base & alloying,Hydro,0.0,0.0,cumulative
+Chromium,Base & alloying,Geothermal,0.0,0.0,cumulative
+Chromium,Base & alloying,Biomass,0.0,0.0,cumulative
+Chromium,Base & alloying,Nuclear,0.0,0.0,cumulative
+Chromium,Base & alloying,Natural gas,0.0,0.0,cumulative
+Chromium,Base & alloying,Coal,0.0,0.0,cumulative
+Copper,Bulk commodities,Utility solar PV,2870458.5878160554,52.44222665096876,cumulative
+Copper,Bulk commodities,Distributed solar,144580.76304278607,2.6414375657753517,cumulative
+Copper,Bulk commodities,CSP,140.71741697355168,0.0025708556486371335,cumulative
+Copper,Bulk commodities,Onshore wind,2047710.9783707974,37.410929284683306,cumulative
+Copper,Bulk commodities,Offshore wind,287349.52434878546,5.2497705237448775,cumulative
+Copper,Bulk commodities,Hydro,9299.704752819625,0.16990219838200668,cumulative
+Copper,Bulk commodities,Geothermal,19947.08373801729,0.36442591119589773,cumulative
+Copper,Bulk commodities,Biomass,85.34183153045343,0.0015591639924455274,cumulative
+Copper,Bulk commodities,Nuclear,5661.242761478275,0.10342883094839658,cumulative
+Copper,Bulk commodities,Natural gas,81285.76426364269,1.4850611296414689,cumulative
+Copper,Bulk commodities,Coal,7043.81313094798,0.12868788501885028,cumulative
+Dysprosium,Rare earth elements,Utility solar PV,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,Distributed solar,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,CSP,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,Onshore wind,8483.091865953618,89.4560384758022,cumulative
+Dysprosium,Rare earth elements,Offshore wind,999.881011554576,10.54396152419779,cumulative
+Dysprosium,Rare earth elements,Hydro,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,Geothermal,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,Biomass,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,Nuclear,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,Natural gas,0.0,0.0,cumulative
+Dysprosium,Rare earth elements,Coal,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Utility solar PV,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Distributed solar,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,CSP,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Onshore wind,6367267.293697153,91.58548024779024,cumulative
+Fiberglass,Bulk commodities,Offshore wind,584999.8958945962,8.414519752209761,cumulative
+Fiberglass,Bulk commodities,Hydro,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Geothermal,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Biomass,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Nuclear,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Natural gas,0.0,0.0,cumulative
+Fiberglass,Bulk commodities,Coal,0.0,0.0,cumulative
+Glass,Bulk commodities,Utility solar PV,64462899.520648636,93.33535720130884,cumulative
+Glass,Bulk commodities,Distributed solar,4593372.468556498,6.650710149549671,cumulative
+Glass,Bulk commodities,CSP,9622.708784709066,0.013932649141500423,cumulative
+Glass,Bulk commodities,Onshore wind,0.0,0.0,cumulative
+Glass,Bulk commodities,Offshore wind,0.0,0.0,cumulative
+Glass,Bulk commodities,Hydro,0.0,0.0,cumulative
+Glass,Bulk commodities,Geothermal,0.0,0.0,cumulative
+Glass,Bulk commodities,Biomass,0.0,0.0,cumulative
+Glass,Bulk commodities,Nuclear,0.0,0.0,cumulative
+Glass,Bulk commodities,Natural gas,0.0,0.0,cumulative
+Glass,Bulk commodities,Coal,0.0,0.0,cumulative
+Indium,Specialty metals,Utility solar PV,3110.660583062015,100.00000000000001,cumulative
+Indium,Specialty metals,Distributed solar,0.0,0.0,cumulative
+Indium,Specialty metals,CSP,0.0,0.0,cumulative
+Indium,Specialty metals,Onshore wind,0.0,0.0,cumulative
+Indium,Specialty metals,Offshore wind,0.0,0.0,cumulative
+Indium,Specialty metals,Hydro,0.0,0.0,cumulative
+Indium,Specialty metals,Geothermal,0.0,0.0,cumulative
+Indium,Specialty metals,Biomass,0.0,0.0,cumulative
+Indium,Specialty metals,Nuclear,0.0,0.0,cumulative
+Indium,Specialty metals,Natural gas,0.0,0.0,cumulative
+Indium,Specialty metals,Coal,0.0,0.0,cumulative
+Lead,Base & alloying,Utility solar PV,21327.345777541883,0.40181359685075546,cumulative
+Lead,Base & alloying,Distributed solar,1778.7257641547405,0.033511727364533804,cumulative
+Lead,Base & alloying,CSP,0.0,0.0,cumulative
+Lead,Base & alloying,Onshore wind,4906253.078617199,92.4352808428319,cumulative
+Lead,Base & alloying,Offshore wind,378411.9020644667,7.129393832952806,cumulative
+Lead,Base & alloying,Hydro,0.0,0.0,cumulative
+Lead,Base & alloying,Geothermal,0.0,0.0,cumulative
+Lead,Base & alloying,Biomass,0.0,0.0,cumulative
+Lead,Base & alloying,Nuclear,0.0,0.0,cumulative
+Lead,Base & alloying,Natural gas,0.0,0.0,cumulative
+Lead,Base & alloying,Coal,0.0,0.0,cumulative
+Magnesium,Base & alloying,Utility solar PV,39939.70700823639,91.72649498583723,cumulative
+Magnesium,Base & alloying,Distributed solar,3602.4636747305854,8.27350501416277,cumulative
+Magnesium,Base & alloying,CSP,0.0,0.0,cumulative
+Magnesium,Base & alloying,Onshore wind,0.0,0.0,cumulative
+Magnesium,Base & alloying,Offshore wind,0.0,0.0,cumulative
+Magnesium,Base & alloying,Hydro,0.0,0.0,cumulative
+Magnesium,Base & alloying,Geothermal,0.0,0.0,cumulative
+Magnesium,Base & alloying,Biomass,0.0,0.0,cumulative
+Magnesium,Base & alloying,Nuclear,0.0,0.0,cumulative
+Magnesium,Base & alloying,Natural gas,0.0,0.0,cumulative
+Magnesium,Base & alloying,Coal,0.0,0.0,cumulative
+Manganese,Base & alloying,Utility solar PV,0.0,0.0,cumulative
+Manganese,Base & alloying,Distributed solar,0.0,0.0,cumulative
+Manganese,Base & alloying,CSP,286.0781233327805,0.04812602328462535,cumulative
+Manganese,Base & alloying,Onshore wind,561295.8231875736,94.42503167173433,cumulative
+Manganese,Base & alloying,Offshore wind,0.0,0.0,cumulative
+Manganese,Base & alloying,Hydro,0.0,0.0,cumulative
+Manganese,Base & alloying,Geothermal,0.0,0.0,cumulative
+Manganese,Base & alloying,Biomass,25.18848721405878,0.004237380013704031,cumulative
+Manganese,Base & alloying,Nuclear,1825.6373757241013,0.3071212360798957,cumulative
+Manganese,Base & alloying,Natural gas,28895.75809748584,4.86104253909987,cumulative
+Manganese,Base & alloying,Coal,2106.9236982963102,0.35444114978755675,cumulative
+Molybdenum,Base & alloying,Utility solar PV,15429.146432873364,15.372091779276,cumulative
+Molybdenum,Base & alloying,Distributed solar,0.0,0.0,cumulative
+Molybdenum,Base & alloying,CSP,0.0,0.0,cumulative
+Molybdenum,Base & alloying,Onshore wind,79565.08492901488,79.27086525984394,cumulative
+Molybdenum,Base & alloying,Offshore wind,5376.926021352762,5.357042960880063,cumulative
+Molybdenum,Base & alloying,Hydro,0.0,0.0,cumulative
+Molybdenum,Base & alloying,Geothermal,0.0,0.0,cumulative
+Molybdenum,Base & alloying,Biomass,0.0,0.0,cumulative
+Molybdenum,Base & alloying,Nuclear,0.0,0.0,cumulative
+Molybdenum,Base & alloying,Natural gas,0.0,0.0,cumulative
+Molybdenum,Base & alloying,Coal,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Utility solar PV,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Distributed solar,0.0,0.0,cumulative
+Neodymium,Rare earth elements,CSP,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Onshore wind,80488.53773720044,90.15036949391627,cumulative
+Neodymium,Rare earth elements,Offshore wind,8794.000081606993,9.84963050608372,cumulative
+Neodymium,Rare earth elements,Hydro,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Geothermal,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Biomass,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Nuclear,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Natural gas,0.0,0.0,cumulative
+Neodymium,Rare earth elements,Coal,0.0,0.0,cumulative
+Nickel,Base & alloying,Utility solar PV,3318.171802768998,2.0923728892004956,cumulative
+Nickel,Base & alloying,Distributed solar,63.26372848507543,0.03989284407800999,cumulative
+Nickel,Base & alloying,CSP,87.17331723362318,0.05496975337114743,cumulative
+Nickel,Base & alloying,Onshore wind,146640.9309995894,92.46884329937807,cumulative
+Nickel,Base & alloying,Offshore wind,5880.024003684358,3.7078257379230157,cumulative
+Nickel,Base & alloying,Hydro,0.0,0.0,cumulative
+Nickel,Base & alloying,Geothermal,0.0,0.0,cumulative
+Nickel,Base & alloying,Biomass,1.3873375326023203,0.0008748273488928476,cumulative
+Nickel,Base & alloying,Nuclear,885.6276643296247,0.558459122949237,cumulative
+Nickel,Base & alloying,Natural gas,1591.5274863853117,1.003585456952865,cumulative
+Nickel,Base & alloying,Coal,116.0456481620023,0.07317606879826069,cumulative
+Niobium,Base & alloying,Utility solar PV,0.0,0.0,cumulative
+Niobium,Base & alloying,Distributed solar,0.0,0.0,cumulative
+Niobium,Base & alloying,CSP,0.0,0.0,cumulative
+Niobium,Base & alloying,Onshore wind,26835.72567460578,91.73121664882088,cumulative
+Niobium,Base & alloying,Offshore wind,2419.010777154482,8.268783351179122,cumulative
+Niobium,Base & alloying,Hydro,0.0,0.0,cumulative
+Niobium,Base & alloying,Geothermal,0.0,0.0,cumulative
+Niobium,Base & alloying,Biomass,0.0,0.0,cumulative
+Niobium,Base & alloying,Nuclear,0.0,0.0,cumulative
+Niobium,Base & alloying,Natural gas,0.0,0.0,cumulative
+Niobium,Base & alloying,Coal,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Utility solar PV,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Distributed solar,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,CSP,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Onshore wind,4254.855636783873,86.25264192613734,cumulative
+Praseodymium,Rare earth elements,Offshore wind,678.1592155930878,13.74735807386265,cumulative
+Praseodymium,Rare earth elements,Hydro,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Geothermal,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Biomass,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Nuclear,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Natural gas,0.0,0.0,cumulative
+Praseodymium,Rare earth elements,Coal,0.0,0.0,cumulative
+Silicon,Bulk commodities,Utility solar PV,3076093.8751763687,91.72649498583723,cumulative
+Silicon,Bulk commodities,Distributed solar,277456.1276350593,8.273505014162772,cumulative
+Silicon,Bulk commodities,CSP,0.0,0.0,cumulative
+Silicon,Bulk commodities,Onshore wind,0.0,0.0,cumulative
+Silicon,Bulk commodities,Offshore wind,0.0,0.0,cumulative
+Silicon,Bulk commodities,Hydro,0.0,0.0,cumulative
+Silicon,Bulk commodities,Geothermal,0.0,0.0,cumulative
+Silicon,Bulk commodities,Biomass,0.0,0.0,cumulative
+Silicon,Bulk commodities,Nuclear,0.0,0.0,cumulative
+Silicon,Bulk commodities,Natural gas,0.0,0.0,cumulative
+Silicon,Bulk commodities,Coal,0.0,0.0,cumulative
+Silver,Specialty metals,Utility solar PV,21054.297185224706,91.70499985881914,cumulative
+Silver,Specialty metals,Distributed solar,1899.0459992887058,8.27156620639309,cumulative
+Silver,Specialty metals,CSP,0.9057435189663706,0.003945095319411912,cumulative
+Silver,Specialty metals,Onshore wind,0.0,0.0,cumulative
+Silver,Specialty metals,Offshore wind,0.0,0.0,cumulative
+Silver,Specialty metals,Hydro,0.0,0.0,cumulative
+Silver,Specialty metals,Geothermal,0.0,0.0,cumulative
+Silver,Specialty metals,Biomass,0.0,0.0,cumulative
+Silver,Specialty metals,Nuclear,4.4743887311906105,0.019488839468367065,cumulative
+Silver,Specialty metals,Natural gas,0.0,0.0,cumulative
+Silver,Specialty metals,Coal,0.0,0.0,cumulative
+Steel,Bulk commodities,Utility solar PV,46423585.869498424,30.167922813747083,cumulative
+Steel,Bulk commodities,Distributed solar,3307961.9875974962,2.149647426917495,cumulative
+Steel,Bulk commodities,CSP,20929.34773241956,0.013600736244473301,cumulative
+Steel,Bulk commodities,Onshore wind,76508613.69333927,49.718390108333736,cumulative
+Steel,Bulk commodities,Offshore wind,17069744.34483149,11.092609935235833,cumulative
+Steel,Bulk commodities,Hydro,451394.3255360862,0.29333428076014334,cumulative
+Steel,Bulk commodities,Geothermal,1583901.7277781193,1.029283373380377,cumulative
+Steel,Bulk commodities,Biomass,12164.95912645745,0.007905282219926058,cumulative
+Steel,Bulk commodities,Nuclear,149840.9250751608,0.09737269056972894,cumulative
+Steel,Bulk commodities,Natural gas,7386781.523432684,4.800229251298419,cumulative
+Steel,Bulk commodities,Coal,969013.4318899763,0.6297041012927856,cumulative
+Tellurium,Specialty metals,Utility solar PV,14832.85087952534,100.0,cumulative
+Tellurium,Specialty metals,Distributed solar,0.0,0.0,cumulative
+Tellurium,Specialty metals,CSP,0.0,0.0,cumulative
+Tellurium,Specialty metals,Onshore wind,0.0,0.0,cumulative
+Tellurium,Specialty metals,Offshore wind,0.0,0.0,cumulative
+Tellurium,Specialty metals,Hydro,0.0,0.0,cumulative
+Tellurium,Specialty metals,Geothermal,0.0,0.0,cumulative
+Tellurium,Specialty metals,Biomass,0.0,0.0,cumulative
+Tellurium,Specialty metals,Nuclear,0.0,0.0,cumulative
+Tellurium,Specialty metals,Natural gas,0.0,0.0,cumulative
+Tellurium,Specialty metals,Coal,0.0,0.0,cumulative
+Terbium,Rare earth elements,Utility solar PV,0.0,0.0,cumulative
+Terbium,Rare earth elements,Distributed solar,0.0,0.0,cumulative
+Terbium,Rare earth elements,CSP,0.0,0.0,cumulative
+Terbium,Rare earth elements,Onshore wind,4431.943733213135,92.6001927730509,cumulative
+Terbium,Rare earth elements,Offshore wind,354.16264571758734,7.399807226949099,cumulative
+Terbium,Rare earth elements,Hydro,0.0,0.0,cumulative
+Terbium,Rare earth elements,Geothermal,0.0,0.0,cumulative
+Terbium,Rare earth elements,Biomass,0.0,0.0,cumulative
+Terbium,Rare earth elements,Nuclear,0.0,0.0,cumulative
+Terbium,Rare earth elements,Natural gas,0.0,0.0,cumulative
+Terbium,Rare earth elements,Coal,0.0,0.0,cumulative
+Tin,Base & alloying,Utility solar PV,438585.17608288553,91.74950596394667,cumulative
+Tin,Base & alloying,Distributed solar,39439.38816406454,8.25049403605333,cumulative
+Tin,Base & alloying,CSP,0.0,0.0,cumulative
+Tin,Base & alloying,Onshore wind,0.0,0.0,cumulative
+Tin,Base & alloying,Offshore wind,0.0,0.0,cumulative
+Tin,Base & alloying,Hydro,0.0,0.0,cumulative
+Tin,Base & alloying,Geothermal,0.0,0.0,cumulative
+Tin,Base & alloying,Biomass,0.0,0.0,cumulative
+Tin,Base & alloying,Nuclear,0.0,0.0,cumulative
+Tin,Base & alloying,Natural gas,0.0,0.0,cumulative
+Tin,Base & alloying,Coal,0.0,0.0,cumulative
+Vanadium,Base & alloying,Utility solar PV,0.0,0.0,cumulative
+Vanadium,Base & alloying,Distributed solar,0.0,0.0,cumulative
+Vanadium,Base & alloying,CSP,0.0,0.0,cumulative
+Vanadium,Base & alloying,Onshore wind,64981.91601676621,91.73939361873266,cumulative
+Vanadium,Base & alloying,Offshore wind,5851.248944874942,8.260606381267328,cumulative
+Vanadium,Base & alloying,Hydro,0.0,0.0,cumulative
+Vanadium,Base & alloying,Geothermal,0.0,0.0,cumulative
+Vanadium,Base & alloying,Biomass,0.0,0.0,cumulative
+Vanadium,Base & alloying,Nuclear,0.0,0.0,cumulative
+Vanadium,Base & alloying,Natural gas,0.0,0.0,cumulative
+Vanadium,Base & alloying,Coal,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Utility solar PV,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Distributed solar,0.0,0.0,cumulative
+Yttrium,Rare earth elements,CSP,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Onshore wind,887.9487370947774,100.0,cumulative
+Yttrium,Rare earth elements,Offshore wind,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Hydro,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Geothermal,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Biomass,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Nuclear,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Natural gas,0.0,0.0,cumulative
+Yttrium,Rare earth elements,Coal,0.0,0.0,cumulative
+Zinc,Base & alloying,Utility solar PV,0.0,0.0,cumulative
+Zinc,Base & alloying,Distributed solar,0.0,0.0,cumulative
+Zinc,Base & alloying,CSP,0.0,0.0,cumulative
+Zinc,Base & alloying,Onshore wind,4010839.957884431,100.0,cumulative
+Zinc,Base & alloying,Offshore wind,0.0,0.0,cumulative
+Zinc,Base & alloying,Hydro,0.0,0.0,cumulative
+Zinc,Base & alloying,Geothermal,0.0,0.0,cumulative
+Zinc,Base & alloying,Biomass,0.0,0.0,cumulative
+Zinc,Base & alloying,Nuclear,0.0,0.0,cumulative
+Zinc,Base & alloying,Natural gas,0.0,0.0,cumulative
+Zinc,Base & alloying,Coal,0.0,0.0,cumulative

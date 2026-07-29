@@ -15,9 +15,11 @@ ROOT = Path(__file__).resolve().parent.parent
 BY_SCEN = ROOT / "outputs" / "data" / "material_demand_by_scenario.csv"
 DEFAULT_SUMMARY = ROOT / "outputs" / "data" / "material_demand_summary.csv"
 
-HIGHLIGHTED_SCENARIOS = {
-    "Mid_Case", "Mid_Case_No_IRA", "Mid_Case_100by2035", "Mid_Case_95by2050",
-}
+# Imported, never hardcoded: this list is the representative-scenario set and
+# it changed families on 2026-07-28 (non-CO2e -> CO2e). A stale copy here is
+# exactly the drift src/scenario_config.py exists to prevent.
+from src.scenario_config import REPRESENTATIVE_SCENARIO_KEYS  # noqa: E402
+HIGHLIGHTED_SCENARIOS = set(REPRESENTATIVE_SCENARIO_KEYS)
 TEST_MATERIALS = ["Steel", "Copper", "Neodymium"]
 TEST_YEAR = 2035
 

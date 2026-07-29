@@ -1,0 +1,12 @@
+Technology,Lifetime_yr
+Solar PV,30
+Onshore wind,30
+Offshore wind,30
+Nuclear,80
+Hydropower,100
+Battery storage,15
+Coal,75
+Gas combined cycle,60
+Gas combustion turbine,50
+Biomass,50
+Geothermal,30

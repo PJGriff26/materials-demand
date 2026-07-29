@@ -5,8 +5,8 @@ matrices.
 
 Layers OECD CRC country-risk weighting, Census import-partner shares, and
 USGS MCS 2025 production/reserves onto the Monte Carlo demand output. The
-canonical 4-panel supply-tier figures (manuscript Figures 5 and 6) come from
-visualizations/fig5_supply_chain_4panel.py; the fig3/fig4/fig5A/fig5B labels
+canonical 4-panel supply-tier figures (manuscript Figures 4 and 5) come from
+visualizations/fig4_fig5_supply_tiers.py; the fig3/fig4/fig5A/fig5B labels
 here are retained only as stable filenames.
 """
 
@@ -1269,7 +1269,7 @@ if __name__ == "__main__":
     # This module is a standalone supporting script: it is run directly to
     # render the alternate supply-chain views and is not invoked by
     # reproduce.py (the canonical supply-tier figures come from
-    # fig5_supply_chain_4panel.py). When run standalone, route output to the
+    # fig4_fig5_supply_tiers.py). When run standalone, route output to the
     # fig5_supply_chain/current/ subdirectory of the manuscript figure dir.
     # If another caller imports these functions, it can set
     # FIGURES_MANUSCRIPT_DIR before calling them.

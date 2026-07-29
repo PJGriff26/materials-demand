@@ -1,0 +1,17 @@
+Material_class,Scenario,Scenario_key,Cumulative_vs_baseline_pct,Peak_annual_vs_baseline_pct,Peak_year,Baseline_peak_year
+Bulk commodities,Net-Zero by 2035,Mid_Case_CO2e_100by2035,14.2,69.2,2034,2031
+Bulk commodities,Net-Zero by 2035 (combustion-CO2 variant),Mid_Case_100by2035,-0.9,1.7,2031,2031
+Bulk commodities,Net-Zero by 2050,Mid_Case_CO2e_95by2050,30.0,0.9,2031,2031
+Bulk commodities,Net-Zero by 2050 (combustion-CO2 variant),Mid_Case_95by2050,26.5,0.4,2031,2031
+Base & alloying,Net-Zero by 2035,Mid_Case_CO2e_100by2035,23.6,135.7,2034,2031
+Base & alloying,Net-Zero by 2035 (combustion-CO2 variant),Mid_Case_100by2035,4.6,39.7,2031,2031
+Base & alloying,Net-Zero by 2050,Mid_Case_CO2e_95by2050,43.6,27.5,2046,2031
+Base & alloying,Net-Zero by 2050 (combustion-CO2 variant),Mid_Case_95by2050,37.7,20.6,2046,2031
+Specialty metals,Net-Zero by 2035,Mid_Case_CO2e_100by2035,-5.0,75.1,2034,2031
+Specialty metals,Net-Zero by 2035 (combustion-CO2 variant),Mid_Case_100by2035,-18.9,30.9,2027,2031
+Specialty metals,Net-Zero by 2050,Mid_Case_CO2e_95by2050,24.1,47.1,2050,2031
+Specialty metals,Net-Zero by 2050 (combustion-CO2 variant),Mid_Case_95by2050,21.3,17.6,2046,2031
+Rare earth elements,Net-Zero by 2035,Mid_Case_CO2e_100by2035,23.7,115.4,2034,2031
+Rare earth elements,Net-Zero by 2035 (combustion-CO2 variant),Mid_Case_100by2035,5.4,38.0,2031,2031
+Rare earth elements,Net-Zero by 2050,Mid_Case_CO2e_95by2050,41.6,14.3,2046,2031
+Rare earth elements,Net-Zero by 2050 (combustion-CO2 variant),Mid_Case_95by2050,36.0,7.6,2046,2031

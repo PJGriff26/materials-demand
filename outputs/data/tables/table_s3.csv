@@ -1,0 +1,32 @@
+Material,Class,Status
+Aluminum,Bulk commodities,demand-bearing; criticality-eligible
+Cement,Bulk commodities,demand-bearing; criticality-eligible
+Copper,Bulk commodities,demand-bearing; criticality-eligible
+Fiberglass,Bulk commodities,demand-bearing; excluded from criticality
+Glass,Bulk commodities,demand-bearing; excluded from criticality
+Silicon,Bulk commodities,demand-bearing; criticality-eligible
+Steel,Bulk commodities,demand-bearing; criticality-eligible
+Boron,Base & alloying,demand-bearing; criticality-eligible
+Chromium,Base & alloying,demand-bearing; criticality-eligible
+Lead,Base & alloying,demand-bearing; criticality-eligible
+Magnesium,Base & alloying,demand-bearing; criticality-eligible
+Manganese,Base & alloying,demand-bearing; criticality-eligible
+Molybdenum,Base & alloying,demand-bearing; criticality-eligible
+Nickel,Base & alloying,demand-bearing; criticality-eligible
+Niobium,Base & alloying,demand-bearing; criticality-eligible
+Tin,Base & alloying,demand-bearing; criticality-eligible
+Vanadium,Base & alloying,demand-bearing; criticality-eligible
+Zinc,Base & alloying,demand-bearing; criticality-eligible
+Cadmium,Specialty metals,demand-bearing; criticality-eligible
+Gallium,Specialty metals,tracked; ~0 demand (CIGS / a-Si only)
+Germanium,Specialty metals,tracked; ~0 demand (CIGS / a-Si only)
+Indium,Specialty metals,demand-bearing; criticality-eligible
+Selenium,Specialty metals,tracked; ~0 demand (CIGS / a-Si only)
+Silver,Specialty metals,demand-bearing; criticality-eligible
+Tellurium,Specialty metals,demand-bearing; criticality-eligible
+Dysprosium,Rare earth elements,demand-bearing; criticality-eligible
+Gadium,Rare earth elements,tracked; ~0 demand (CIGS / a-Si only)
+Neodymium,Rare earth elements,demand-bearing; criticality-eligible
+Praseodymium,Rare earth elements,demand-bearing; criticality-eligible
+Terbium,Rare earth elements,demand-bearing; criticality-eligible
+Yttrium,Rare earth elements,demand-bearing; criticality-eligible

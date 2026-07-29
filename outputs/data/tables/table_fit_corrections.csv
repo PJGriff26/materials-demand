@@ -1,0 +1,11 @@
+Type,Technology,Material,Raw,Corrected,Basis
+Decimal,CIGS,Indium,44155.0,44.155,Decimal placement error: 1000x too high vs other CIGS Indium values (5-83 kg/MW)
+Decimal,utility-scale solar pv,Silicon,4.0,4000,Decimal placement error: 1000x too low vs other solar Silicon values (median 3653 kg/MW)
+Decimal,Solar Distributed,Silicon,4.0,4000,Decimal placement error: 1000x too low vs other solar Silicon values (median 3653 kg/MW)
+Value,offshore wind,Vanadium,7000.0,90.0,Offshore:onshore ratio 78x inconsistent with other alloy metals (Cr/Cu/Mo/Ni/Nb ~1x ratio); uncorrected peak demand ~100x global production. Corrected to 90 kg/MW (matching onshore-wind vanadium values 90.0/90.4 from Fizaine 2015 and Watari 2019).
+Removal,CIGS,Cadmium,265.0,removed,Single point 204x median; other values are 1.3
+Removal,CdTe,Tellurium,500.0,removed,Single point z=5.22; 1.92x gap above next-highest (260)
+Removal,onshore wind,Aluminum,13200.0,removed,Single point z=4.93; 2.49x gap above next-highest (5300)
+Removal,Solar Distributed,Lead,336.0,removed,Single point 14.8x median; 4.67x gap above next-highest (72)
+Removal,utility-scale solar pv,Lead,336.0,removed,Single point 14.8x median; 4.67x gap above next-highest (72)
+Removal,offshore wind,Nickel,376.57,removed,Single point 3.4x median; other 3 values are all 111

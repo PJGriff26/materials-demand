@@ -1,5 +1,5 @@
 """Write outputs/data/material_features.csv: the per-material supply-chain
-feature table (net import reliance, production HHI, ...) that the Figure 7
+feature table (net import reliance, production HHI, ...) that the Figure 6
 supply-risk scatter reads.
 
 Computes the features with the live feature_engineering functions (no clustering

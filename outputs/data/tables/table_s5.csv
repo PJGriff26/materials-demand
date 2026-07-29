@@ -1,0 +1,18 @@
+Material,Metric,Value,Reason,Source
+Tellurium,US production (A),20 t/yr,"USGS withholds; single-facility floor, so the ratio is an upper bound",SCRREEN2 2023
+Boron,US production (A),860 kt/yr,USGS withholds (net exporter); export volume as a lower bound,USGS MCS 2025
+Magnesium,US production (A),109 kt/yr,USGS withholds; secondary production (primary smelters closed 2023),USGS MCS 2025
+"Indium, manganese, niobium, yttrium",US production (A),undefined,no US production; ratios A and B mark the absence of a domestic supply chain,USGS MCS 2025
+Tellurium,Global production (C),962 t/yr,"below the 1,000 t injection threshold, so US is not added; world total excludes the US",USGS MCS 2025
+"Tin, vanadium",Global production (C),US injected,"withheld in the per-country world data but exceeds 1,000 t",USGS MCS 2025
+"Nd, Pr, Dy, Tb, Y",Global production (C),"Ne 49,000; Pr 15,500; Dy 2,000; Te 1,000; Yt 10,000 t/yr",USGS reports only a basket; the magnet REE are co-mined,U.S. DOE 2023 (Nd/Pr/Dy/Tb); USGS MCS (Y)
+Aluminum,"Reserves (B, D)",bauxite x 0.25,4 t bauxite yields 1 t aluminum,USGS MCS 2025
+Steel,"Reserves (B, D)",iron-ore 'iron content',"USGS reports iron ore, not finished steel",USGS MCS 2025
+"Cement, silicon, cadmium, gallium, germanium, fiberglass, glass","Reserves (B, D)",excluded,no separate USGS reserve concept,USGS MCS 2025
+"Rare earths (Nd, Pr, Dy, Tb, Y)","Reserves (B, D)","aggregate TREO (US 1,900,000 t / world 90,000,000 t)",no source publishes per-element REE reserves; each element is measured against the aggregate rare-earth-oxide reserve base (an optimistic upper bound),USGS MCS 2025 Rare Earths
+"Boron, molybdenum",NIR,0,USGS net exporters,USGS MCS 2025
+"Nd, Pr, Dy, Tb, Gd",NIR,0.945,no per-element trade data; inherit the rare-earth basket,USGS MCS 2025
+Rare earths,NIR,published value,stage-asymmetry guard: USGS NIR at least 0.5 but trade-balance at most 0.05,USGS MCS 2025
+Germanium,HHI,0.81,"country shares unavailable from USGS; EU CRM processing-stage shares used (China 89.6, Russia 5.4, US 2.1, Japan 1.9, Ukraine 1.0 percent)",EU CRM 2023
+Rare earths,HHI,"0.73 light, 1.0 heavy","refining stage governs, replacing the mining basket of about 0.50",EU CRM 2023
+"Gallium, germanium, selenium, gadolinium",Scope,~0 demand,tied to the zero-weight CIGS / a-Si chemistries,Seel et al. 2025

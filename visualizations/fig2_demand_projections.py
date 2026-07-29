@@ -15,9 +15,11 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
+from matplotlib.ticker import FuncFormatter, MaxNLocator
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
+from src.scenario_config import SCENARIO_LABELS, SCENARIO_COLORS  # noqa: E402
 # DEMAND_CSV / DEFAULT_OUT_DIR are set by main() after parsing --interpolation
 # so the script can target either the production CSV or an interpolated
 # variant at outputs/data/interpolated/{method}/. Defaults match the
@@ -33,27 +35,17 @@ DEFAULT_OUT_DIR = figures_output_dir("none", subdir="manuscript")
 # ═══════════════════════════════════════════════════════════════════════════════
 
 # Four representative scenarios (NREL Standard Scenarios 2024)
-SCENARIOS = {
-    "Mid_Case_100by2035":  "Net-Zero by 2035",
-    "Mid_Case_95by2050":   "Net-Zero by 2050",
-    "Mid_Case":            "Mid Case (with IRA)",
-    "Mid_Case_No_IRA":     "Mid Case (no IRA)",
-}
+# Display order (legend top-to-bottom): most aggressive first. Keys, labels,
+# and the cross-figure palette come from src/scenario_config.py (single
+# source of truth for the representative-scenario set).
+_DISPLAY_ORDER = ["Mid_Case_CO2e_100by2035", "Mid_Case_CO2e_95by2050",
+                  "Mid_Case", "Mid_Case_No_IRA"]
+SCENARIOS = {k: SCENARIO_LABELS[k] for k in _DISPLAY_ORDER}
 
-# Colorblind-friendly palette
-SCENARIO_COLORS = {
-    "Mid_Case_100by2035":  "#d62728",  # red (most aggressive)
-    "Mid_Case_95by2050":   "#9467bd",  # purple (NZ-2050)
-    "Mid_Case":            "#1f77b4",  # blue (baseline)
-    "Mid_Case_No_IRA":     "#ff7f0e",  # orange (rollback)
-}
-
-# Materials plotted, ordered roughly by demand magnitude: bulk commodities,
-# then intermediate-volume metals, then tech-specific specialty metals and
-# rare-earth elements. Specialty entries include Silver (PV), Vanadium (offshore
-# wind redox-flow), Indium (thin-film PV), and Manganese (wind steel alloys,
-# battery cathodes).
-MATERIALS = [
+# Materials plotted, in alphabetical facet order (2026-07-13 figure
+# revision; was demand-magnitude order). sorted() keeps the ordering
+# self-enforcing however the underlying list is edited.
+MATERIALS = sorted([
     # All 27 demand-bearing materials (31 tracked minus the 4 zeroed under the PV mix).
     "Steel", "Cement", "Aluminum", "Glass", "Fiberglass",
     "Copper", "Lead", "Zinc", "Silicon", "Manganese",
@@ -61,16 +53,31 @@ MATERIALS = [
     "Magnesium", "Niobium", "Silver", "Boron",
     "Tellurium", "Cadmium", "Indium",
     "Neodymium", "Dysprosium", "Praseodymium", "Terbium", "Yttrium",
-]
+])
+
+# Rare-earth facet titles are rendered in the same bold navy used for the REE
+# material labels in Figs 4/5 (supply_tiers_variants.REE_HIGHLIGHT_COLOR), so the
+# REE set reads consistently across figures (2026-07-13 figure revision).
+REE_SET = {"Neodymium", "Dysprosium", "Praseodymium", "Terbium", "Yttrium"}
+REE_TITLE_COLOR = "#0d3b66"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # HELPERS
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def kt_formatter(x, pos):
-    """Format y-axis values: 1500 -> '2k', 1500000 -> '1.5M'."""
-    if x >= 1e6: return f"{x/1e6:.1f}M"
-    if x >= 1e3: return f"{x/1e3:.0f}k"
+    """Format y-axis tick labels with at most two significant digits.
+
+    e.g. 1_500_000 -> '1.5M', 12_000_000 -> '12M', 350_000 -> '350k'. One
+    decimal is kept only for single-digit mantissas, so labels never run past
+    two digits (review item C15).
+    """
+    if x == 0:
+        return "0"
+    for thresh, suffix in ((1e6, "M"), (1e3, "k")):
+        if abs(x) >= thresh:
+            v = x / thresh
+            return f"{v:.1f}{suffix}" if abs(v) < 10 else f"{v:.0f}{suffix}"
     return f"{x:.0f}"
 
 
@@ -98,7 +105,7 @@ def compute_envelope(mat_data, mode):
         # Outer envelope of scenario means
         lo = by_year[mean_col].min()
         hi = by_year[mean_col].max()
-        label = "min/max across 61 scenario means"
+        label = "Scenario ensemble range"
     elif mode == "full-uncertainty":
         # Pooled outer 95% CI across scenarios x MC draws
         lo = by_year[p2_col].min()
@@ -112,18 +119,19 @@ def compute_envelope(mat_data, mode):
 def plot_fig1(demand, mode, output_path, docx=False):
     """Render manuscript Figure 2 for one envelope mode and save it to output_path.
 
-    Lays out one panel per material in a fixed 4-column grid (rows derived from
+    Lays out one panel per material in a fixed 5-column grid (rows derived from
     the material count), drawing the four representative scenario lines over the
     shaded uncertainty band produced by compute_envelope(). `mode` selects the
     band ('cross-scenario' or 'full-uncertainty'); `docx` scales text up for the
     Word manuscript without changing the default output.
     """
-    # Fixed 4-column grid; row count is ceil(len(MATERIALS) / n_cols). Shared
-    # axis labels suppress per-panel "Demand" y-title and "Year" x-title clutter.
-    n_cols = 4
+    # Fixed 5-column grid (2026-07-13 figure revision; was 4); row count is
+    # ceil(len(MATERIALS) / n_cols). Shared axis labels suppress per-panel
+    # "Demand" y-title and "Year" x-title clutter.
+    n_cols = 5
     n_rows = (len(MATERIALS) + n_cols - 1) // n_cols
-    _orig_w = 18
-    _orig_h = 3.2 * n_rows + 1.5
+    _orig_w = 19
+    _orig_h = 3.0 * n_rows + 1.5
     # Keep the original large canvas for BOTH default and --docx. Shrinking the
     # figsize to print width spaced the 27 panels out unattractively; instead
     # the --docx path (below) keeps this canvas and only scales the text up a
@@ -159,42 +167,76 @@ def plot_fig1(demand, mode, output_path, docx=False):
             color = SCENARIO_COLORS[sc]
             ax.plot(yrs, mean, color=color, lw=1.8, label=label, zorder=3)
 
-        ax.set_title(mat, fontsize=11, fontweight="bold")
+        # REE facet titles carry the Figs 4/5 REE label formatting (bold +
+        # navy) while the other titles stay regular weight, so the REE set
+        # stands out the same way it does there (2026-07-13 figure revision).
+        is_ree = mat in REE_SET
+        ax.set_title(mat, fontsize=13,
+                     fontweight="bold" if is_ree else "normal",
+                     color=REE_TITLE_COLOR if is_ree else "black")
         ax.grid(True, alpha=0.25)
         ax.set_xlim(2026, 2050)
+        # 10-year tick interval (2026-07-13 figure revision), matching the
+        # Fig 1 capacity-additions facet.
+        ax.set_xticks([2030, 2040, 2050])
         ax.set_ylim(bottom=0)
         ax.yaxis.set_major_formatter(FuncFormatter(kt_formatter))
+        # Review item C15: at most six y-axis increments with two-digit labels,
+        # larger tick text, and no y-axis tick marks.
+        ax.yaxis.set_major_locator(MaxNLocator(nbins=6, steps=[1, 2, 2.5, 5, 10]))
+        ax.tick_params(axis="both", labelsize=11)
+        ax.tick_params(axis="y", length=0)
         # Per-panel axis titles suppressed; shared figure-level labels below
         # are sufficient.
 
-    # Hide any unused subplot axes
-    for extra_ax in axes[len(MATERIALS):]:
-        extra_ax.set_visible(False)
+    # Review item C15: host the legend in an empty bottom-row grid cell rather
+    # than a bottom-center figure legend. With 27 materials on a 5-column grid
+    # the bottom row has three empty cells; the middle one hosts the legend
+    # (visually centered in the empty span) and the rest are hidden. The
+    # legend cell is its own axes, so it can never overlap a data panel
+    # (2026-07-13 figure revision).
+    empty_axes = list(axes[len(MATERIALS):])
+    legend_ax = None
+    if empty_axes:
+        legend_ax = empty_axes[len(empty_axes) // 2]
+        for extra_ax in empty_axes:
+            if extra_ax is legend_ax:
+                extra_ax.axis("off")
+            else:
+                extra_ax.set_visible(False)
 
-    # Shared figure-level axis labels (replaces per-panel titles)
+    # Under sharex, year labels render only on the grid's bottom row; but the
+    # bottom row also holds the legend and hidden cells, so re-enable the x
+    # tick labels on the bottom-most occupied panel of every column (same
+    # treatment as fig1_capacity_additions_facet.py).
+    for col in range(n_cols):
+        col_panels = [col + r * n_cols for r in range(n_rows)
+                      if col + r * n_cols < len(MATERIALS)]
+        if col_panels:
+            axes[max(col_panels)].tick_params(axis="x", labelbottom=True)
+
+    # Shared figure-level axis labels (replaces per-panel titles). x is pulled
+    # slightly negative so the rotated title clears the first-column tick
+    # labels (2026-07-13 figure revision); bbox_inches='tight' at save time
+    # grows the canvas to include it.
     fig.supxlabel("", fontsize=1)
-    fig.supylabel("Annual material demand (tonnes)", fontsize=11,
-                  fontweight="bold", x=0.005)
+    fig.supylabel("Annual material demand (tonnes)", fontsize=13,
+                  fontweight="normal", x=-0.004)
 
-    # Legend at bottom (avoids overlap with suptitle)
+    # Legend in the middle empty bottom-row cell, borderless
+    # (2026-07-13 figure revision: no frame around the legend).
     handles, labels = axes[0].get_legend_handles_labels()
-    env_idx = [i for i, l in enumerate(labels) if "CI" in l or "min/max" in l]
+    env_idx = [i for i, l in enumerate(labels)
+               if "across scenarios" in l or "CI" in l]
     sc_idx = [i for i in range(len(labels)) if i not in env_idx]
     ordered_h = [handles[i] for i in sc_idx] + [handles[i] for i in env_idx]
     ordered_l = [labels[i] for i in sc_idx] + [labels[i] for i in env_idx]
-    # LAYOUT FIX (docx): the single-row 5-column legend is too wide to be
-    # legible at the 6.5 in print width. Reflow to 3 columns (2 rows) so the
-    # five labels fit at 8.5 pt without clipping. Default (no --docx) keeps
-    # the original single-row 5-column arrangement byte-for-byte.
-    _legend_ncol = 3 if docx else 5
-    fig.legend(ordered_h, ordered_l,
-               loc="lower center", bbox_to_anchor=(0.5, -0.02),
-               ncol=_legend_ncol, fontsize=10, framealpha=0.95, frameon=True)
+    legend_host = legend_ax if legend_ax is not None else fig
+    legend_host.legend(ordered_h, ordered_l, loc="center", ncol=1,
+                       fontsize=13, frameon=False)
 
-    fig.suptitle("Annual material demand under four NREL scenarios, 2026\u20132050",
-                 fontsize=12, fontweight="bold", y=0.995)
-
-    fig.tight_layout(rect=[0, 0.04, 1, 0.96])
+    # No figure title (the caption carries it).
+    fig.tight_layout(rect=[0, 0, 1, 0.99])
 
     # --docx: keep the original large canvas (above) and scale ALL text up by a
     # modest factor so it reads better when the figure is inserted full-page in
@@ -227,7 +269,12 @@ def plot_fig1(demand, mode, output_path, docx=False):
             for _x in _lg.get_texts():
                 _bump(_x)
 
-    fig.savefig(output_path, dpi=300, bbox_inches="tight")
+    # A little extra padding around the tight bbox so the bold figure-level
+    # y-axis label (anchored near the very left edge) gets some breathing room
+    # instead of sitting flush against the canvas edge. docx only, so the
+    # default output stays byte-for-byte unchanged.
+    fig.savefig(output_path, dpi=300, bbox_inches="tight",
+                pad_inches=0.5 if docx else 0.1)
     plt.close(fig)
     print(f"  Saved {output_path.name}")
 

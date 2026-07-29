@@ -1,0 +1,24 @@
+NREL_technology,Intensity_category_crosswalk,Lifetime_yr
+battery_4,n/a (excluded),15
+battery_8,n/a (excluded),15
+bio,Biomass,50
+bio-ccs,Bio CCS,50
+coal,Coal,75
+coal_ccs,Coal CCS,75
+csp,CSP,30
+dac,n/a (excluded),30
+distpv,Solar Distributed,30
+electrolyzer,n/a (excluded),
+gas_cc,NGCC,60
+gas_cc_ccs,Gas CCS,60
+gas_ct,NGGT,50
+geo,Geothermal,30
+h2-ct,NGGT,50
+hydro,Hydro,100
+nuclear,Nuclear New,80
+nuclear_smr,Nuclear New,80
+o-g-s,n/a (excluded),75
+pumped-hydro,Hydro,100
+upv,CdTe (21%); utility-scale solar pv (79%),30
+wind_offshore,offshore wind,30
+wind_onshore,onshore wind,30

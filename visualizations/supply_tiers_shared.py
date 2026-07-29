@@ -2,7 +2,7 @@
 
 Assembles per-material supply-chain data (load_all_data), the OECD CRC risk
 grouping, the per-element rare-earth production table, and withheld-production
-overrides consumed by fig5_supply_chain_4panel.py, fig5_alt_variants.py, and
+overrides consumed by fig4_fig5_supply_tiers.py, supply_tiers_variants.py, and
 peak_demand_vs_nir_scatter.py. Run directly (--re-mode aggregate/per-element),
 it also renders standalone US-supply-gap and global-squeeze panels; it is not
 itself a separately numbered manuscript figure.
@@ -672,7 +672,7 @@ def plot_si_re_scatter(output_path):
     """SI Figure: per-element RE demand vs production with ±40% uncertainty bands.
     Provides element-level supply stress detail with explicit error bars,
     appropriate for SI placement when the main-text supply-tier figures
-    (manuscript Figures 5 and 6) aggregate the rare earths into one row.
+    (manuscript Figures 4 and 5) aggregate the rare earths into one row.
     """
     demand_raw, _ = load_data()
     elements = list(RE_ELEMENT_DATA.keys())

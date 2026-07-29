@@ -9,41 +9,51 @@ Glass (no criticality source).
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 
 # Repo-relative paths (this file lives in visualizations/, so the repository
 # root is two levels up). Reads the same canonical PCHIP-annualized demand CSV
 # every other figure uses, and writes into the manuscript figure directory.
 CODEBASE_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(CODEBASE_ROOT))
+from src.scenario_config import SCENARIO_LABELS, SCENARIO_COLORS  # noqa: E402
+from src.material_classes import CLASS_MEMBERS, CLASS_LABELS, CLASS_ORDER  # noqa: E402
 DATA_PATH = (
     CODEBASE_ROOT / "outputs" / "data" / "material_demand_by_scenario.csv"
 )
 OUT_DIR = CODEBASE_ROOT / "outputs" / "figures" / "manuscript"
 
-EXCL = {"Fiberglass", "Glass"}
+EXCL: set = set()  # 2026-07-28: Glass/Fiberglass now included in Bulk (Option 2)
 
-FAMILIES = {
-    "Bulk commodities":     ["Cement", "Steel", "Aluminum", "Copper"],
-    "Base & alloying":      ["Zinc", "Lead", "Nickel", "Tin", "Manganese",
-                             "Chromium", "Molybdenum", "Vanadium", "Silicon",
-                             "Magnesium", "Boron"],
-    "Specialty metals":     ["Tellurium", "Indium", "Cadmium", "Silver", "Niobium"],
-    "Rare earth elements":  ["Dysprosium", "Neodymium", "Praseodymium",
-                             "Terbium", "Yttrium"],
-}
+# Panel title -> members, from the canonical taxonomy (Option 2 placements).
+FAMILIES = {CLASS_LABELS[c]: list(CLASS_MEMBERS[c]) for c in CLASS_ORDER}
 
-SCENARIOS = [
-    ("Mid_Case_No_IRA",                   "Mid Case (no IRA)",          "#888888", "--", 1.8),
-    ("Mid_Case",                          "Mid Case (with IRA)",        "#333333", "-",  2.2),
-    ("Mid_Case_95by2050",                 "Net-Zero by 2050",           "#59A14F", "-",  2.0),
-    ("Mid_Case_100by2035",                "Net-Zero by 2035",           "#F28E2B", "-",  2.0),
+# Canonical scenario palette, shared with Fig 1 (capacity additions) and Fig 2
+# (annual demand): NZ2035 red, NZ2050 purple, Mid-IRA blue,
+# no-IRA orange. All lines solid (2026-07-28 revision: the no-IRA dash is out,
+# matching Fig 2's all-solid treatment; color alone separates the curves).
+# Draw order (baseline over no-IRA, net-zero curves on top); (linestyle,
+# linewidth) per scenario, all solid per the 2026-07-28 revision. Keys,
+# labels, and colors come from src/scenario_config.py.
+_DRAW_STYLE = [
+    ("Mid_Case_No_IRA",    "-", 1.8),
+    ("Mid_Case",           "-", 2.2),
+    ("Mid_Case_CO2e_95by2050",  "-", 2.0),
+    ("Mid_Case_CO2e_100by2035", "-", 2.0),
 ]
+SCENARIOS = [(k, SCENARIO_LABELS[k], SCENARIO_COLORS[k], ls, lw)
+             for k, ls, lw in _DRAW_STYLE]
+
+# Legend entry order, matching Fig 2's legend top-to-bottom (2026-07-28
+# revision: consistency across the figure set).
+LEGEND_ORDER = ["Net-Zero by 2035", "Net-Zero by 2050",
+                "Baseline with IRA", "Baseline without IRA"]
 
 
 def pick_unit(max_tonnes: float) -> tuple[float, str]:
@@ -94,8 +104,8 @@ def main(docx: bool = False) -> None:
     """Render the 2x2 figure and print a per-family endpoint table.
 
     Draws one panel per material family (Bulk, Base & alloying,
-    Specialty, REE), one line per scenario, with leader-line endpoint
-    labels at 2050. Saves PNG (300 dpi) and PDF into the manuscript
+    Specialty, REE), one line per scenario, with a shared bottom-center
+    scenario legend. Saves PNG (300 dpi) and PDF into the manuscript
     figure directory and echoes a small per-family pivot table to stdout
     for a sanity check. Pass docx=True to scale all text up for full-page
     print insertion; the default output is unchanged.
@@ -108,7 +118,7 @@ def main(docx: bool = False) -> None:
     fig, axes = plt.subplots(2, 2, figsize=(12.5, 8.2), dpi=150, sharex=True)
     axes_flat = axes.ravel()
 
-    for ax, (fam, traj) in zip(axes_flat, data.items()):
+    for panel_idx, (ax, (fam, traj)) in enumerate(zip(axes_flat, data.items())):
         max_cum = traj["cum"].max()
         divisor, unit = pick_unit(max_cum)
 
@@ -116,59 +126,57 @@ def main(docx: bool = False) -> None:
         for scen, label, color, ls, lw in SCENARIOS:
             s = traj[traj.scenario == scen].sort_values("year").copy()
             s["y"] = s["cum"] / divisor
+            # No point markers on the lines (2026-07-23 review, Fig 3 comment).
             ax.plot(
                 s.year, s.y,
-                color=color, linestyle=ls, linewidth=lw,
-                marker="o", markersize=3, label=label,
+                color=color, linestyle=ls, linewidth=lw, label=label,
             )
             end = s.iloc[-1]
             endpoints.append((float(end.y), label, color))
 
-        endpoints.sort(key=lambda t: t[0])
         y_max = max(e[0] for e in endpoints)
-        # At print width (--docx) each panel is physically much shorter, so the
-        # four endpoint labels need a larger vertical de-collision step; the
-        # reserved right margin (tight_layout rect below) gives the labels room
-        # so they never overlap each other or clip.
-        # Scale the endpoint-label de-collision step with the label font (F) so
-        # the four labels never overlap once the text is scaled up.
-        y_min_step = y_max * 0.055 * F
-        label_x = 2050.6
-        last_y = -np.inf
-        for y_val, label, color in endpoints:
-            y_text = max(y_val, last_y + y_min_step)
-            ax.annotate(
-                label,
-                xy=(2050, y_val),
-                xytext=(label_x, y_text),
-                textcoords="data",
-                fontsize=8.5, color=color, va="center", fontweight="bold",
-                arrowprops=dict(arrowstyle="-", color=color, lw=0.6, alpha=0.6)
-                if abs(y_text - y_val) > y_min_step * 0.3 else None,
-            )
-            last_y = y_text
 
         ax.set_title(fam, fontsize=11.5, fontweight="bold", pad=4)
-        ax.set_ylabel(f"Cumulative tonnage ({unit})", fontsize=10)
+        # Quantity is the mean across MC iterations; unit stays per-panel
+        # (Mt/kt/tonnes) because a single kt axis would force 6-digit bulk
+        # values and sub-unit REE values (deviation from the literal "(kt)"
+        # in the 2026-07-23 review comment).
+        ax.set_ylabel(f"Average cumulative demand ({unit})", fontsize=10)
         ax.set_xticks(range(2030, 2051, 5))   # every 5 years: 2030, 2035, 2040, 2045, 2050
-        # Under --docx the endpoint labels are larger; widen the x-limit so they
-        # sit inside the panel's own right margin instead of spilling into the
-        # gutter and overlapping the next column's y-axis label.
-        ax.set_xlim(2025.5, 2064 if docx else 2061)
-        ax.set_ylim(top=y_max * (1.24 if docx else 1.18))
+        # No right-margin reserve anymore: it existed only for the endpoint
+        # labels, which the legend replaces (2026-07-28).
+        ax.set_xlim(2025.5, 2051)
+        ax.set_ylim(top=y_max * (1.12 if docx else 1.08))
         ax.set_ylim(bottom=0)
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
+        # Review item C18: keep the x-axis line from extending past 2050 (the
+        # endpoint labels still sit in the reserved right margin), and drop the
+        # x/y tick marks while keeping the tick labels.
+        ax.spines["bottom"].set_bounds(2026, 2050)
+        ax.tick_params(axis="both", length=0)
         ax.grid(axis="y", linestyle=":", alpha=0.35)
 
+    # Review item C18: no "Year" axis titles (the caption states the span).
     for ax in axes[-1, :]:
-        ax.set_xlabel("Year", fontsize=10.5)
+        ax.set_xlabel("")
 
-    fig.suptitle(
-        "Cumulative material demand over time, by family and scenario (absolute tonnage)",
-        fontsize=12, y=1.0, fontweight="bold",
+    # Bottom-center figure legend, borderless, one row (2026-07-28 revision:
+    # replaces the upper-right in-panel legend for consistency with Fig 2's
+    # bottom legend; entry order mirrors Fig 2 top-to-bottom). tight_layout's
+    # rect reserves the bottom strip so the legend never overlaps the year
+    # tick labels at either text scale.
+    handle_by_label = dict(zip(
+        [lbl for _, lbl, _, _, _ in SCENARIOS], axes_flat[0].get_lines()))
+    fig.legend(
+        [handle_by_label[lbl] for lbl in LEGEND_ORDER], LEGEND_ORDER,
+        loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=4,
+        frameon=False, fontsize=10 * F, handlelength=1.8,
+        columnspacing=1.6,
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.97])
+
+    # No figure title (the caption carries it).
+    fig.tight_layout(rect=[0, 0.05 * F, 1, 0.99])
 
     if docx:
         # Keep the original canvas (above) and scale ALL text up by F for
@@ -186,7 +194,10 @@ def main(docx: bool = False) -> None:
             _bump(_ax.yaxis.label)
             for _t in _ax.get_xticklabels() + _ax.get_yticklabels():
                 _bump(_t)
-            for _t in _ax.texts:        # includes the endpoint scenario labels
+            # Legend text is NOT bumped here: the figure-level legend is
+            # already created at 10 * F, and its entries don't live in
+            # _ax.texts anyway.
+            for _t in _ax.texts:
                 _bump(_t)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)

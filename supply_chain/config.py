@@ -85,20 +85,11 @@ DEMAND_TO_RISK = {
 }
 
 # ── Material classes ─────────────────────────────────────────────────────────
-# The four classes used to group and color materials throughout the figures
-# (Figs 3, 4, and 7). This is the canonical copy; the standalone Fig 3 and
-# Fig 4 generators keep a local copy of the same grouping so they remain
-# runnable on their own, but the membership is identical to this dict.
-MATERIAL_GROUPS = {
-    "Bulk commodities":    ["Cement", "Steel", "Aluminum", "Copper"],
-    "Base & alloying":     ["Zinc", "Lead", "Nickel", "Tin", "Manganese",
-                            "Chromium", "Molybdenum", "Vanadium", "Silicon",
-                            "Magnesium", "Boron"],
-    "Specialty metals":    ["Tellurium", "Indium", "Cadmium", "Silver",
-                            "Niobium"],
-    "Rare earth elements": ["Dysprosium", "Neodymium", "Praseodymium",
-                            "Terbium", "Yttrium"],
-}
+# The four classes used to group and color materials throughout the figures.
+# Canonical taxonomy lives in src/material_classes.py (Option 2 placements,
+# 2026-07-28); this is a re-export for existing `from config import` sites.
+from src.material_classes import CLASS_MEMBERS as _CLASS_MEMBERS  # noqa: E402
+MATERIAL_GROUPS = {c: list(ms) for c, ms in _CLASS_MEMBERS.items()}
 
 # ── Create output directories ────────────────────────────────────────────────
 # Importing config guarantees the output tree exists, so any script can write

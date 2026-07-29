@@ -1,11 +1,11 @@
-"""Manuscript Figures 5 and 6: supply-chain risk (demand vs supply tiers).
+"""Manuscript Figures 4 and 5: supply-chain risk (demand vs supply tiers).
 
 The default split run writes Figure 5 (US tiers: production over reserves) and
 Figure 6 (global tiers: production over reserves). It reads the Monte Carlo
 demand output and the supply-chain risk tables (USGS MCS 2025, OECD CRC, Census
 HTS import shares) and renders the demand-to-supply ratio bars per material,
 with a magnitude sub-panel and a CRC source-mix sub-panel. Per-element
-rare-earth breakdowns come from the shared helper fig4_supply_chain.py; the
+rare-earth breakdowns come from the shared helper supply_tiers_shared.py; the
 --legacy-colored flag reproduces the older combined 2x2 layout.
 """
 
@@ -41,11 +41,12 @@ from _interpolation_io import (  # noqa: E402
 _INTERP_METHOD = setup_interpolation_env()
 
 from config import FIGURES_MANUSCRIPT_DIR, DEMAND_TO_RISK, FIGURE_DPI  # noqa: E402
-from fig4_supply_chain import (  # noqa: E402
+from supply_tiers_shared import (  # noqa: E402
     load_all_data, CRC_GROUPS, GROUP_ORDER, GROUP_COLORS, OECD_MEMBERS,
     country_to_group, WITHHELD_OVERRIDES,
 )
 from supply_chain_analysis import load_data  # noqa: E402
+from src.scenario_config import REFERENCE_SCENARIO  # noqa: E402
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -80,7 +81,7 @@ NO_SEPARATE_RESERVES = {
 # DATA
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def _mid_case_and_worst_scenario(demand_raw, mid_case_name="Mid_Case"):
+def _mid_case_and_worst_scenario(demand_raw, mid_case_name=REFERENCE_SCENARIO):
     """
     For the mid-case-variant framing: per material, return:
       - peak_mid_case : peak-year MC mean annual demand under Mid_Case
@@ -189,8 +190,11 @@ def _alias_yttrium_to_rare_earths(out):
     "Rare Earths" total, not as a separate column. Without this alias the
     Yttrium row gets reserves=0 and falsely flags as ∞-stress in Panel D,
     while Dy/Tb/Nd/Pr correctly inherit the aggregate via risk_name=
-    "Rare Earths". This is a placeholder until per-element REE reserves
-    are sourced (no public source publishes per-element REE reserves).
+    "Rare Earths". No source publishes per-element REE reserves, so by design
+    every rare-earth element's reserve ratio is measured against the aggregate
+    total-rare-earth-oxide reserve base (an optimistic upper bound); the paper
+    reports this as the chosen reserve basis (see Table S2). Per-element
+    apportionment is documented as context only and is not used here.
     """
     if "Rare Earths" in out and "Yttrium" not in out:
         out["Yttrium"] = out["Rare Earths"]
@@ -226,26 +230,47 @@ def _get_global_reserves(risk):
 
 
 def _reserves_by_country_group(risk, crc_lookup):
+    """For each risk material, return {group: fraction_of_global_reserves}.
+
+    Shares are fractions of the GLOBAL total (the "Global"/"World total" row),
+    not of the sum of listed countries, so any unattributed reserves (the USGS
+    "Other Countries" row, plus rounding) read as the Unknown remainder in the
+    bar — mirroring how the production-share path works. Three data hazards are
+    handled explicitly:
+      - aggregate rows ("Global", "World total (rounded)") are the denominator,
+        never a country (otherwise they'd be classified as Moderate risk and
+        double the totals);
+      - "Other"/"Other Countries" are unattributed and excluded from the CRC
+        split (they become the Unknown remainder);
+      - duplicate country rows (e.g. "Russia" and "Russia " with a trailing
+        space, which the augment step can introduce) are collapsed by
+        normalized name so a country is counted once and classified once.
     """
-    For each risk material, return a dict {group: fraction_of_global_reserves}.
-    """
-    reserves_df = risk["reserves"]
-    mat_cols = [c for c in reserves_df.columns if c != "Unnamed: 0"]
+    reserves_df = risk["reserves"].copy()
+    reserves_df["_c"] = reserves_df["Unnamed: 0"].astype(str).str.strip()
+    mat_cols = [c for c in reserves_df.columns if c not in ("Unnamed: 0", "_c")]
 
     out = {}
     for mc in mat_cols:
-        shares = {g: 0.0 for g in GROUP_ORDER}
-        total = 0.0
+        global_total = 0.0
+        by_country = {}
         for _, row in reserves_df.iterrows():
-            country = row["Unnamed: 0"]
-            if country in ("Global", "Other", None) or pd.isna(country):
-                continue
+            country = row["_c"]
+            low = country.lower()
             val = pd.to_numeric(row[mc], errors="coerce")
-            if pd.notna(val) and val > 0:
-                shares[country_to_group(country, crc_lookup)] += val
-                total += val
-        if total > 0:
-            shares = {g: v / total for g, v in shares.items()}
+            if pd.isna(val) or val <= 0:
+                continue
+            if low == "global" or "total" in low:
+                global_total = max(global_total, val)     # denominator
+            elif low in ("other", "other countries", "none", "nan"):
+                continue                                   # -> Unknown remainder
+            else:
+                by_country[country] = max(by_country.get(country, 0.0), val)  # de-dup
+        denom = max(global_total, sum(by_country.values()))
+        shares = {g: 0.0 for g in GROUP_ORDER}
+        if denom > 0:
+            for country, val in by_country.items():
+                shares[country_to_group(country, crc_lookup)] += val / denom
         out[mc] = shares
     _alias_yttrium_to_rare_earths(out)
     return out
@@ -259,7 +284,7 @@ def apply_s9d_style_order(df, mat_order, re_mode, n=10, sort_panel="A"):
     """Top-N by sort_panel ratio (descending) + REE block forced to the
     bottom as a contiguous group, applied consistently across all panels so
     the highest supply-stress materials lead and the rare earths read as one
-    block. (Figures 5 and 6 pass n = all materials, so the top-N cap is not
+    block. (Figures 4 and 5 pass n = all materials, so the top-N cap is not
     binding there; it just fixes the ordering.)
 
     Parameters
@@ -346,6 +371,57 @@ def apply_s9d_style_order(df, mat_order, re_mode, n=10, sort_panel="A"):
     return re_block_reversed + non_re_top_reversed
 
 
+# Material families for row grouping, from the canonical taxonomy
+# (src/material_classes.py, Option 2 placements). The REE family is extended
+# with the 'Gadium' data spelling and the aggregate 'Rare Earths' row.
+from src.material_classes import CLASS_MEMBERS as _CM, CLASS_ORDER as FAMILY_ORDER  # noqa: E402
+MATERIAL_FAMILIES = {c: list(ms) for c, ms in _CM.items()}
+MATERIAL_FAMILIES["Rare earth elements"] = (
+    MATERIAL_FAMILIES["Rare earth elements"] + ["Gadium", "Rare Earths"])
+
+
+def family_grouped_order(df, mat_order, re_mode, sort_panel="C"):
+    """Row order for Figs 4/5: group materials by family (bulk -> base &
+    alloying -> specialty -> rare earths, reading top to bottom), and within
+    each family sort by the sort_panel demand/supply ratio (descending).
+    Rare earths stay a contiguous block at the bottom (so the B/D aggregation
+    and the REE highlight band keep working). Returns matplotlib bottom-up
+    order (row 0 = bottom of chart)."""
+    panel_keys = {
+        "A": ("peak_mid_case", "us_prod_t"),
+        "B": ("cum_mid_case", "us_reserves_t"),
+        "C": ("peak_mid_case", "global_prod_t"),
+        "D": ("cum_mid_case", "global_reserves_t"),
+    }
+    num_col, den_col = panel_keys[sort_panel]
+
+    def _ratio(m):
+        if m not in df.index:
+            return -1.0
+        row = df.loc[m]
+        num = row.get(num_col, 0) or 0
+        den = row.get(den_col, 0) or 0
+        if den <= 0:
+            return float("inf") if num > 0 else -1.0
+        return num / den
+
+    fam_of = {m: fam for fam, mats in MATERIAL_FAMILIES.items() for m in mats}
+    # Unmapped materials (shouldn't occur for the manuscript set) are slotted
+    # into "Base & alloying" so the families stay clean and contiguous.
+    leftover = sorted((m for m in mat_order if m not in fam_of),
+                      key=_ratio, reverse=True)
+    top_to_bottom = []
+    for fam in FAMILY_ORDER:
+        members = [m for m in mat_order if fam_of.get(m) == fam]
+        if fam == "Base & alloying":
+            members += leftover
+        members.sort(key=_ratio, reverse=True)
+        top_to_bottom += members
+    # matplotlib barh draws row 0 at the bottom; reverse so "Bulk commodities"
+    # sits at the top of the chart and the REE block at the bottom.
+    return list(reversed(top_to_bottom))
+
+
 def build_records(re_mode="aggregate"):
     """Compose full per-material data for all 4 panels."""
     df, mat_order, _ = load_all_data(re_mode)
@@ -418,8 +494,8 @@ def build_records(re_mode="aggregate"):
             peak_by_scen = by_sy.groupby("scenario").max()
             # Cumulative still uses raw `mean` (period totals).
             cum_re = re_d[(re_d["year"] >= 2026) & (re_d["year"] <= 2050)].groupby("scenario")["mean"].sum()
-            mid_peak = peak_by_scen.get("Mid_Case", peak_by_scen.median())
-            mid_cum  = cum_re.get("Mid_Case", cum_re.median())
+            mid_peak = peak_by_scen.get(REFERENCE_SCENARIO, peak_by_scen.median())
+            mid_cum  = cum_re.get(REFERENCE_SCENARIO, cum_re.median())
             return float(mid_peak), float(peak_by_scen.max()), float(mid_cum), float(cum_re.max())
         if mat in mc.index:
             return (float(mc.loc[mat, "peak_mid_case"]),
@@ -1344,7 +1420,7 @@ def plot_4panel(df, mat_order, output_path, framing="demand-over-supply",
     # Methodological footer: the static R/P (reserve-to-production) framing
     # in panels B and D is known to overstate scarcity (Graedel et al.
     # 2015, PNAS 112:4257; Tilton 2003, Resources Policy 29:195). Flagging
-    # it in-figure prevents a reviewer misread of "reserves = finite atoms".
+    # it in-figure prevents a misread of "reserves = finite atoms".
     # In-figure caption removed (2026-04-18): methodological notes belong in
     # the manuscript figure-caption / Methods §2.5, not on the figure itself.
     # The dual-semantic row banners (Census vs USGS) and the legend carry
@@ -1356,8 +1432,8 @@ def plot_4panel(df, mat_order, output_path, framing="demand-over-supply",
     # fallbacks and lacked a footer on the alt-variants poster).
 
     if split:
-        out_us = output_path.parent / "fig5_supply_tiers_us.png"
-        out_gl = output_path.parent / "fig6_supply_tiers_global.png"
+        out_us = output_path.parent / "fig4_supply_tiers_us.png"
+        out_gl = output_path.parent / "fig5_supply_tiers_global.png"
         for _fig, _ttl, _out in (
             (fig_us, "Figure 5. US critical-material demand versus domestic supply, 2026-2050", out_us),
             (fig_gl, "Figure 6. US critical-material demand versus global supply, 2026-2050", out_gl),
@@ -1458,8 +1534,8 @@ def main():
 
     df, mat_order = build_records(re_mode=args.re_mode)
 
-    default_v1 = args.output_dir / "fig5_supply_chain_4panel.png"
-    default_v2 = args.output_dir / "fig5_supply_chain_4panel_supply_coverage.png"
+    default_v1 = args.output_dir / "fig4_fig5_supply_tiers.png"
+    default_v2 = args.output_dir / "fig4_fig5_supply_tiers_supply_coverage.png"
 
     if args.legacy_colored:
         # Legacy color-by-CRC layout for reproducing pre-2026-05-21 figures.
@@ -1500,7 +1576,7 @@ def main():
         return
 
     # Default (2026-05-21): split mag|mix layout via the opt3a-midcase
-    # renderer in fig5_alt_variants. The gray magnitude bar shows the
+    # renderer in supply_tiers_variants. The gray magnitude bar shows the
     # Mid_Case scenario mean, the hatched extension reaches the worst-case
     # scenario, and the thin whiskers are the within-Mid_Case MC 95% CI.
     # The mix sub-panel is a 0-100% CRC / HTS stacked bar.
@@ -1509,25 +1585,25 @@ def main():
     # non-REE materials by Panel A (US production) ratio descending,
     # plus the REE block forced to the bottom as a contiguous group
     # with pink background banding and maroon-bold REE labels.
-    from fig5_alt_variants import plot_option3a_midcase  # noqa: E402
+    from supply_tiers_variants import plot_option3a_midcase  # noqa: E402
 
-    # Manuscript Figures 5 and 6: the split supply-tier figures (per the
+    # Manuscript Figures 4 and 5: the split supply-tier figures (per the
     # outline comment "split into 2 figs, stack"). split=True writes two files
     # into args.output_dir:
-    #   Figure 5 -> fig5_supply_tiers_us.png      (Panel A US production over
+    #   Figure 5 -> fig4_supply_tiers_us.png      (Panel A US production over
     #                                              Panel B US reserves)
-    #   Figure 6 -> fig6_supply_tiers_global.png  (Panel C global production over
+    #   Figure 6 -> fig5_supply_tiers_global.png  (Panel C global production over
     #                                              Panel D global reserves)
-    # All materials are shown (per reviewer request), ordered by the Panel-C
-    # global-production ratio so Tellurium / Indium / Lead lead (Tellurium near
-    # a 1.0 global ratio is the headline supply-stress finding). The gray
-    # magnitude bar is the Mid_Case scenario mean, the hatched extension reaches
-    # the worst-case scenario, and the thin whiskers are the within-Mid_Case MC
-    # 95% interval; the mix sub-panel is a 0-100% CRC / HTS stacked bar.
-    # show_flow_fallback=False drops the diagonal-hatch fallback overlay (its
-    # methodology is noted in the figure caption / SI instead).
-    mat_order_all = apply_s9d_style_order(df, mat_order, args.re_mode,
-                                          n=len(mat_order), sort_panel="C")
+    # All materials are shown. Each panel is ordered independently from highest
+    # to lowest demand-to-supply stress in the renderer; the gray magnitude bar
+    # is the Mid_Case scenario mean, the hatched extension reaches the worst-case
+    # scenario, and the thin whiskers are the within-Mid_Case MC 95% interval;
+    # the mix sub-panel is a 0-100% CRC / HTS stacked bar. show_flow_fallback=
+    # False drops the diagonal-hatch fallback overlay (noted in the caption / SI).
+    # family_grouped_order supplies the material set; the renderer re-sorts each
+    # panel by stress.
+    mat_order_all = family_grouped_order(df, mat_order, args.re_mode,
+                                         sort_panel="C")
     plot_option3a_midcase(df, mat_order_all, default_v1,
                           styling=args.styling, ree_band=True,
                           show_flow_fallback=False, split=True,

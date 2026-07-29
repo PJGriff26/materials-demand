@@ -67,12 +67,8 @@ N_ITERATIONS = 10000
 # The four scenarios highlighted throughout the manuscript. material_demand_
 # summary.csv is written for exactly these (per scenario); the full 61-scenario
 # detail lives in material_demand_by_scenario.csv.
-HIGHLIGHTED_SCENARIOS = [
-    "Mid_Case",            # reference / central estimate
-    "Mid_Case_No_IRA",     # Mid Case without the Inflation Reduction Act
-    "Mid_Case_100by2035",  # 100% clean electricity by 2035
-    "Mid_Case_95by2050",   # 95% clean electricity by 2050
-]
+from src.scenario_config import REFERENCE_SCENARIO, REPRESENTATIVE_SCENARIO_KEYS
+HIGHLIGHTED_SCENARIOS = list(REPRESENTATIVE_SCENARIO_KEYS)
 
 # Focus scenarios (None = all scenarios)
 FOCUS_SCENARIOS = None  # or ['Mid_Case', 'Mid_Case_No_IRA', 'Mid_Case_100by2035']
@@ -346,13 +342,13 @@ def main():
     print("="*80)
     print()
     
-    # Show top materials for 2035 in the Mid_Case (central estimate)
-    print("Top 10 materials by median demand (2035, Mid_Case):")
+    # Show top materials for 2035 in the reference scenario (central estimate)
+    print(f"Top 10 materials by median demand (2035, {REFERENCE_SCENARIO}):")
     print("-" * 80)
 
     summary_2035 = summary_stats[
         (summary_stats['year'] == 2035) &
-        (summary_stats['scenario'] == 'Mid_Case')
+        (summary_stats['scenario'] == REFERENCE_SCENARIO)
     ].copy()
     summary_2035_sorted = summary_2035.sort_values('p50', ascending=False).head(10)
     
@@ -510,12 +506,12 @@ def create_report(
         f.write("KEY RESULTS\n")
         f.write("-" * 80 + "\n\n")
         
-        # Top 10 materials in 2035 (Mid_Case central estimate)
-        f.write("Top 10 Materials by Median Demand (2035, Mid_Case)\n")
+        # Top 10 materials in 2035 (reference-scenario central estimate)
+        f.write(f"Top 10 Materials by Median Demand (2035, {REFERENCE_SCENARIO})\n")
         f.write("-" * 80 + "\n")
         summary_2035 = summary_stats[
             (summary_stats['year'] == 2035) &
-            (summary_stats['scenario'] == 'Mid_Case')
+            (summary_stats['scenario'] == REFERENCE_SCENARIO)
         ].copy()
         summary_2035_sorted = summary_2035.sort_values('p50', ascending=False).head(10)
         
@@ -526,15 +522,15 @@ def create_report(
                    f"{row[p2_5_col]:>15,.0f} {row[p97_5_col]:>15,.0f}\n")
         f.write("\n")
         
-        # Material demand over time (key materials, Mid_Case)
+        # Material demand over time (key materials, reference scenario)
         key_materials = ['Copper', 'Aluminum', 'Steel', 'Lithium', 'Silicon']
-        f.write("\nMaterial Demand Over Time (Median, Mid_Case)\n")
+        f.write(f"\nMaterial Demand Over Time (Median, {REFERENCE_SCENARIO})\n")
         f.write("-" * 80 + "\n")
 
         for material in key_materials:
             mat_data = summary_stats[
                 (summary_stats['material'] == material) &
-                (summary_stats['scenario'] == 'Mid_Case')
+                (summary_stats['scenario'] == REFERENCE_SCENARIO)
             ].copy()
             if len(mat_data) == 0:
                 continue

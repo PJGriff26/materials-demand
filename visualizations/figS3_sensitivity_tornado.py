@@ -1,4 +1,4 @@
-"""Manuscript Figure 4: demand-uncertainty sensitivity tornado.
+"""Manuscript Figure S3: demand-uncertainty sensitivity tornado.
 
 Paired-bar tornado comparing demand sensitivity to scenario choice
 against material-intensity uncertainty, per material class, pooled across
@@ -8,6 +8,7 @@ outputs/data/material_demand_by_scenario.csv.
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -20,31 +21,31 @@ import pandas as pd
 # differ only in which years are pooled (8 reporting years vs the full annual
 # grid). See the --pchip help below.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+sys.path.insert(0, str(PROJECT_ROOT))
+from src.scenario_config import REFERENCE_SCENARIO, SCENARIO_LABELS  # noqa: E402
+
+# Reverse lookup so the fixed-baseline scenario IDs below come from the
+# canonical config rather than repeating string literals.
+_KEY_BY_LABEL = {label: key for key, label in SCENARIO_LABELS.items()}
+
 DEFAULT_INPUT = PROJECT_ROOT / "outputs" / "data" / "material_demand_by_scenario.csv"
 PCHIP_INPUT = DEFAULT_INPUT
 DEFAULT_OUTPUT = (
     PROJECT_ROOT / "outputs" / "figures" / "manuscript"
-    / "fig4_sensitivity_tornado.png"
+    / "figS3_sensitivity_tornado.png"
 )
 
-EXCLUDED = {"Fiberglass", "Glass"}
-ZERO_DEMAND = {"Gadium", "Selenium", "Germanium", "Gallium"}
+EXCLUDED: set = set()  # 2026-07-28: Glass/Fiberglass now included in Bulk (Option 2)
+from src.material_classes import (  # noqa: E402
+    CLASS_MEMBERS, CLASS_ORDER, CLASS_COLORS, ZERO_DEMAND_MATERIALS)
+ZERO_DEMAND = set(ZERO_DEMAND_MATERIALS)
 
-MATERIAL_GROUPS = {
-    "Bulk commodities":    ["Cement", "Steel", "Aluminum", "Copper"],
-    "Base & alloying":     ["Zinc", "Lead", "Nickel", "Tin", "Manganese",
-                            "Chromium", "Molybdenum", "Vanadium", "Silicon",
-                            "Magnesium", "Boron"],
-    "Specialty metals":    ["Tellurium", "Indium", "Cadmium", "Silver", "Niobium"],
-    "Rare earth elements": ["Dysprosium", "Neodymium", "Praseodymium",
-                            "Terbium", "Yttrium"],
-}
-CATEGORY_COLORS = {
-    "Bulk commodities":     "#00693E",
-    "Base & alloying":      "#3B6E8F",
-    "Specialty metals":     "#C97B3A",
-    "Rare earth elements":  "#8E3A62",
-}
+MATERIAL_GROUPS = {c: list(CLASS_MEMBERS[c]) for c in CLASS_ORDER}
+# Locked manuscript material-class palette; keep in sync with
+# fig6_nir_vs_hhi_scatter.CLASS_COLORS (2026-07-13 figure revision: REE navy to
+# match the Figs 4/5 REE labels; Base & alloying takes the freed plum).
+CATEGORY_COLORS = dict(CLASS_COLORS)
 SCENARIO_COLOR = "#00693E"
 INTENSITY_COLOR = "#C97B3A"
 
@@ -76,8 +77,9 @@ SCENARIO_BOUNDS = {
 # Baseline selection: which row serves as the 0% reference for both bars.
 #   median   — the scenario whose mean is the median of the 61 per-scenario means
 #              (baseline tracks the ensemble center; varies by material/year)
-#   mid_case — NREL's Mid_Case reference scenario (fixed scenario ID across cells)
-#   no_ira   — Mid_Case_No_IRA policy-rollback counterfactual
+#   mid_case — the reference scenario from src/scenario_config.py (fixed ID
+#              across cells)
+#   no_ira    — the no-IRA policy-rollback counterfactual (same config)
 BASELINES = {
     "median": {
         "label":  "MEDIAN-SCENARIO\nBASELINE",
@@ -87,16 +89,16 @@ BASELINES = {
         "fixed_id": None,  # picked dynamically per cell
     },
     "mid_case": {
-        "label":  "Mid Case\n(with IRA)",
-        "short":  "Mid Case (with IRA)",
-        "desc":   "baseline = NREL Mid_Case reference scenario (fixed scenario across all cells)",
-        "fixed_id": "Mid_Case",
+        "label":  "Baseline\n(with IRA)",
+        "short":  SCENARIO_LABELS[REFERENCE_SCENARIO],
+        "desc":   "baseline = NREL reference scenario (fixed scenario across all cells)",
+        "fixed_id": REFERENCE_SCENARIO,
     },
     "no_ira": {
         "label":  "NO-IRA\nBASELINE",
-        "short":  "Mid Case (no IRA)",
-        "desc":   "baseline = Mid_Case_No_IRA policy-rollback counterfactual (fixed scenario)",
-        "fixed_id": "Mid_Case_No_IRA",
+        "short":  "Baseline without IRA",
+        "desc":   "baseline = the no-IRA policy-rollback counterfactual (fixed scenario)",
+        "fixed_id": _KEY_BY_LABEL["Baseline without IRA"],
     },
 }
 
@@ -522,7 +524,7 @@ def main() -> None:
     """Parse command-line arguments and render Figure 4.
 
     With no flags, reads the default demand CSV and writes
-    outputs/figures/manuscript/fig4_sensitivity_tornado.png. When --output
+    outputs/figures/manuscript/figS3_sensitivity_tornado.png. When --output
     is unset, non-default variant flags are appended to the filename so the
     canonical figure is never overwritten by an alternative variant.
     """

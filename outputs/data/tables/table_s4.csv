@@ -1,0 +1,168 @@
+Technology,Material,n,sigma,CV,CV_source,Median_t_per_MW,KS_p,AD
+Bio CCS,Aluminum,1,0.689,0.779,borrowed,1.3,1.0,0.0
+Bio CCS,Cement,2,0.689,0.779,borrowed,32.005,0.933,0.359
+Bio CCS,Copper,3,0.689,0.779,borrowed,0.6,0.986,0.255
+Bio CCS,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+Bio CCS,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+Bio CCS,Steel,1,0.689,0.779,borrowed,79.56,1.0,0.0
+Biomass,Aluminum,1,0.689,0.779,borrowed,1.3,1.0,0.0
+Biomass,Cement,2,0.689,0.779,borrowed,20.9185,0.933,0.359
+Biomass,Copper,4,0.689,0.779,borrowed,0.4855,0.957,0.239
+Biomass,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+Biomass,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+Biomass,Steel,1,0.689,0.779,borrowed,52.0,1.0,0.0
+CIGS,Aluminum,3,0.689,0.779,borrowed,15.39,0.521,0.619
+CIGS,Cadmium,2,0.689,0.779,borrowed,0.0013,1.0,0.0
+CIGS,Cement,4,0.689,0.779,borrowed,7.1475,0.998,0.22
+CIGS,Copper,3,0.689,0.779,borrowed,7.0,0.521,0.619
+CIGS,Gadolinium,3,0.689,0.779,borrowed,0.01,0.58,0.546
+CIGS,Gallium,41,1.093,1.518,fitted,0.0067,0.106,1.605
+CIGS,Glass,3,0.689,0.779,borrowed,66.7,0.718,0.42
+CIGS,Indium,76,0.645,0.719,fitted,0.023,0.312,0.653
+CIGS,Molybdenum,2,0.689,0.779,borrowed,0.055,1.0,0.0
+CIGS,Selenium,36,0.758,0.881,fitted,0.045,0.724,0.616
+CIGS,Steel,2,0.689,0.779,borrowed,55.95,0.933,0.359
+CIGS,Zinc,1,0.689,0.779,borrowed,0.121,1.0,0.0
+CSP,Aluminum,2,0.689,0.779,borrowed,5.5,1.0,0.0
+CSP,Cement,2,0.689,0.779,borrowed,161.0,0.933,0.359
+CSP,Copper,2,0.689,0.779,borrowed,2.3,0.933,0.359
+CSP,Glass,2,0.689,0.779,borrowed,120.0,0.933,0.359
+CSP,Manganese,2,0.689,0.779,borrowed,3.85,0.933,0.359
+CSP,Nickel,2,0.689,0.779,borrowed,1.42,0.933,0.359
+CSP,Silver,2,0.689,0.779,borrowed,0.0145,0.933,0.359
+CSP,Steel,2,0.689,0.779,borrowed,320.0,0.933,0.359
+CdTe,Aluminum,3,0.689,0.779,borrowed,15.39,0.521,0.619
+CdTe,Cadmium,40,0.73,0.839,fitted,0.078,0.087,1.333
+CdTe,Cement,4,0.689,0.779,borrowed,7.1475,0.998,0.22
+CdTe,Chromium,1,0.689,0.779,borrowed,0.061,1.0,0.0
+CdTe,Copper,8,0.94,1.192,fitted,5.181,0.376,0.807
+CdTe,Glass,3,0.689,0.779,borrowed,66.7,0.718,0.42
+CdTe,Indium,3,0.689,0.779,borrowed,0.0155,0.521,0.619
+CdTe,Lead,2,0.689,0.779,borrowed,0.0079,0.933,0.359
+CdTe,Molybdenum,3,0.689,0.779,borrowed,0.1005,1.0,0.0
+CdTe,Nickel,1,0.689,0.779,borrowed,0.016,1.0,0.0
+CdTe,Steel,2,0.689,0.779,borrowed,55.95,0.933,0.359
+CdTe,Tellurium,54,0.64,0.712,fitted,0.0895,0.384,0.777
+CdTe,Tin,1,0.689,0.779,borrowed,0.0066,1.0,0.0
+Coal,Aluminum,4,0.689,0.779,borrowed,0.35,0.827,0.321
+Coal,Cement,12,0.514,0.55,fitted,14.121,0.763,0.247
+Coal,Copper,4,0.689,0.779,borrowed,0.4855,0.957,0.239
+Coal,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+Coal,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+Coal,Steel,3,0.689,0.779,borrowed,51.34,0.986,0.255
+Coal CCS,Aluminum,4,0.689,0.779,borrowed,0.35,0.827,0.321
+Coal CCS,Cement,12,0.535,0.576,fitted,17.7455,0.921,0.248
+Coal CCS,Copper,4,0.689,0.779,borrowed,0.5825,0.954,0.241
+Coal CCS,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+Coal CCS,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+Coal CCS,Steel,4,0.689,0.779,borrowed,73.1225,0.959,0.24
+Gas,Aluminum,2,0.689,0.779,borrowed,0.217,0.933,0.359
+Gas,Cement,4,0.689,0.779,borrowed,10.7415,0.999,0.208
+Gas,Copper,4,0.689,0.779,borrowed,0.4855,0.957,0.239
+Gas,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+Gas,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+Gas,Steel,2,0.689,0.779,borrowed,41.08,0.933,0.359
+Gas CCS,Aluminum,2,0.689,0.779,borrowed,0.217,0.933,0.359
+Gas CCS,Cement,4,0.689,0.779,borrowed,16.435,0.853,0.308
+Gas CCS,Copper,4,0.689,0.779,borrowed,0.5825,0.954,0.241
+Gas CCS,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+Gas CCS,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+Gas CCS,Steel,2,0.689,0.779,borrowed,62.8525,0.933,0.359
+Geothermal,Aluminum,7,1.352,2.286,fitted,9.729,0.809,0.465
+Geothermal,Cement,8,0.893,1.105,fitted,251.833,0.922,0.383
+Geothermal,Copper,3,0.689,0.779,borrowed,2.518,1.0,0.0
+Geothermal,Steel,8,0.906,1.128,fitted,325.5,0.759,0.551
+Hydro,Aluminum,1,0.689,0.779,borrowed,0.052,1.0,0.0
+Hydro,Cement,8,0.313,0.32,fitted,995.68,0.993,0.166
+Hydro,Copper,3,0.689,0.779,borrowed,1.502,0.954,0.29
+Hydro,Steel,4,0.689,0.779,borrowed,66.25,0.998,0.201
+NGCC,Aluminum,2,0.689,0.779,borrowed,0.217,0.933,0.359
+NGCC,Cement,4,0.689,0.779,borrowed,10.7415,0.999,0.208
+NGCC,Copper,4,0.689,0.779,borrowed,0.4855,0.957,0.239
+NGCC,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+NGCC,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+NGCC,Steel,2,0.689,0.779,borrowed,41.08,0.933,0.359
+NGGT,Aluminum,2,0.689,0.779,borrowed,0.217,0.933,0.359
+NGGT,Cement,4,0.689,0.779,borrowed,10.7415,0.999,0.208
+NGGT,Copper,4,0.689,0.779,borrowed,0.4855,0.957,0.239
+NGGT,Manganese,3,0.689,0.779,borrowed,0.124,0.716,0.422
+NGGT,Nickel,3,0.689,0.779,borrowed,0.01,0.906,0.318
+NGGT,Steel,2,0.689,0.779,borrowed,41.08,0.933,0.359
+Nuclear New,Aluminum,4,0.689,0.779,borrowed,0.039,0.945,0.301
+Nuclear New,Cement,9,0.407,0.425,fitted,30.4,0.9,0.368
+Nuclear New,Copper,5,0.36,0.372,fitted,1.345,0.939,0.238
+Nuclear New,Manganese,4,0.689,0.779,borrowed,0.348,0.93,0.254
+Nuclear New,Nickel,5,0.865,1.055,fitted,0.1,0.846,0.331
+Nuclear New,Silver,3,0.689,0.779,borrowed,0.001,1.0,0.0
+Nuclear New,Steel,6,0.773,0.904,fitted,39.637,0.387,0.781
+Solar Distributed,Aluminum,4,0.689,0.779,borrowed,19.0,0.817,0.343
+Solar Distributed,Cement,6,0.265,0.27,fitted,7.1475,0.916,0.289
+Solar Distributed,Copper,11,1.203,1.804,fitted,0.884,0.456,0.612
+Solar Distributed,Glass,3,0.689,0.779,borrowed,66.7,0.718,0.42
+Solar Distributed,Lead,5,1.09,1.511,fitted,0.0063,0.392,0.689
+Solar Distributed,Magnesium,1,0.689,0.779,borrowed,0.0535,1.0,0.0
+Solar Distributed,Nickel,5,0.118,0.119,fitted,0.0011,0.745,0.569
+Solar Distributed,Silicon,15,0.622,0.688,fitted,4.0,0.435,1.02
+Solar Distributed,Silver,30,0.773,0.904,fitted,0.0297,0.905,0.316
+Solar Distributed,Steel,2,0.689,0.779,borrowed,55.95,0.933,0.359
+Solar Distributed,Tin,1,0.689,0.779,borrowed,0.577,1.0,0.0
+a-Si,Aluminum,3,0.689,0.779,borrowed,15.39,0.521,0.619
+a-Si,Cadmium,1,0.689,0.779,borrowed,0.0066,1.0,0.0
+a-Si,Cement,4,0.689,0.779,borrowed,7.1475,0.998,0.22
+a-Si,Chromium,1,0.689,0.779,borrowed,0.634,1.0,0.0
+a-Si,Copper,4,0.689,0.779,borrowed,7.0,0.272,0.891
+a-Si,Germanium,16,0.947,1.205,fitted,0.042,0.092,1.505
+a-Si,Glass,3,0.689,0.779,borrowed,66.7,0.718,0.42
+a-Si,Indium,4,0.689,0.779,borrowed,0.0053,0.48,0.543
+a-Si,Molybdenum,1,0.689,0.779,borrowed,0.0106,1.0,0.0
+a-Si,Nickel,1,0.689,0.779,borrowed,0.334,1.0,0.0
+a-Si,Silicon,1,0.689,0.779,borrowed,0.15,1.0,0.0
+a-Si,Steel,2,0.689,0.779,borrowed,55.95,0.933,0.359
+a-Si,Tellurium,1,0.689,0.779,borrowed,0.0078,1.0,0.0
+a-Si,Tin,2,0.689,0.779,borrowed,0.072,1.0,0.0
+offshore wind,Aluminum,20,1.012,1.336,fitted,1.03,0.851,0.36
+offshore wind,Boron,1,0.689,0.779,borrowed,0.007,1.0,0.0
+offshore wind,Cement,4,0.689,0.779,borrowed,0.181,0.635,0.719
+offshore wind,Chromium,4,0.689,0.779,borrowed,0.333,0.701,0.427
+offshore wind,Copper,49,0.85,1.03,fitted,4.0,0.446,0.634
+offshore wind,Dysprosium,18,0.588,0.642,fitted,0.017,0.606,0.842
+offshore wind,Fiberglass,5,0.302,0.309,fitted,10.551,0.398,0.868
+offshore wind,Lead,3,0.689,0.779,borrowed,6.72,0.521,0.619
+offshore wind,Molybdenum,1,0.689,0.779,borrowed,0.0753,1.0,0.0
+offshore wind,Neodymium,41,0.495,0.528,fitted,0.1657,0.008,4.391
+offshore wind,Nickel,3,0.689,0.779,borrowed,0.111,1.0,0.0
+offshore wind,Niobium,1,0.689,0.779,borrowed,0.0377,1.0,0.0
+offshore wind,Praseodymium,4,0.689,0.779,borrowed,0.032,0.761,0.375
+offshore wind,Steel,20,0.568,0.617,fitted,221.335,0.848,0.524
+offshore wind,Terbium,3,0.689,0.779,borrowed,0.0062,0.708,0.428
+offshore wind,Vanadium,2,0.689,0.779,borrowed,0.09,1.0,0.0
+onshore wind,Aluminum,37,0.994,1.299,fitted,1.64,0.229,0.765
+onshore wind,Boron,3,0.689,0.779,borrowed,0.001,0.521,0.619
+onshore wind,Cement,6,0.234,0.237,fitted,53.5845,0.898,0.316
+onshore wind,Chromium,10,0.394,0.41,fitted,0.4975,0.836,0.246
+onshore wind,Copper,102,0.605,0.665,fitted,2.52,0.137,1.001
+onshore wind,Dysprosium,47,1.049,1.415,fitted,0.0133,0.015,1.723
+onshore wind,Fiberglass,3,0.689,0.779,borrowed,8.98,0.83,0.355
+onshore wind,Lead,2,0.689,0.779,borrowed,6.72,1.0,0.0
+onshore wind,Manganese,3,0.689,0.779,borrowed,0.79,0.991,0.246
+onshore wind,Molybdenum,4,0.689,0.779,borrowed,0.104,0.917,0.32
+onshore wind,Neodymium,50,1.018,1.349,fitted,0.15,0.003,3.139
+onshore wind,Nickel,13,0.605,0.665,fitted,0.24,0.127,1.574
+onshore wind,Niobium,1,0.689,0.779,borrowed,0.0377,1.0,0.0
+onshore wind,Praseodymium,15,0.689,0.779,borrowed,0.004,1.0,0.0
+onshore wind,Steel,48,0.22,0.222,fitted,119.9925,0.661,0.688
+onshore wind,Terbium,16,1.281,2.041,fitted,0.0066,0.336,0.74
+onshore wind,Vanadium,2,0.689,0.779,borrowed,0.0902,0.933,0.359
+onshore wind,Yttrium,2,0.689,0.779,borrowed,0.0012,0.933,0.359
+onshore wind,Zinc,2,0.689,0.779,borrowed,5.5,1.0,0.0
+utility-scale solar pv,Aluminum,4,0.689,0.779,borrowed,19.0,0.817,0.343
+utility-scale solar pv,Cement,6,0.265,0.27,fitted,7.1475,0.916,0.289
+utility-scale solar pv,Copper,8,0.982,1.274,fitted,1.842,0.361,0.925
+utility-scale solar pv,Glass,3,0.689,0.779,borrowed,66.7,0.718,0.42
+utility-scale solar pv,Lead,5,1.09,1.511,fitted,0.0063,0.392,0.689
+utility-scale solar pv,Magnesium,1,0.689,0.779,borrowed,0.0535,1.0,0.0
+utility-scale solar pv,Nickel,5,0.118,0.119,fitted,0.0011,0.745,0.569
+utility-scale solar pv,Silicon,15,0.622,0.688,fitted,4.0,0.435,1.02
+utility-scale solar pv,Silver,30,0.773,0.904,fitted,0.0297,0.905,0.316
+utility-scale solar pv,Steel,2,0.689,0.779,borrowed,55.95,0.933,0.359
+utility-scale solar pv,Tin,1,0.689,0.779,borrowed,0.577,1.0,0.0

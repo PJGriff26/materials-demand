@@ -1,11 +1,11 @@
-"""Supply-chain split-panel renderer for manuscript Figures 5 and 6.
+"""Supply-chain split-panel renderer for manuscript Figures 4 and 5.
 
 The shipped Figure 5 (US demand vs domestic supply, panels A/B) and Figure 6
 (US demand vs global supply, panels C/D) are produced by
-plot_option3a_midcase(..., split=True), which writes fig5_supply_tiers_us.png
-and fig6_supply_tiers_global.png. The other plot_option* functions are earlier
+plot_option3a_midcase(..., split=True), which writes fig4_supply_tiers_us.png
+and fig5_supply_tiers_global.png. The other plot_option* functions are earlier
 rendering experiments kept for reference. Supply-chain inputs are assembled by
-build_records() in fig5_supply_chain_4panel.py; this module only renders them.
+build_records() in fig4_fig5_supply_tiers.py; this module only renders them.
 """
 
 import sys
@@ -31,12 +31,14 @@ from _interpolation_io import (  # noqa: E402
 _INTERP_METHOD = setup_interpolation_env()
 
 from config import FIGURES_MANUSCRIPT_DIR, FIGURE_DPI  # noqa: E402
-from fig4_supply_chain import GROUP_ORDER, GROUP_COLORS, country_to_group  # noqa: E402
-from fig5_supply_chain_4panel import (  # noqa: E402
+from supply_tiers_shared import GROUP_ORDER, GROUP_COLORS, country_to_group  # noqa: E402
+from fig4_fig5_supply_tiers import (  # noqa: E402
     build_records, NO_SEPARATE_RESERVES,
 )
 from supply_chain_analysis import load_data as _load_demand_raw  # noqa: E402
 from config import DEMAND_TO_RISK  # noqa: E402
+sys.path.insert(0, str(BASE_DIR))
+from src.scenario_config import REFERENCE_SCENARIO  # noqa: E402
 
 # Distinct gray for the "Unknown / 'Other countries'" segment in mix bars.
 # Appears only in Panel C where USGS reports a slice of global production in
@@ -50,16 +52,17 @@ from config import DEMAND_TO_RISK  # noqa: E402
 UNKNOWN_COLOR = "#5a5a5a"
 UNKNOWN_LABEL = "Unknown (USGS 'Other countries')"
 
-# Worst-case extension: solid light-gray with a hatch overlay so it's not
-# confused with the solid darker-gray "Unknown" segments.
-WORST_CASE_FACE  = "#bdbdbd"
+# Worst-case extension: very light-gray with a hatch overlay so it's not
+# confused with the (now lighter) solid magnitude bar.
+WORST_CASE_FACE  = "#d9d9d9"
 WORST_CASE_EDGE  = "white"
 WORST_CASE_HATCH = "/////"
 WORST_CASE_LABEL = "Mid Case (with IRA) → highest-demand scenario extension"
 
-# Neutral magnitude-bar color, kept away from the CRC palette blues/greens
-# so the bar + whiskers can't be mistaken for a colored mix segment.
-MAG_BAR_COLOR = "#4a4a4a"
+# Neutral magnitude-bar color. Lightened from #4a4a4a so the
+# black MC whiskers read clearly on top of it; kept away from the CRC palette
+# blues/greens so the bar can't be mistaken for a colored mix segment.
+MAG_BAR_COLOR = "#a0a0a0"
 
 # Uniform text-scale factor applied only under the opt-in --docx path of the
 # split fig5/fig6 render (see plot_option3a_midcase). Tuned so that, at the
@@ -189,16 +192,18 @@ def _draw_mix_bar(ax, i, shares, y=None, height=0.8):
     `y`/`height` override the row centre/thickness (general hook)."""
     yy = i if y is None else y
     left = 0.0
+    # render the risk/country colours slightly translucent so
+    # they read less boldly (alpha 0.82).
     for grp in GROUP_ORDER:
         w = shares.get(grp, 0)
         if w <= 0:
             continue
         ax.barh(yy, w, left=left, height=height, color=GROUP_COLORS[grp],
-                edgecolor="white", linewidth=0.4, zorder=3)
+                alpha=0.82, edgecolor="white", linewidth=0.4, zorder=3)
         left += w
     if left < 0.995:
         ax.barh(yy, 1 - left, left=left, height=height, color=UNKNOWN_COLOR,
-                edgecolor="white", linewidth=0.4, zorder=3)
+                alpha=0.82, edgecolor="white", linewidth=0.4, zorder=3)
 
 
 def _overlay_flow_fallback_hatch(ax, i):
@@ -343,7 +348,7 @@ def _build_partner_reserve_shares():
     # get — creating a visually inconsistent green-vs-purple split in the REE
     # block. Aliases all three outputs (shares, coverage, partner_total)
     # so Y mirrors the aggregate Rare Earths treatment. Companion alias to
-    # _alias_yttrium_to_rare_earths in fig5_supply_chain_4panel.py. Placeholder
+    # _alias_yttrium_to_rare_earths in fig4_fig5_supply_tiers.py. Placeholder
     # until per-element REE reserves are sourced (USGS MCS 2025 publishes only
     # the aggregate TREO reserve, not a per-element split).
     if "Rare Earths" in shares_out and "Yttrium" not in shares_out:
@@ -366,7 +371,7 @@ def _augment_midcase_mc_ci(df):
     demand_raw, _risk = _load_demand_raw()
     has_p = "p2" in demand_raw.columns and "p97" in demand_raw.columns
 
-    mid = demand_raw[demand_raw["scenario"] == "Mid_Case"]
+    mid = demand_raw[demand_raw["scenario"] == REFERENCE_SCENARIO]
 
     # REE aggregate: sum across RE elements per year (conservative — assumes
     # comonotone intensity draws across elements).
@@ -653,13 +658,13 @@ PANEL_TITLES = {
           "Peak-year demand ÷ US annual production",
           "deficit split by 2020–23 US import partners (CRC group)"),
     "B": ("B. US reserves",
-          "Cumulative 2026–2050 demand ÷ US reserves",
+          "2026–2050 Cumulative demand ÷ US reserves",
           "deficit split by 2020–23 US import partners (CRC group)"),
     "C": ("C. Global production",
           "US peak-year demand ÷ global annual production",
           "bar split by producer-country share (USGS MCS 2025, CRC group)"),
     "D": ("D. Global reserves",
-          "US cumulative 2026–2050 demand ÷ global reserves",
+          "2026–2050 Cumulative demand ÷ global reserves",
           "bar split by reserve-holder country share (USGS MCS 2025, CRC group)"),
 }
 
@@ -679,9 +684,9 @@ MIX_SUBTITLES = {
 # import flow vs. cumulative 2026–2050 flow) — labeled to match.
 MIX_X_LABELS = {
     "A": "Source share",
-    "B": "Partner reserve share",
-    "C": "Global production share",
-    "D": "Global reserve share",
+    "B": "Reserve share",
+    "C": "Global production\nshare",
+    "D": "Global reserve\nshare",
 }
 
 # Short italic grey subtitle describing each panel's sourcing basis —
@@ -961,9 +966,11 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
     """
     REE_HIGHLIGHT_SET = {"Dysprosium", "Neodymium", "Praseodymium",
                          "Terbium", "Yttrium", "Gadium", "Rare Earths"}
-    REE_HIGHLIGHT_COLOR = "#880e4f"
-    REE_BAND_FACE = "#fcf2f6"  # soft pink background banding for the REE block
-    NO_PROD_COLOR = "#7b1d3f"
+    # REE highlight must NOT match the China bar colour
+    # (#880e4f). Use a dark navy for the REE labels and a pale blue-grey band.
+    REE_HIGHLIGHT_COLOR = "#0d3b66"
+    REE_BAND_FACE = "#eef2f8"  # pale blue-grey background banding for the REE block
+    NO_PROD_COLOR = "#0d3b66"
 
     _augment_midcase_mc_ci(df)  # adds peak/cum_mid_case_p2/_p97
 
@@ -993,28 +1000,29 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
         # the insert width and set absolute pt). Print width = 6.5 in
         # (full-page portrait); keep the original aspect, capped at 8.6 in
         # tall so it fits a portrait page.
+        # use the full text width (7.2 in) and a wider gap
+        # between the two stacked panels so a and b never overlap. The
+        # magnitude sub-panel takes a larger width share so the demand bars use
+        # the available horizontal space.
         _orig_w = 11.5
         _orig_h = max(11, len(mat_order) * 0.52)
+        _mag_ratio = 2.7
         if docx:
-            _w = 6.5
-            _h = min(_w * (_orig_h / _orig_w), 8.6)
-            # Tighter inter-panel / mag|mix spacing at the small print size so
-            # the two stacked tier panels, the side share-bar panels, the
-            # colorbar/legend, and the long material labels all fit without
-            # overlap or clipping.
-            _hspace, _wspace = 0.30, 0.05
+            _w = 7.2
+            _h = min(_w * (_orig_h / _orig_w), 9.4)
+            _hspace, _wspace = 0.52, 0.05
         else:
             _w, _h = _orig_w, _orig_h
-            _hspace, _wspace = 0.34, 0.06
+            _hspace, _wspace = 0.50, 0.06
         fig_us = plt.figure(figsize=(_w, _h))
         outer_us = fig_us.add_gridspec(2, 1, hspace=_hspace)
         fig_gl = plt.figure(figsize=(_w, _h))
         outer_gl = fig_gl.add_gridspec(2, 1, hspace=_hspace)
         inner = {
-            "A": outer_us[0, 0].subgridspec(1, 2, width_ratios=[2.2, 1.0], wspace=_wspace),
-            "B": outer_us[1, 0].subgridspec(1, 2, width_ratios=[2.2, 1.0], wspace=_wspace),
-            "C": outer_gl[0, 0].subgridspec(1, 2, width_ratios=[2.2, 1.0], wspace=_wspace),
-            "D": outer_gl[1, 0].subgridspec(1, 2, width_ratios=[2.2, 1.0], wspace=_wspace),
+            "A": outer_us[0, 0].subgridspec(1, 2, width_ratios=[_mag_ratio, 1.0], wspace=_wspace),
+            "B": outer_us[1, 0].subgridspec(1, 2, width_ratios=[_mag_ratio, 1.0], wspace=_wspace),
+            "C": outer_gl[0, 0].subgridspec(1, 2, width_ratios=[_mag_ratio, 1.0], wspace=_wspace),
+            "D": outer_gl[1, 0].subgridspec(1, 2, width_ratios=[_mag_ratio, 1.0], wspace=_wspace),
         }
         panel_fig = {"A": fig_us, "B": fig_us, "C": fig_gl, "D": fig_gl}
         fig = fig_us  # fallback handle; save block is split-aware below
@@ -1041,198 +1049,194 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
     ree_row_indices = [i for i, m in enumerate(mat_order)
                        if m in REE_HIGHLIGHT_SET]
 
+    # (fig, ax, label) for split-figure panel titles, placed after tight_layout.
+    _panel_titles = []
+    # (fig, ax_mag, ax_mix) per panel, used after tight_layout to vertically
+    # align each panel's two x-axis titles to a common baseline.
+    _panel_pairs = []
+
     for p in ("A", "B", "C", "D"):
         _pf = panel_fig[p]
         ax_mag = _pf.add_subplot(inner[p][0, 0])
         ax_mix = _pf.add_subplot(inner[p][0, 1], sharey=ax_mag)
+        _panel_pairs.append((_pf, ax_mag, ax_mix))
 
-        # REE pink background band — drawn first so it sits behind all data.
-        # Spans from the lowest to highest REE row index in mat_order.
-        if ree_band and ree_row_indices:
-            band_lo = min(ree_row_indices) - 0.5
-            band_hi = max(ree_row_indices) + 0.5
-            for ax in (ax_mag, ax_mix):
-                ax.axhspan(band_lo, band_hi, color=REE_BAND_FACE,
-                           zorder=0, alpha=1.0)
-
-        if styling == "poster":
-            for ax in (ax_mag, ax_mix):
-                for i in range(len(mat_order)):
-                    if i % 2 == 1:
-                        ax.axhspan(i - 0.5, i + 0.5, color="#f2f2f2",
-                                   zorder=0, alpha=0.6)
-
-        title, xlab, _ = PANEL_TITLES[p]
-        # Magnitude: log, neutral dark-gray bar + whiskers (never blue/green
-        # so bar/CI can't be read as a CRC color).
-        ax_mag.axvline(1.0, color="black", ls="-", lw=1.8, alpha=0.9, zorder=5)
-        # Reserves panels (B, D) AGGREGATE the per-element REE rows into one
-        # "Rare Earths" entry: per-element REE reserves are not published (USGS
-        # gives only the aggregate TREO reserve), so per-element rows would each
-        # carry the same shared denominator. Production panels (A, C) keep the
-        # per-element breakdown. Row positions stay unchanged so A/B (and C/D)
-        # remain vertically aligned; the REE block is merged into one bar below.
-        aggregate_ree = p in ("B", "D") and len(ree_row_indices) > 1
-        ree_set = set(ree_row_indices)
-        ree_ctr = (ree_row_indices[len(ree_row_indices) // 2]
-                   if ree_row_indices else None)
-
-        ax_mag.set_yticks(range(len(mat_order)))
-        _labels = list(_mat_labels_with_backest_glyph(mat_order, df, p))
-        if aggregate_ree:
-            for _ri in ree_row_indices:
-                _labels[_ri] = "Rare Earths" if _ri == ree_ctr else ""
-        ax_mag.set_yticklabels(_labels, fontsize=9)
-        # REE label highlight is now applied whenever ree_band is on
-        # (independent of `styling`), so the manuscript default carries
-        # the maroon-bold treatment that previously only ran in poster mode.
-        if ree_band or styling == "poster":
-            for lab, mat in zip(ax_mag.get_yticklabels(), mat_order):
-                if mat in REE_HIGHLIGHT_SET:
-                    lab.set_fontweight("bold")
-                    lab.set_color(REE_HIGHLIGHT_COLOR)
-        ax_mag.set_ylim(-0.6, len(mat_order) - 0.4)
-        # Tighter linthresh for Panel A/B (1e-4) so small-ratio materials
-        # (Boron ~4e-4, Magnesium ~7e-2) get visible bars instead of being
-        # compressed into the linear band. Panel C/D use 1e-4 too since
-        # US demand / global anything is typically small.
-        ax_mag.set_xscale("symlog", linthresh=1e-4)
-        ax_mag.set_xlabel(xlab + " (log)", fontsize=9.5, fontweight="bold")
-        # Left-aligned panel title on the magnitude sub-axis; this naturally
-        # aligns with the left edge of the (mag | mix) panel pair.
-        ax_mag.set_title(title, loc="left",
-                         fontsize=11.5, fontweight="bold", pad=8)
-        ax_mag.grid(True, alpha=0.15, axis="x")
-
-        mid_rows = _midcase_ratios_for_panel(df, mat_order, p)
-        # Aggregate the REE block for the reserves panels. The per-element
-        # ratios share the single aggregate-reserve denominator, so the
-        # aggregate ratio is their sum (the central value is exact; the CI and
-        # worst-case bounds are summed — a conservative upper bound).
-        ree_agg = None
-        if aggregate_ree:
-            _acc = [0.0, 0.0, 0.0, 0.0]
-            _seen = False
-            for _i, _r in enumerate(mid_rows):
-                if _i in ree_set and _r[1] is not None:
-                    _acc[0] += _r[1]; _acc[1] += _r[2]
-                    _acc[2] += _r[3]; _acc[3] += _r[4]
-                    _seen = True
-            ree_agg = _acc if _seen else None
-        hi_candidates = []
-        for _i, r in enumerate(mid_rows):
-            if r[1] is None:
-                continue
-            if aggregate_ree and _i in ree_set:
-                continue   # individual REE ratios are not drawn in B/D
-            for v in (r[1], r[3], r[4]):
-                if np.isfinite(v):
-                    hi_candidates.append(v)
-        if ree_agg is not None:
-            for v in (ree_agg[0], ree_agg[2], ree_agg[3]):
-                if np.isfinite(v):
-                    hi_candidates.append(v)
-        upper = (max(hi_candidates) * 1.25) if hi_candidates else 1.0
-        if p in ("A", "B"):
-            ax_mag.set_xlim(right=max(10, upper))
+        # Panel labels: lowercase letters, reset per split figure (Fig 5 = a/b
+        # US tiers; Fig 6 = a/b global tiers).
+        if split:
+            title = {"A": "a. U.S. production", "B": "b. U.S. reserves",
+                     "C": "a. Global production", "D": "b. Global reserves"}[p]
+            xlab = PANEL_TITLES[p][1]
         else:
-            ax_mag.set_xlim(right=max(1.5, upper))
+            title, xlab, _ = PANEL_TITLES[p]
 
-        for i, (mat, r_mid, r_lo, r_hi, r_w, skip_reason) in enumerate(mid_rows):
-            if aggregate_ree and i in ree_set:
-                continue   # REE block drawn once as a merged bar below
-            if r_mid is None:
-                if styling == "poster":
-                    trans = blended_transform_factory(ax_mag.transAxes,
-                                                     ax_mag.transData)
-                    ax_mag.text(0.5, i,
-                                skip_reason if skip_reason else "No US production",
-                                transform=trans, fontsize=11, fontweight="bold",
-                                ha="center", va="center", color=NO_PROD_COLOR,
-                                zorder=4)
-                else:
-                    _skip_text(ax_mag, i, skip_reason)
-                continue
-            _draw_mag_bar_midcase(
-                ax_mag, i, r_mid, r_lo, r_hi, r_w, color=MAG_BAR_COLOR,
-            )
-        if ree_agg is not None:
-            # Aggregate Rare Earths entry drawn as a normal-height bar on the
-            # centre REE row (per-element REE reserves are unpublished, so the
-            # block shares one aggregate value). The other per-element REE rows
-            # stay blank; the soft-pink band groups them visually.
-            _draw_mag_bar_midcase(
-                ax_mag, ree_ctr, ree_agg[0], ree_agg[1], ree_agg[2], ree_agg[3],
-                color=MAG_BAR_COLOR,
-            )
-
-        mix = _mix_shares_for_panel(
+        # Assemble one entry per material for this panel: the demand-to-supply
+        # ratio triplet (median, low, high), the worst-case-scenario value, and
+        # the source-mix shares. The reserves panels (B, D) collapse the
+        # per-element rare earths into a single "Rare Earths" entry, because USGS
+        # publishes only the aggregate TREO reserve (no per-element reserves); the
+        # aggregate ratio is the sum of the per-element demand-to-reserve ratios,
+        # which share one denominator. The production panels (A, C) keep the
+        # per-element breakdown.
+        mid_rows = _midcase_ratios_for_panel(df, mat_order, p)
+        mix_rows = _mix_shares_for_panel(
             df, mat_order, p,
             partner_reserve_shares=partner_res_shares,
             partner_reserve_coverage=partner_res_cov,
             partner_reserve_total_kt=partner_res_total_kt,
         )
+        entries = []
+        for (mat, r_mid, r_lo, r_hi, r_w, skip_reason), (_m, shares, flags) in zip(
+                mid_rows, mix_rows):
+            entries.append({"mat": mat, "r_mid": r_mid, "r_lo": r_lo, "r_hi": r_hi,
+                            "r_w": r_w, "skip": skip_reason, "shares": shares,
+                            "flags": flags or {}})
+
+        if p in ("B", "D") and sum(1 for e in entries
+                                   if e["mat"] in REE_HIGHLIGHT_SET) > 1:
+            ree_es = [e for e in entries if e["mat"] in REE_HIGHLIGHT_SET]
+
+            def _sum(key, _es=ree_es):
+                vals = [_e[key] for _e in _es if _e[key] is not None]
+                return sum(vals) if vals else None
+
+            agg = {"mat": "Rare Earths", "r_mid": _sum("r_mid"), "r_lo": _sum("r_lo"),
+                   "r_hi": _sum("r_hi"), "r_w": _sum("r_w"), "skip": None,
+                   "shares": next((e["shares"] for e in ree_es if e["shares"]), None),
+                   "flags": {}}
+            entries = [e for e in entries
+                       if e["mat"] not in REE_HIGHLIGHT_SET] + [agg]
+
+        # Order this panel from highest to lowest stress (demand-to-supply
+        # ratio). matplotlib draws row 0 at the bottom, so finite ratios are
+        # sorted ascending (top row = highest stress); materials with no
+        # denominator (e.g. no US production, no separate reserves) collect at
+        # the bottom as labelled rows, grouped by skip reason so the two
+        # categories (no reserves concept vs no domestic/global reserves) sit
+        # in contiguous blocks rather than interleaving.
+        finite = sorted((e for e in entries if e["r_mid"] is not None),
+                        key=lambda e: e["r_mid"])
+        nodata = sorted((e for e in entries if e["r_mid"] is None),
+                        key=lambda e: e["skip"] or "")
+        ordered = nodata + finite
+        n_rows = len(ordered)
+
+        # Magnitude axis: log scale, neutral grey bar + black whiskers, thin
+        # dotted sufficiency threshold at ratio 1.0 (explained in the caption).
+        ax_mag.axvline(1.0, color="black", ls=":", lw=1.2, alpha=0.85, zorder=5)
+        ax_mag.set_yticks(range(n_rows))
+        # No-data rows are flagged with an asterisk placed ON THE PLOT at the
+        # row's left edge (not appended to the y-axis label), explained in the
+        # caption: "*" = no separately reported reserves; "**" = no US
+        # production (panel a) / no US reserves (panel b). Keeping the asterisk
+        # off the tick label leaves the material names clean and uniform.
+        def _marker(e):
+            if e["r_mid"] is not None:
+                return ""
+            sk = (e["skip"] or "").lower()
+            return "*" if ("concept" in sk or "data" in sk) else "**"
+        ax_mag.set_yticklabels([e["mat"] for e in ordered], fontsize=9)
+        # Rare-earth labels in bold navy so they read as a set even though each
+        # element now sits at its own stress-ranked row.
+        for lab, e in zip(ax_mag.get_yticklabels(), ordered):
+            if e["mat"] in REE_HIGHLIGHT_SET:
+                lab.set_fontweight("bold")
+                lab.set_color(REE_HIGHLIGHT_COLOR)
+        ax_mag.set_ylim(-0.6, n_rows - 0.4)
+        ax_mag.set_xscale("symlog", linthresh=1e-4)
+        ax_mag.set_xlabel(xlab + " (log)", fontsize=9.5, fontweight="bold")
+        if split:
+            # Panel-title placement is deferred to after tight_layout (in the
+            # save block) so it can be left-aligned to the figure's left content
+            # margin (the leftmost y-tick label) instead of the plot area.
+            _panel_titles.append((_pf, ax_mag, title))
+        else:
+            ax_mag.set_title(title, loc="left", fontsize=11.5,
+                             fontweight="bold", pad=8)
+        ax_mag.grid(True, alpha=0.15, axis="x")
+        # Remove x and y axis tick marks (keep the labels).
+        ax_mag.tick_params(axis="both", which="both", length=0)
+
+        hi_candidates = [v for e in finite for v in (e["r_mid"], e["r_hi"], e["r_w"])
+                         if v is not None and np.isfinite(v)]
+        upper = (max(hi_candidates) * 1.25) if hi_candidates else 1.0
+        ax_mag.set_xlim(right=max(10, upper) if p in ("A", "B") else max(1.5, upper))
+
+        for i, e in enumerate(ordered):
+            if e["r_mid"] is None:
+                if styling == "poster":
+                    trans = blended_transform_factory(ax_mag.transAxes,
+                                                       ax_mag.transData)
+                    ax_mag.text(0.5, i, e["skip"] if e["skip"] else "No data",
+                                transform=trans, fontsize=11, fontweight="bold",
+                                ha="center", va="center", color=NO_PROD_COLOR,
+                                zorder=4)
+                else:
+                    # Manuscript styling: asterisk marker drawn ON THE PLOT at
+                    # the row's left edge (x in axes fraction via the blended
+                    # y-axis transform, y in data coords) rather than appended
+                    # to the material name on the y-axis.
+                    _mk = _marker(e)
+                    if _mk:
+                        ax_mag.text(0.01, i, _mk,
+                                    transform=ax_mag.get_yaxis_transform(),
+                                    ha="left", va="center", fontsize=9,
+                                    fontweight="bold", color="#555555",
+                                    zorder=6)
+                continue
+            _draw_mag_bar_midcase(ax_mag, i, e["r_mid"], e["r_lo"], e["r_hi"],
+                                  e["r_w"], color=MAG_BAR_COLOR)
+
+        # Source-mix axis: 100%-stacked CRC/HTS bars (translucent), 50% guide.
         ax_mix.set_xlim(0, 1)
         ax_mix.set_xticks([0, 0.25, 0.5, 0.75, 1])
         ax_mix.set_xticklabels(["0%", "25%", "50%", "75%", "100%"], fontsize=8)
-        # Dashed reference line at 50% so readers can anchor on
-        # "more-than-half / less-than-half" without counting tick marks.
-        # Drawn on top of the bars (high zorder) so it stays visible.
-        ax_mix.axvline(0.5, color="#222222", ls="--", lw=1.0,
-                       alpha=0.85, zorder=7)
+        # Dashed 50% reference so readers can anchor on more-than-half /
+        # less-than-half without counting ticks.
+        ax_mix.axvline(0.5, color="#222222", ls="--", lw=1.0, alpha=0.85, zorder=7)
         ax_mix.tick_params(axis="y", left=False, labelleft=False)
+        # Remove x tick marks too (keep the % labels).
+        ax_mix.tick_params(axis="x", which="both", length=0)
         ax_mix.set_xlabel(MIX_X_LABELS[p], fontsize=8.5, fontweight="bold")
-        # Italic grey derivation note below the x-axis label. Under docx the
-        # figure height is compressed to print size, so the note is pushed
-        # further below the axis to clear the (bold) x-axis label and avoid
-        # the two strings overlapping. Layout-only; text is unchanged.
-        _mix_sub_y = -0.20 if docx else -0.12
-        ax_mix.text(0.5, _mix_sub_y, MIX_X_SUBTITLES[p],
-                    transform=ax_mix.transAxes, ha="center", va="top",
-                    fontsize=6.8, style="italic", color="#555555",
-                    wrap=True)
+        # Share-basis subtitles removed from the figure (explained in the
+        # caption instead).
         ax_mix.grid(True, alpha=0.15, axis="x")
 
-        for i, (mat, shares, flags) in enumerate(mix):
-            if aggregate_ree and i in ree_set:
-                continue   # REE block drawn once as a merged mix bar below
-            if shares is None:
+        # Bring the plot-area border (spines = the box outline + the x/y
+        # baselines) to the front so the data bars (zorder 3) do not paint over
+        # the axis lines. Without this the left baseline and the box edges are
+        # hidden wherever a bar runs up against them.
+        for _ax in (ax_mag, ax_mix):
+            for _sp in _ax.spines.values():
+                _sp.set_zorder(10)
+
+        for i, e in enumerate(ordered):
+            if e["shares"] is None:
                 continue
-            _draw_mix_bar(ax_mix, i, shares)
-            if show_flow_fallback and flags.get("panel_b_flow_fallback"):
+            _draw_mix_bar(ax_mix, i, e["shares"])
+            if show_flow_fallback and e["flags"].get("panel_b_flow_fallback"):
                 _overlay_flow_fallback_hatch(ax_mix, i)
-        if aggregate_ree:
-            # Merged reserve-holder mix for aggregate Rare Earths. Every
-            # per-element REE row carries the same (aggregate) reserve shares,
-            # so the centre row's shares represent the block.
-            _agg_shares = mix[ree_ctr][1] if ree_ctr is not None else None
-            if _agg_shares is not None:
-                _draw_mix_bar(ax_mix, ree_ctr, _agg_shares)
 
         if styling == "poster":
             for ax in (ax_mag, ax_mix):
+                for i in range(n_rows):
+                    if i % 2 == 1:
+                        ax.axhspan(i - 0.5, i + 0.5, color="#f2f2f2",
+                                   zorder=0, alpha=0.6)
                 ax.spines[["top", "right"]].set_visible(False)
 
-    handles = [mpatches.Patch(color=GROUP_COLORS[g], label=g) for g in GROUP_ORDER]
-    handles.append(mpatches.Patch(color=UNKNOWN_COLOR, label=UNKNOWN_LABEL))
-    handles += [
-        mpatches.Patch(facecolor=WORST_CASE_FACE, edgecolor=WORST_CASE_EDGE,
-                       hatch=WORST_CASE_HATCH, label=WORST_CASE_LABEL),
-    ]
-    if show_flow_fallback:
-        handles.append(
-            mpatches.Patch(facecolor="none", edgecolor="#222222", hatch="////",
-                           label="Panel B: flow-based fallback (reserve coverage <20%)"),
-        )
-    handles += [
-        plt.Line2D([], [], color="black", marker="|", ls="-", markersize=10,
-                   label="Mid_Case MC p2.5–p97.5 (whiskers)"),
-        plt.Line2D([], [], color="black", lw=1.8,
-                   label="Sufficiency threshold (ratio = 1.0)"),
-    ]
+    # the legend now shows ONLY the supply-source country-risk
+    # groups (translucent to match the bars, "US domestic" relabelled
+    # "United States"). The "Unknown" segment, the highest-demand-scenario
+    # hatched extension, the MC p2.5-p97.5 whiskers, and the sufficiency
+    # threshold line are described in the figure caption instead of the legend.
+    GROUP_LEGEND_LABELS = {"US domestic": "United States"}
+    handles = [mpatches.Patch(color=GROUP_COLORS[g], alpha=0.82,
+                              label=GROUP_LEGEND_LABELS.get(g, g))
+               for g in GROUP_ORDER]
     if split:
-        out_us = output_path.parent / "fig5_supply_tiers_us.png"
-        out_gl = output_path.parent / "fig6_supply_tiers_global.png"
+        out_us = output_path.parent / "fig4_supply_tiers_us.png"
+        out_gl = output_path.parent / "fig5_supply_tiers_global.png"
         for _fig, _ttl, _out in (
             (fig_us, "Figure 5. US critical-material demand vs domestic supply, 2026-2050 (Mid Case (with IRA), MC + scenario uncertainty)", out_us),
             (fig_gl, "Figure 6. US critical-material demand vs global supply, 2026-2050 (Mid Case (with IRA), MC + scenario uncertainty)", out_gl),
@@ -1256,11 +1260,7 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
             _fig.legend(handles=handles, loc="upper center",
                         bbox_to_anchor=(0.5, _leg_top_y), ncol=_ncol,
                         fontsize=9, frameon=False)
-            if docx:
-                _ttl_render = _ttl.replace(", 2026-2050 (", ", 2026-2050\n(")
-            else:
-                _ttl_render = _ttl
-            _fig.suptitle(_ttl_render, fontsize=12, fontweight="bold", y=0.997)
+            # No figure title on the figure (the caption carries it).
             if docx:
                 # Render-at-print-size docx mode: the figure is already at the
                 # 6.5 in print width, so absolute point sizes set here equal the
@@ -1298,6 +1298,51 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
                 _fig.tight_layout(rect=[0, 0.045, 1, 0.95])
             else:
                 _fig.tight_layout(rect=[0, 0.045, 1, 0.95])
+
+            # Panel titles: left-aligned to the figure's left content margin
+            # (the leftmost y-tick label), placed after tight_layout so the
+            # final tick-label extents are known. Using a figure-level text (not
+            # the axes title) avoids matplotlib re-centering it over the plot.
+            _fig.canvas.draw()
+            _rend = _fig.canvas.get_renderer()
+
+            # Vertically align each panel's two x-axis titles (magnitude bar +
+            # source-mix). The magnitude axis carries tall log-exponent tick
+            # labels while the mix axis carries short "%" labels, so
+            # matplotlib's auto-placement drops the two xlabels to different
+            # heights. Pin both just below the lower of the two tick-label
+            # bottoms; the sub-axes share the panel row, so an identical
+            # axes-fraction y lands the labels at the same figure height.
+            _pad_px = (3.0 / 72.0) * _fig.dpi
+            for _pf2, _axm_p, _axx_p in _panel_pairs:
+                if _pf2 is not _fig:
+                    continue
+                _bottoms = [t.get_window_extent(_rend).y0
+                            for _ax in (_axm_p, _axx_p)
+                            for t in _ax.get_xticklabels() if t.get_text()]
+                if not _bottoms:
+                    continue
+                _y_disp = min(_bottoms) - _pad_px
+                for _ax in (_axm_p, _axx_p):
+                    _yf = _ax.transAxes.inverted().transform((0, _y_disp))[1]
+                    _ax.xaxis.set_label_coords(0.5, _yf)
+
+            _tfs = 9.5 if docx else 11.5
+            _fig_panels = [(a, l) for f, a, l in _panel_titles if f is _fig]
+            # Common left edge = leftmost y-tick label across ALL panels in the
+            # figure, so the panel titles (a., b.) align with each other and with
+            # the figure's left content margin (panels have different materials,
+            # so their individual leftmost labels differ).
+            _all_xs = [t.get_window_extent(_rend).x0
+                       for _axm, _ in _fig_panels
+                       for t in _axm.get_yticklabels() if t.get_text()]
+            _left_disp = min(_all_xs) if _all_xs else 0.0
+            _left_fig = _fig.transFigure.inverted().transform((_left_disp, 0))[0]
+            for _axm, _lbl in _fig_panels:
+                _top_fig = _axm.get_position().y1
+                _fig.text(_left_fig, _top_fig + 0.006, _lbl, ha="left",
+                          va="bottom", fontsize=_tfs, fontweight="bold")
+
             _fig.savefig(_out, dpi=FIGURE_DPI, bbox_inches="tight")
             plt.close(_fig)
             print(f"  Saved {_out.name}")

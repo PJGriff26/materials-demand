@@ -1,6 +1,6 @@
 # feature_engineering.py
 """Build the dimensionless per-material supply-chain feature table behind the
-NIR vs HHI supply-risk scatter (manuscript Figure 7).
+NIR vs HHI supply-risk scatter (manuscript Figure 6).
 
 `engineer_material_features()` is called by build_material_features.py to
 write outputs/data/material_features.csv; features (import dependency,
@@ -79,7 +79,7 @@ MCS2025_COMMODITY_MAP = {
 # for the per-element framing decision and [[feedback_re_publication_strategy]]
 # for the aggregate-main / per-element-SI publication pattern.
 #
-# These distributions are also used in visualizations/fig4_supply_chain.py
+# These distributions are also used in visualizations/supply_tiers_shared.py
 # (LREE_PROCESSING / HREE_PROCESSING). That module imports from here as
 # the single source of truth — supply_chain depends on no viz code.
 LREE_PROCESSING_SHARES = {
@@ -110,17 +110,26 @@ REE_PROCESSING_CLASS = {
 # peer-reviewed or official-government source — the explicit calculation
 # (not a narrative fit) must appear in the comment.
 PUBLISHED_PRODUCTION_HHI = {
-    # Germanium: MCS 2025 World CSV rows are "W" (withheld). The USGS MCS 2025
-    # Germanium chapter reports explicit country shares in prose: China 75%
-    # of refined germanium, remainder distributed across Belgium, Canada,
-    # Germany, Russia, others.
-    # HHI calculation (Graedel 2012 formula, SUM(s_i^2) with the USGS shares):
-    #   China 0.75² + Belgium 0.12² + Canada 0.06² + Germany 0.03² + Russia 0.02² + other 0.02²
-    #   = 0.5625 + 0.0144 + 0.0036 + 0.0009 + 0.0004 + 0.0004 ≈ 0.58
-    # Source: U.S. Geological Survey, 2025, Mineral Commodity Summaries 2025:
-    #   Germanium, DOI 10.3133/mcs2025 (Germanium chapter, p. 76-77).
-    #   https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-germanium.pdf
-    "Germanium": (0.58, "USGS MCS 2025 Germanium chapter (country shares in prose)"),
+    # Germanium: MCS 2025 World CSV rows are "W" (withheld), and the MCS
+    # Germanium chapters publish no numeric country shares: "Because some
+    # producers do not publicly report germanium production, global
+    # production data were limited." — no per-country shares appear in the
+    # 2024 or 2025 chapter. (A prior version of this entry attributed
+    # China 75% / Belgium 12% / Canada 6% / Germany 3% / Russia 2% to MCS
+    # 2025 chapter prose; both vintages were re-read 2026-07-07 and contain
+    # no such shares.)
+    # Authoritative source: EU CRM 2023 final report (doi 10.2873/725585),
+    # annex "Global supply shares and trade-related variable", p. 83,
+    # processing stage — the only stage the EU assesses for Ge (a zinc
+    # by-product); same annex family as LREE/HREE_PROCESSING_SHARES:
+    #   China 89.6%, Russia 5.4%, United States 2.1%, Japan 1.9%, Ukraine 1.0%
+    # HHI (Graedel 2012 formula, SUM(s_i^2)):
+    #   0.896² + 0.054² + 0.021² + 0.019² + 0.010²
+    #   = 0.8028 + 0.0029 + 0.0004 + 0.0004 + 0.0001 ≈ 0.81
+    # Stage note: processing-stage HHI; with no published mining distribution
+    # this is canonical under the max-stage rule (matches the rare-earth
+    # processing-stage handling documented in Table S5).
+    "Germanium": (0.81, "EU CRM 2023 final report annex p. 83 (processing-stage country shares)"),
 }
 
 # Materials that are not tracked on any published critical-minerals list
@@ -370,7 +379,7 @@ def _build_import_dependency_series(risk_data, thin_film_data):
                 # Net-exporter ("E") and not-applicable ("--") years count as
                 # 0 in the 5-year mean, matching
                 # supply_chain_analysis._get_import_dependency so this feature
-                # CSV (Fig 7 scatter) and the Fig 5/6 panels share ONE uniform
+                # CSV (Fig 6 scatter) and the Fig 4/5 panels share ONE uniform
                 # NIR convention: an EU CRM-style 5-year average with
                 # net-exporter years set to 0. (Fixed 2026-06-06; previously
                 # "E" years were dropped from the mean, which inflated volatile
@@ -828,7 +837,7 @@ def _build_global_production_series(risk_data):
     glob = pd.Series(dtype=float, name="global_production_t")
 
     # ── Primary: existing production sheet (values in kt; convert to tonnes) ──
-    # Aggregation logic mirrors `get_global_kt` in fig4_supply_chain.py:
+    # Aggregation logic mirrors `get_global_kt` in supply_tiers_shared.py:
     #   1. Prefer the explicit "World total (rounded)" row when present —
     #      this is USGS's authoritative rounded world total and avoids any
     #      rounding artifacts from summing per-country.

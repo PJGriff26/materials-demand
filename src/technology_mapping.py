@@ -159,8 +159,9 @@ TECHNOLOGY_MAPPING = {
     'battery_8': {},   # 8-hour battery storage
     
     # Note: These technologies don't have intensity data
-    'o-g-s': {},       # Oil-gas-steam - deprecated technology
+    'o-g-s': {},       # Oil-gas-steam - deprecated technology; no additions in any scenario
     'dac': {},         # Direct Air Capture - no intensity data yet
+    'electrolyzer': {},  # Hydrogen electrolyzer - no intensity data (Table S2 exclusion)
 }
 
 

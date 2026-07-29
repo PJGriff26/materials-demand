@@ -2,7 +2,7 @@
 
 Pairs with n < 5 cannot support a reliable coefficient-of-variation estimate,
 so their fitted lognormal sigma is replaced by the median CV of the well-sampled
-(n >= 5) pairs while the original median intensity is preserved. Runs after
+(n > 5) pairs while the original median intensity is preserved. Runs after
 distribution fitting and before the Monte Carlo draws.
 """
 

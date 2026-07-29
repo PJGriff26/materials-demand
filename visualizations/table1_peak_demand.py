@@ -16,16 +16,23 @@ import pandas as pd
 # root is one level up). Reads the canonical demand CSV and writes the table
 # next to the other results, in outputs/data/.
 REPO_ROOT = Path(__file__).resolve().parent.parent
+import sys  # noqa: E402
+sys.path.insert(0, str(REPO_ROOT))
+from src.scenario_config import REPRESENTATIVE_SCENARIO_KEYS  # noqa: E402
 DEMAND_CSV = REPO_ROOT / "outputs" / "data" / "material_demand_by_scenario.csv"
 OUT_DIR = REPO_ROOT / "outputs" / "data"
 
 # Four highlighted scenarios -> display label (order = table column order).
 SCENARIOS = [
     ("Mid_Case", "Mid_Case"),
-    ("Mid_Case_100by2035", "NZ-2035"),
-    ("Mid_Case_95by2050", "NZ-2050"),
+    ("Mid_Case_CO2e_100by2035", "NZ-2035"),
+    ("Mid_Case_CO2e_95by2050", "NZ-2050"),
     ("Mid_Case_No_IRA", "No-IRA"),
 ]
+# Column labels are frozen (verification registries reference them); the KEY
+# set is guarded against the canonical config so the two cannot diverge.
+assert {k for k, _ in SCENARIOS} == set(REPRESENTATIVE_SCENARIO_KEYS), (
+    "table1_peak_demand scenarios diverge from src/scenario_config.py")
 
 
 def round_sig(x, sig=3):
