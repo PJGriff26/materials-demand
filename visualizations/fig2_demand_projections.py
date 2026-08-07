@@ -5,6 +5,28 @@ representative NREL scenarios over a shaded uncertainty envelope (selected
 via --envelope: cross-scenario min/max, or full-uncertainty pooled 95% CI).
 Reads outputs/data/material_demand_by_scenario.csv. The file/function names
 keep a legacy "fig1_*" prefix; this is Figure 2.
+
+INVENTORY:
+  name: fig2_demand_projections
+  output: outputs/figures/manuscript/fig2_demand_projections{,_full_uncertainty}.png
+  category: Manuscript main text — Fig 2
+  axes:
+    x: year (2026-2050)
+    y: annual material demand (tonnes; one panel per material, 27 panels)
+    color: 4 representative NREL scenarios (rest shown as envelope band)
+  data_sources:
+    - outputs/data/material_demand_by_scenario.csv (or interpolated variant
+      via --interpolation), `_annual` columns.
+  description: >
+    Small-multiples line chart (5-column grid, alphabetical) of annual
+    demand for all 27 demand-bearing materials under four highlighted NREL
+    scenarios over a shaded uncertainty envelope (--envelope selects
+    cross-scenario min/max or pooled 95% CI). Legend hosted in an empty
+    bottom-row grid cell; --docx scales all text x1.5 on the same canvas
+    for the Word manuscript. 2026-08-07 (PI request): y-axis text enlarged
+    (supylabel 13->16, tick labels 11->13) and legend 13->16; both carry
+    through the --docx x1.5 scaling (24 / 19.5 / 24 pt).
+END_INVENTORY
 """
 
 import argparse
@@ -184,7 +206,8 @@ def plot_fig1(demand, mode, output_path, docx=False):
         # Review item C15: at most six y-axis increments with two-digit labels,
         # larger tick text, and no y-axis tick marks.
         ax.yaxis.set_major_locator(MaxNLocator(nbins=6, steps=[1, 2, 2.5, 5, 10]))
-        ax.tick_params(axis="both", labelsize=11)
+        # PI request 2026-08-07: larger y-axis text (x kept consistent).
+        ax.tick_params(axis="both", labelsize=13)
         ax.tick_params(axis="y", length=0)
         # Per-panel axis titles suppressed; shared figure-level labels below
         # are sufficient.
@@ -220,7 +243,7 @@ def plot_fig1(demand, mode, output_path, docx=False):
     # labels (2026-07-13 figure revision); bbox_inches='tight' at save time
     # grows the canvas to include it.
     fig.supxlabel("", fontsize=1)
-    fig.supylabel("Annual material demand (tonnes)", fontsize=13,
+    fig.supylabel("Annual material demand (tonnes)", fontsize=16,
                   fontweight="normal", x=-0.004)
 
     # Legend in the middle empty bottom-row cell, borderless
@@ -233,7 +256,7 @@ def plot_fig1(demand, mode, output_path, docx=False):
     ordered_l = [labels[i] for i in sc_idx] + [labels[i] for i in env_idx]
     legend_host = legend_ax if legend_ax is not None else fig
     legend_host.legend(ordered_h, ordered_l, loc="center", ncol=1,
-                       fontsize=13, frameon=False)
+                       fontsize=16, frameon=False)
 
     # No figure title (the caption carries it).
     fig.tight_layout(rect=[0, 0, 1, 0.99])
@@ -242,8 +265,9 @@ def plot_fig1(demand, mode, output_path, docx=False):
     # modest factor so it reads better when the figure is inserted full-page in
     # Word, WITHOUT respacing the panels. Typography only; no data, series,
     # colors, or label content touched. Default (no --docx) output is
-    # byte-for-byte unchanged. The bottom legend is already reflowed to 3
-    # columns (above) so it still fits the width at the larger size.
+    # unaffected by this block. The 2026-08-07 base-size bump (supylabel/legend
+    # 13->16, ticks 11->13) carries through here automatically because _bump
+    # multiplies whatever base size each element already has.
     if docx:
         F = 1.5   # slight text scale-up on the original-size canvas
 

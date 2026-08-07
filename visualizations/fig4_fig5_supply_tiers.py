@@ -1,12 +1,44 @@
 """Manuscript Figures 4 and 5: supply-chain risk (demand vs supply tiers).
 
-The default split run writes Figure 5 (US tiers: production over reserves) and
-Figure 6 (global tiers: production over reserves). It reads the Monte Carlo
+The default split run writes Figure 4 (US tiers: production over reserves) and
+Figure 5 (global tiers: production over reserves). It reads the Monte Carlo
 demand output and the supply-chain risk tables (USGS MCS 2025, OECD CRC, Census
 HTS import shares) and renders the demand-to-supply ratio bars per material,
 with a magnitude sub-panel and a CRC source-mix sub-panel. Per-element
 rare-earth breakdowns come from the shared helper supply_tiers_shared.py; the
 --legacy-colored flag reproduces the older combined 2x2 layout.
+
+INVENTORY:
+  name: fig4_fig5_supply_tiers
+  output: outputs/figures/manuscript/fig4_supply_tiers_us.png,
+    outputs/figures/manuscript/fig5_supply_tiers_global.png
+    (--docx variants under outputs/figures/manuscript/docx/)
+  category: Manuscript main text — Figs 4 and 5
+  axes:
+    x: demand-to-supply ratio (symlog) on the magnitude sub-panel;
+       0-100% source/reserve share on the mix sub-panel
+    y: materials, stress-ranked per panel (highest ratio at top)
+    color: magnitude bar neutral gray + hatched worst-case extension;
+       mix bars by OECD CRC risk group; dark-gray "Unknown" filler
+       (Fig 5 only) for USGS 'Other countries' aggregate shares
+  data_sources:
+    - outputs/data/material_demand_by_scenario.csv (via build_records)
+    - USGS MCS 2025 raw CSVs, OECD CRC 2026, Census HTS import shares
+      (via supply_chain_analysis.load_data / supply_tiers_shared)
+  description: >
+    Builds the supply-chain records and delegates the shipped split render
+    to supply_tiers_variants.plot_option3a_midcase(split=True). Each figure
+    stacks panel a (peak-annual-demand vs production ratio + share bars)
+    over panel b (cumulative-demand vs reserves ratio + share bars).
+    2026-08-07 (PI request): V1 x-axis labels reworded to "US peak annual
+    demand / US cumulative demand" phrasing in both the shipped split path
+    (supply_tiers_variants.PANEL_TITLES) and the legacy --legacy-colored
+    V1 f-strings here; V2 (supply-over-demand) labels unchanged.
+    2026-08-07 numbering cleanup: docstring/help updated to the current
+    Fig 4/5 numbering; --legacy-colored variants now write to
+    fig4_fig5_variants/ (was fig5_4panel_variants/) with fig4_fig5__ stems.
+    No rendering changes.
+END_INVENTORY
 """
 
 import sys
@@ -1162,7 +1194,7 @@ def plot_4panel(df, mat_order, output_path, framing="demand-over-supply",
     if not inverse:
         _fmt_axis(ax_usp,
                   "A. US production\ndeficit split by 2020–23 US import partners (CRC group)",
-                  f"Peak-year demand ÷ US annual production ({scale_lbl})",
+                  f"US peak annual demand ÷ US annual production ({scale_lbl})",
                   mat_order, linthresh=0.01, xscale=xscale,
                   xlim_right=max_ratio_a * 1.1 if max_ratio_a > 0 else None,
                   tick_labels=panel_a_labels)
@@ -1235,7 +1267,7 @@ def plot_4panel(df, mat_order, output_path, framing="demand-over-supply",
     if not inverse:
         _fmt_axis(ax_usr,
                   "B. US reserves\ndeficit split by 2020–23 US import partners (CRC group)",
-                  f"Cumulative 2026–2050 demand ÷ US reserves ({scale_lbl})",
+                  f"US cumulative demand ÷ US reserves ({scale_lbl})",
                   mat_order, linthresh=0.01, xscale=xscale,
                   xlim_right=max_ratio_b * 1.2 if max_ratio_b > 0 else None)
     else:
@@ -1287,7 +1319,7 @@ def plot_4panel(df, mat_order, output_path, framing="demand-over-supply",
     if not inverse:
         _fmt_axis(ax_glp,
                   "C. Global production\nbar split by producer-country share (USGS MCS 2025, CRC group)",
-                  f"US peak-year demand ÷ global annual production ({scale_lbl})",
+                  f"US peak annual demand ÷ global annual production ({scale_lbl})",
                   mat_order, linthresh=0.01, xscale=xscale,
                   xlim_right=max(1.2, max_ratio_c * 1.5) if max_ratio_c > 0 else 1.2)
     else:
@@ -1343,7 +1375,7 @@ def plot_4panel(df, mat_order, output_path, framing="demand-over-supply",
     if not inverse:
         _fmt_axis(ax_glr,
                   "D. Global reserves\nbar split by reserve-holder country share (USGS MCS 2025, CRC group)",
-                  f"US cumulative 2026–2050 demand ÷ global reserves ({scale_lbl})",
+                  f"US cumulative demand ÷ global reserves ({scale_lbl})",
                   mat_order, linthresh=0.01, xscale=xscale,
                   xlim_right=max(1.2, max_ratio_d * 1.5) if max_ratio_d > 0 else 1.2)
     else:
@@ -1468,7 +1500,7 @@ def main():
     add_interpolation_arg(parser)
     parser.add_argument("--output-dir", type=Path,
                          default=FIGURES_MANUSCRIPT_DIR,
-                        help="Top-level output directory. A 'fig5_4panel_variants/' "
+                        help="Top-level output directory. A 'fig4_fig5_variants/' "
                              "subfolder will be created inside it; both framings × "
                              "both x-axis scales are written there. The literature-"
                              "standard (demand÷supply, log-scale) copy is also "
@@ -1524,7 +1556,7 @@ def main():
         action="store_true",
         default=False,
         help="Typography-only: uniformly enlarge all in-plot text in the "
-             "split fig5/fig6 (US-tiers / global-tiers) figures so they read "
+             "split fig4/fig5 (US-tiers / global-tiers) figures so they read "
              "legibly when inserted into a Word docx at a small insert width. "
              "Scales every text artist by a single factor, preserving the "
              "designed hierarchy. Default output (no --docx) is unchanged.",
@@ -1552,7 +1584,7 @@ def main():
             else [args.scenario_mode]
         )
 
-        variants_dir = args.output_dir / "fig5_4panel_variants"
+        variants_dir = args.output_dir / "fig4_fig5_variants"
         variants_dir.mkdir(parents=True, exist_ok=True)
 
         styling_token = "_poster" if args.styling == "poster" else ""
@@ -1562,7 +1594,7 @@ def main():
                 sc_token = "log" if sc == "symlog" else "linear"
                 for sm in scenario_modes_to_run:
                     sm_token = "median_envelope" if sm == "median" else "mid_case_worst"
-                    out = variants_dir / f"fig5_4panel__{fr_token}__{sc_token}__{sm_token}{styling_token}.png"
+                    out = variants_dir / f"fig4_fig5__{fr_token}__{sc_token}__{sm_token}{styling_token}.png"
                     plot_4panel(df, mat_order, out,
                                 framing=fr, xscale=sc, scenario_mode=sm,
                                 styling=args.styling)

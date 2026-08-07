@@ -1,4 +1,4 @@
-"""Shared supply-chain helper for manuscript Figures 5, 6, and 7.
+"""Shared supply-chain helper for manuscript Figures 4, 5, and 6.
 
 Assembles per-material supply-chain data (load_all_data), the OECD CRC risk
 grouping, the per-element rare-earth production table, and withheld-production
@@ -755,9 +755,12 @@ def run_mode(re_mode, output_dir):
 
     Writes fig4a_<suffix>_us_supply_gap.png and fig4b_<suffix>_global_production_squeeze.png
     (suffix is "aggregate" or "per_element") into output_dir, then prints a per-material
-    US-ratio / global-ratio summary table to stdout.
+    US-ratio / global-ratio summary table to stdout. The fig4a/fig4b stems are
+    retained as stable legacy filenames (these standalone panels are not a
+    numbered manuscript figure under the current scheme).
     """
-    print(f"\n=== Generating Fig 4 in '{re_mode}' mode ===")
+    print(f"\n=== Generating standalone supply-gap panels (fig4a/fig4b) "
+          f"in '{re_mode}' mode ===")
     df, mat_order, inf_cap = load_all_data(re_mode)
 
     suffix = "aggregate" if re_mode == "aggregate" else "per_element"

@@ -1,11 +1,40 @@
 """Supply-chain split-panel renderer for manuscript Figures 4 and 5.
 
-The shipped Figure 5 (US demand vs domestic supply, panels A/B) and Figure 6
+The shipped Figure 4 (US demand vs domestic supply, panels A/B) and Figure 5
 (US demand vs global supply, panels C/D) are produced by
 plot_option3a_midcase(..., split=True), which writes fig4_supply_tiers_us.png
 and fig5_supply_tiers_global.png. The other plot_option* functions are earlier
 rendering experiments kept for reference. Supply-chain inputs are assembled by
 build_records() in fig4_fig5_supply_tiers.py; this module only renders them.
+
+INVENTORY:
+  name: supply_tiers_variants
+  output: outputs/figures/manuscript/fig4_supply_tiers_us.png,
+    outputs/figures/manuscript/fig5_supply_tiers_global.png
+    (renderer; invoked by fig4_fig5_supply_tiers.py, --docx variants under
+    outputs/figures/manuscript/docx/)
+  category: Manuscript main text — Figs 4 and 5 (renderer module)
+  axes:
+    x: demand-to-supply ratio (symlog, magnitude sub-panel); 0-100% share
+       (mix sub-panel)
+    y: materials, stress-ranked per panel
+    color: OECD CRC risk groups (mix bars); MAG_BAR_COLOR #a0a0a0 magnitude
+       bar; WORST_CASE_FACE #d9d9d9 hatched extension; UNKNOWN_COLOR
+       #4a4a4a for unclassifiable USGS 'Other countries' shares
+  data_sources:
+    - build_records() in fig4_fig5_supply_tiers.py (see that INVENTORY)
+  description: >
+    plot_option3a_midcase(split=True) is the shipped renderer for Figs 4/5.
+    2026-08-07 (PI request): x-axis labels reworded via PANEL_TITLES ("US
+    peak annual demand ÷ ... production (log)", "US cumulative demand ÷ ...
+    reserves (log)"); UNKNOWN_COLOR darkened #5a5a5a -> #4a4a4a and given a
+    legend entry "Unknown" on Figure 5 only (Fig 4 panels never draw the
+    unclassified filler — Census HTS / partner-reserve shares sum to 1).
+    2026-08-07 numbering cleanup: docstring/comments updated to the current
+    Fig 4/5 numbering; standalone-run default output dir is now
+    fig4_fig5_variants/past_iterations/ (was fig5_supply_chain/past_iterations/).
+    No rendering changes.
+END_INVENTORY
 """
 
 import sys
@@ -41,15 +70,18 @@ sys.path.insert(0, str(BASE_DIR))
 from src.scenario_config import REFERENCE_SCENARIO  # noqa: E402
 
 # Distinct gray for the "Unknown / 'Other countries'" segment in mix bars.
-# Appears only in Panel C where USGS reports a slice of global production in
-# an 'Other' bucket without per-country breakdown, so those tonnes can't be
-# CRC-classified. See diagnostic in the source-audit trail.
-# Two grays used in the figure — kept visually distinct.
-#   UNKNOWN_COLOR is a darker neutral slate, for USGS 'Other countries' in
-#     the mix sub-panels (Panel C).
+# Appears only in Panels C and D (Figure 5, global tiers) where USGS reports
+# a slice of global production / reserves in an 'Other countries' bucket
+# without per-country breakdown, so those tonnes can't be CRC-classified.
+# Verified 2026-08-07: Panels A/B (Figure 4) never draw this filler — Census
+# HTS import shares and partner-reserve shares always sum to 1.
+# Grays used in the figure — kept visually distinct.
+#   UNKNOWN_COLOR is a dark neutral gray (PI request 2026-08-07: darkened
+#     from #5a5a5a and added to the Figure 5 legend as "Unknown").
+#   MAG_BAR_COLOR (#a0a0a0) is the neutral magnitude bar.
 #   WORST_CASE_FACE is a pale light gray, for the Mid_Case → worst-case
 #     scenario extension on the magnitude bar.
-UNKNOWN_COLOR = "#5a5a5a"
+UNKNOWN_COLOR = "#4a4a4a"
 UNKNOWN_LABEL = "Unknown (USGS 'Other countries')"
 
 # Worst-case extension: very light-gray with a hatch overlay so it's not
@@ -65,7 +97,7 @@ WORST_CASE_LABEL = "Mid Case (with IRA) → highest-demand scenario extension"
 MAG_BAR_COLOR = "#a0a0a0"
 
 # Uniform text-scale factor applied only under the opt-in --docx path of the
-# split fig5/fig6 render (see plot_option3a_midcase). Tuned so that, at the
+# split fig4/fig5 render (see plot_option3a_midcase). Tuned so that, at the
 # manuscript insert width (5.0 in) and the bbox-tight saved pixel width, the
 # in-plot text lands in the target legibility band. The override hook is for
 # tuning sweeps only and is None in normal use.
@@ -653,18 +685,21 @@ def _mix_shares_for_panel(df, mat_order, panel,
 # Variant 2 — linear x-axis
 # ─────────────────────────────────────────────────────────────────────────────
 
+# x-axis label wording per PI request 2026-08-07 (exact): "US peak annual
+# demand ÷ US/global annual production", "US cumulative demand ÷ US/global
+# reserves". The split renderer appends " (log)".
 PANEL_TITLES = {
     "A": ("A. US production",
-          "Peak-year demand ÷ US annual production",
+          "US peak annual demand ÷ US annual production",
           "deficit split by 2020–23 US import partners (CRC group)"),
     "B": ("B. US reserves",
-          "2026–2050 Cumulative demand ÷ US reserves",
+          "US cumulative demand ÷ US reserves",
           "deficit split by 2020–23 US import partners (CRC group)"),
     "C": ("C. Global production",
-          "US peak-year demand ÷ global annual production",
+          "US peak annual demand ÷ global annual production",
           "bar split by producer-country share (USGS MCS 2025, CRC group)"),
     "D": ("D. Global reserves",
-          "2026–2050 Cumulative demand ÷ global reserves",
+          "US cumulative demand ÷ global reserves",
           "bar split by reserve-holder country share (USGS MCS 2025, CRC group)"),
 }
 
@@ -1061,8 +1096,8 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
         ax_mix = _pf.add_subplot(inner[p][0, 1], sharey=ax_mag)
         _panel_pairs.append((_pf, ax_mag, ax_mix))
 
-        # Panel labels: lowercase letters, reset per split figure (Fig 5 = a/b
-        # US tiers; Fig 6 = a/b global tiers).
+        # Panel labels: lowercase letters, reset per split figure (Fig 4 = a/b
+        # US tiers; Fig 5 = a/b global tiers).
         if split:
             title = {"A": "a. U.S. production", "B": "b. U.S. reserves",
                      "C": "a. Global production", "D": "b. Global reserves"}[p]
@@ -1225,21 +1260,28 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
                                    zorder=0, alpha=0.6)
                 ax.spines[["top", "right"]].set_visible(False)
 
-    # the legend now shows ONLY the supply-source country-risk
-    # groups (translucent to match the bars, "US domestic" relabelled
-    # "United States"). The "Unknown" segment, the highest-demand-scenario
-    # hatched extension, the MC p2.5-p97.5 whiskers, and the sufficiency
-    # threshold line are described in the figure caption instead of the legend.
+    # the legend shows the supply-source country-risk groups
+    # (translucent to match the bars, "US domestic" relabelled
+    # "United States"). The highest-demand-scenario hatched extension, the
+    # MC p2.5-p97.5 whiskers, and the sufficiency threshold line are
+    # described in the figure caption instead of the legend.
+    # PI request 2026-08-07: the dark-gray "Unknown" mix segment (USGS
+    # 'Other countries' aggregate, no CRC class assignable) now gets its
+    # own legend entry — on the global figure only, since Panels A/B
+    # (Figure 4) never draw that filler (verified: Census HTS import and
+    # partner-reserve shares always sum to 1).
     GROUP_LEGEND_LABELS = {"US domestic": "United States"}
     handles = [mpatches.Patch(color=GROUP_COLORS[g], alpha=0.82,
                               label=GROUP_LEGEND_LABELS.get(g, g))
                for g in GROUP_ORDER]
+    unknown_handle = mpatches.Patch(color=UNKNOWN_COLOR, alpha=0.82,
+                                    label="Unknown")
     if split:
         out_us = output_path.parent / "fig4_supply_tiers_us.png"
         out_gl = output_path.parent / "fig5_supply_tiers_global.png"
         for _fig, _ttl, _out in (
-            (fig_us, "Figure 5. US critical-material demand vs domestic supply, 2026-2050 (Mid Case (with IRA), MC + scenario uncertainty)", out_us),
-            (fig_gl, "Figure 6. US critical-material demand vs global supply, 2026-2050 (Mid Case (with IRA), MC + scenario uncertainty)", out_gl),
+            (fig_us, "Figure 4. US critical-material demand vs domestic supply, 2026-2050 (Mid Case (with IRA), MC + scenario uncertainty)", out_us),
+            (fig_gl, "Figure 5. US critical-material demand vs global supply, 2026-2050 (Mid Case (with IRA), MC + scenario uncertainty)", out_gl),
         ):
             # Under docx the figure is at the 6.5 in print width, so the long
             # single-line title and the wide 4-column legend overflow the
@@ -1257,7 +1299,10 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
             # per render size (the docx canvas is short, so the gap is a larger
             # figure-fraction than on the tall original canvas).
             _leg_top_y = 0.012 if docx else 0.049
-            _fig.legend(handles=handles, loc="upper center",
+            # Global figure carries the extra "Unknown" entry (its mix bars
+            # are the only ones that draw the dark-gray unclassified filler).
+            _handles = handles + [unknown_handle] if _fig is fig_gl else handles
+            _fig.legend(handles=_handles, loc="upper center",
                         bbox_to_anchor=(0.5, _leg_top_y), ncol=_ncol,
                         fontsize=9, frameon=False)
             # No figure title on the figure (the caption carries it).
@@ -1266,7 +1311,7 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
                 # 6.5 in print width, so absolute point sizes set here equal the
                 # on-page pt when inserted at the saved (bbox-tight) width. Set
                 # by ROLE — this is a dense full-page figure, so these are the
-                # largest sizes that fit (small text is accepted to keep fig5/6
+                # largest sizes that fit (small text is accepted to keep fig4/5
                 # as single full-page figures). Fonts are set BEFORE
                 # tight_layout so the layout solver packs at the final sizes.
                 _SUP, _AXTITLE, _AXLABEL, _TICK, _LEG, _ANNOT = (
@@ -1621,7 +1666,7 @@ def main():
     args = ap.parse_args()
 
     out_dir = Path(args.output_dir) if args.output_dir else \
-        FIGURES_MANUSCRIPT_DIR / "fig5_supply_chain" / "past_iterations"
+        FIGURES_MANUSCRIPT_DIR / "fig4_fig5_variants" / "past_iterations"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("Loading data…")
