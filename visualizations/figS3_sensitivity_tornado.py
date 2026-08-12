@@ -367,8 +367,11 @@ def plot(input_csv: Path, output_path: Path,
     # Label the actual year set averaged over: the annual grid covers every
     # year 2027-2050; the 3-yr-bucket CSV pools the 8 NREL reporting years
     # 2029-2050 (2026 excluded — zero additions by construction).
-    year_span = ("2027–2050" if annual_grid
-                 else "reporting years 2029–2050")
+    # Keep the axis label short enough for the fixed-width --docx canvas
+    # (the longer "reporting years ..." phrasing clipped at the right edge);
+    # the SI caption spells out the exact year set (annual grid 2027-2050 vs
+    # the eight NREL reporting years 2029-2050).
+    year_span = "2027–2050" if annual_grid else "2029–2050"
     xlabel_suffix = (
         f"(%, {year_span} cumulative)"
         if timebase == "cumulative"
