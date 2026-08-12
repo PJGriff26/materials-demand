@@ -23,9 +23,8 @@ INVENTORY:
     scenarios over a shaded uncertainty envelope (--envelope selects
     cross-scenario min/max or pooled 95% CI). Legend hosted in an empty
     bottom-row grid cell; --docx scales all text x1.5 on the same canvas
-    for the Word manuscript. 2026-08-07 (PI request): y-axis text enlarged
-    (supylabel 13->16, tick labels 11->13) and legend 13->16; both carry
-    through the --docx x1.5 scaling (24 / 19.5 / 24 pt).
+    for the Word manuscript. Text sizes: supylabel and legend 16 pt, tick
+    labels 13 pt (x1.5 under --docx).
 END_INVENTORY
 """
 
@@ -206,7 +205,6 @@ def plot_fig1(demand, mode, output_path, docx=False):
         # Review item C15: at most six y-axis increments with two-digit labels,
         # larger tick text, and no y-axis tick marks.
         ax.yaxis.set_major_locator(MaxNLocator(nbins=6, steps=[1, 2, 2.5, 5, 10]))
-        # PI request 2026-08-07: larger y-axis text (x kept consistent).
         ax.tick_params(axis="both", labelsize=13)
         ax.tick_params(axis="y", length=0)
         # Per-panel axis titles suppressed; shared figure-level labels below
@@ -265,9 +263,9 @@ def plot_fig1(demand, mode, output_path, docx=False):
     # modest factor so it reads better when the figure is inserted full-page in
     # Word, WITHOUT respacing the panels. Typography only; no data, series,
     # colors, or label content touched. Default (no --docx) output is
-    # unaffected by this block. The 2026-08-07 base-size bump (supylabel/legend
-    # 13->16, ticks 11->13) carries through here automatically because _bump
-    # multiplies whatever base size each element already has.
+    # unaffected by this block. Base-size changes above carry through
+    # automatically because _bump multiplies whatever size each element
+    # already has.
     if docx:
         F = 1.5   # slight text scale-up on the original-size canvas
 

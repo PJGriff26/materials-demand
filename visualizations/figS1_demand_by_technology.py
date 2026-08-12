@@ -1,5 +1,5 @@
 """
-Figure 4 - material demand across electricity-supply technologies.
+Figure S1 - material demand across electricity-supply technologies.
 
 INVENTORY:
   name: figS1_demand_by_technology
@@ -23,6 +23,9 @@ INVENTORY:
     Covers all 27 demand-bearing materials (Glass and Fiberglass included).
     Backs claims F4a-F4c in Scientific_Draft/claims_registry.yaml via the
     demand_by_tech_shares_*.csv traceability exports.
+    2026-08-07 numbering cleanup: docstring/help updated from the old
+    "Figure 4" numbering to Figure S1 (registry claim IDs F4a-F4c are
+    unchanged). No rendering changes.
 END_INVENTORY
 
 Usage:
@@ -87,7 +90,7 @@ def _stack_matrix(scenario: str, mode: str, keep: list[str]):
 
 
 def render(mode: str, scenario: str, keep: list[str], out_dir: Path):
-    """Sorted-by-total-demand 100%-stacked composition bars (manuscript Fig 4)."""
+    """Sorted-by-total-demand 100%-stacked composition bars (manuscript Fig S1)."""
     materials, mat, totals = _stack_matrix(scenario, mode, keep)
     order = sorted(materials, key=lambda m: totals[m], reverse=True)
     materials = order
@@ -150,12 +153,12 @@ def render(mode: str, scenario: str, keep: list[str], out_dir: Path):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Render manuscript Figure 4 "
+    ap = argparse.ArgumentParser(description="Render manuscript Figure S1 "
                                  "(demand by technology) and export share CSVs.")
     ap.add_argument("--scenario", default=L.REFERENCE_SCENARIO)
     ap.add_argument("--mode", choices=["cumulative", "peak2035"],
                     default="cumulative",
-                    help="manuscript Figure 4 is the cumulative decomposition")
+                    help="manuscript Figure S1 is the cumulative decomposition")
     ap.add_argument("--output-dir", default="outputs/figures/manuscript")
     args = ap.parse_args()
 

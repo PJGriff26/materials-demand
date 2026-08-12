@@ -25,15 +25,10 @@ INVENTORY:
     - build_records() in fig4_fig5_supply_tiers.py (see that INVENTORY)
   description: >
     plot_option3a_midcase(split=True) is the shipped renderer for Figs 4/5.
-    2026-08-07 (PI request): x-axis labels reworded via PANEL_TITLES ("US
-    peak annual demand ÷ ... production (log)", "US cumulative demand ÷ ...
-    reserves (log)"); UNKNOWN_COLOR darkened #5a5a5a -> #4a4a4a and given a
-    legend entry "Unknown" on Figure 5 only (Fig 4 panels never draw the
-    unclassified filler — Census HTS / partner-reserve shares sum to 1).
-    2026-08-07 numbering cleanup: docstring/comments updated to the current
-    Fig 4/5 numbering; standalone-run default output dir is now
-    fig4_fig5_variants/past_iterations/ (was fig5_supply_chain/past_iterations/).
-    No rendering changes.
+    X-axis labels come from PANEL_TITLES ("US peak annual demand ÷ ...
+    production (log)", "US cumulative demand ÷ ... reserves (log)"). The
+    dark-gray UNKNOWN_COLOR mix segment carries an "Unknown" legend entry on
+    Figure 5 only. Standalone runs write to fig4_fig5_variants/past_iterations/.
 END_INVENTORY
 """
 
@@ -69,18 +64,13 @@ from config import DEMAND_TO_RISK  # noqa: E402
 sys.path.insert(0, str(BASE_DIR))
 from src.scenario_config import REFERENCE_SCENARIO  # noqa: E402
 
-# Distinct gray for the "Unknown / 'Other countries'" segment in mix bars.
-# Appears only in Panels C and D (Figure 5, global tiers) where USGS reports
-# a slice of global production / reserves in an 'Other countries' bucket
-# without per-country breakdown, so those tonnes can't be CRC-classified.
-# Verified 2026-08-07: Panels A/B (Figure 4) never draw this filler — Census
-# HTS import shares and partner-reserve shares always sum to 1.
-# Grays used in the figure — kept visually distinct.
-#   UNKNOWN_COLOR is a dark neutral gray (PI request 2026-08-07: darkened
-#     from #5a5a5a and added to the Figure 5 legend as "Unknown").
-#   MAG_BAR_COLOR (#a0a0a0) is the neutral magnitude bar.
-#   WORST_CASE_FACE is a pale light gray, for the Mid_Case → worst-case
-#     scenario extension on the magnitude bar.
+# Dark gray for the "Unknown / 'Other countries'" segment in mix bars: USGS
+# reports part of global production/reserves in an 'Other countries' bucket
+# with no per-country breakdown, so those tonnes can't be CRC-classified.
+# Only Panels C and D draw it — the Panel A/B Census HTS import shares and
+# partner-reserve shares always sum to 1. Kept visually distinct from
+# MAG_BAR_COLOR (#a0a0a0, neutral magnitude bar) and WORST_CASE_FACE (pale
+# gray worst-case scenario extension).
 UNKNOWN_COLOR = "#4a4a4a"
 UNKNOWN_LABEL = "Unknown (USGS 'Other countries')"
 
@@ -685,9 +675,7 @@ def _mix_shares_for_panel(df, mat_order, panel,
 # Variant 2 — linear x-axis
 # ─────────────────────────────────────────────────────────────────────────────
 
-# x-axis label wording per PI request 2026-08-07 (exact): "US peak annual
-# demand ÷ US/global annual production", "US cumulative demand ÷ US/global
-# reserves". The split renderer appends " (log)".
+# Manuscript x-axis wording; the split renderer appends " (log)".
 PANEL_TITLES = {
     "A": ("A. US production",
           "US peak annual demand ÷ US annual production",
@@ -1265,11 +1253,8 @@ def plot_option3a_midcase(df, mat_order, output_path, styling="manuscript",
     # "United States"). The highest-demand-scenario hatched extension, the
     # MC p2.5-p97.5 whiskers, and the sufficiency threshold line are
     # described in the figure caption instead of the legend.
-    # PI request 2026-08-07: the dark-gray "Unknown" mix segment (USGS
-    # 'Other countries' aggregate, no CRC class assignable) now gets its
-    # own legend entry — on the global figure only, since Panels A/B
-    # (Figure 4) never draw that filler (verified: Census HTS import and
-    # partner-reserve shares always sum to 1).
+    # The dark-gray "Unknown" mix segment gets a legend entry on the global
+    # figure only; the US panels never draw that filler.
     GROUP_LEGEND_LABELS = {"US domestic": "United States"}
     handles = [mpatches.Patch(color=GROUP_COLORS[g], alpha=0.82,
                               label=GROUP_LEGEND_LABELS.get(g, g))

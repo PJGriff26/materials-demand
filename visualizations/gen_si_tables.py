@@ -206,7 +206,7 @@ def table_s6():
     USGS MCS for Y) -- the only per-element REE quantities the pipeline
     consumes.
 
-    Reserve columns were REMOVED 2026-07-28 (PJ decision): no source publishes
+    Reserve columns are intentionally absent: no source publishes
     per-element REE reserves, and the deposit-composition apportionment that
     once populated them fed nothing -- every reserve ratio in Table S9 and every
     reserve bar in Figures 4/5 divides by the AGGREGATE TREO base. Printing
@@ -232,7 +232,7 @@ def table_s9():
     build_records so the table and Figures 4/5 never diverge)."""
     import fig4_fig5_supply_tiers as F5
     # per-element: A/C use per-element REE production; B/D still divide by the
-    # aggregate TREO reserve (Option B, PJ decision 2026-07-27), matching
+    # aggregate TREO reserve base, matching
     # Figures 4/5 and Table S8.
     df, _mat_order = F5.build_records(re_mode="per-element")
 

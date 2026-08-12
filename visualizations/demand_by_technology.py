@@ -16,11 +16,17 @@ INVENTORY:
   description: >
     Shared library for the demand-by-technology figure family (opt_a/b/c).
     Decomposes each material's demand into per-technology shares for a
-    reference scenario (deterministic split rescaled to the published MC
-    mean). Covers all 27 demand-bearing materials, including Glass and
+    reference scenario using the fitted-lognormal mean intensities the MC
+    samples (validation ratios ~1.00 vs the published MC means; totals pinned
+    exactly to published values). Display groups label the CCS/SMR-only
+    technologies as such. Covers all 27 demand-bearing materials, including Glass and
     Fiberglass (criticality-ineligible but demand-bearing; added 2026-07-07).
     export_shares() writes the traceability CSV backing manuscript
-    Figure 4 claims F4a-F4c in Scientific_Draft/claims_registry.yaml.
+    Figure S1 claims (registry IDs F4a-F4c) in
+    Scientific_Draft/claims_registry.yaml.
+    2026-08-07 numbering cleanup: docstrings updated from the old "Figure 4"
+    numbering to Figure S1 (registry claim IDs F4a-F4c are unchanged).
+    No rendering changes.
 END_INVENTORY
 
 """
@@ -29,6 +35,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import math
 import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,7 +60,10 @@ PEAK_YEAR = 2035
 
 MODE_LABEL = {
     "cumulative": "cumulative 2026–2050",
-    "peak2035": f"peak-year ({PEAK_YEAR})",
+    # Totals are pinned to published ANNUAL 2035 demand; the share weights
+    # come from the 2032-2035 additions interval of the raw 3-yr NREL series
+    # (shares are insensitive to the interval-vs-annual scale factor).
+    "peak2035": f"annual {PEAK_YEAR} (shares from the 2032–{PEAK_YEAR} additions interval)",
 }
 
 # ───────────────────────────────────────────────────────────────────────────
@@ -79,11 +89,16 @@ DISPLAY_TECH = {
     "csp": "CSP",
     "wind_onshore": "Onshore wind",
     "wind_offshore": "Offshore wind",
-    "nuclear": "Nuclear", "nuclear_smr": "Nuclear",
+    # Unabated coal, conventional nuclear, and unabated biomass have zero
+    # additions in every scenario, so their display groups contain only the
+    # CCS/SMR variants and are labeled accordingly. H2 combustion turbines
+    # are grouped with natural gas (they carry natural-gas-turbine material
+    # intensities; Table S2); pumped hydro is grouped with hydro.
+    "nuclear": "Nuclear (SMR)", "nuclear_smr": "Nuclear (SMR)",
     "gas_cc": "Natural gas", "gas_ct": "Natural gas",
     "gas_cc_ccs": "Natural gas", "h2-ct": "Natural gas",
-    "coal": "Coal", "coal_ccs": "Coal",
-    "bio": "Biomass", "bio-ccs": "Biomass",
+    "coal": "Coal CCS", "coal_ccs": "Coal CCS",
+    "bio": "Biomass CCS", "bio-ccs": "Biomass CCS",
     "hydro": "Hydro", "pumped-hydro": "Hydro",
     "geo": "Geothermal",
 }
@@ -92,8 +107,8 @@ DISPLAY_TECH = {
 TECH_ORDER = [
     "Utility solar PV", "Distributed solar", "CSP",
     "Onshore wind", "Offshore wind",
-    "Hydro", "Geothermal", "Biomass", "Nuclear",
-    "Natural gas", "Coal",
+    "Hydro", "Geothermal", "Biomass CCS", "Nuclear (SMR)",
+    "Natural gas", "Coal CCS",
 ]
 TECH_COLORS = {
     "Utility solar PV":  "#E8A33D",
@@ -103,10 +118,10 @@ TECH_COLORS = {
     "Offshore wind":     "#08519C",
     "Hydro":             "#66C2A5",
     "Geothermal":        "#D55E00",
-    "Biomass":           "#4DAF4A",
-    "Nuclear":           "#7B5AA6",
+    "Biomass CCS":       "#4DAF4A",
+    "Nuclear (SMR)":     "#7B5AA6",
     "Natural gas":       "#9E9E9E",
-    "Coal":              "#4D4D4D",
+    "Coal CCS":          "#4D4D4D",
 }
 
 
@@ -123,15 +138,28 @@ def fmt_tonnes(t: float) -> str:
 
 
 def _mean_intensity() -> dict:
+    """Mean intensity per (technology, material) as the MC samples it: the
+    mean of the fitted lognormal, loc + scale * exp(s^2 / 2). All 167 pairs
+    are parametric lognormals with loc = 0. By linearity of expectation, a
+    decomposition built from these means reproduces the published MC-mean
+    totals (the sample-mean column does not — the fits are median-preserving
+    with borrowed CVs, so their means differ from sample means by up to
+    ~2.5x for skew-heavy pairs like Praseodymium / onshore wind).
+    """
     di = pd.read_csv(INTENSITY_FILE)
-    return {(r.technology, r.material): r.mean for r in di.itertuples()}
+    return {
+        (r.technology, r.material):
+            float(r.param_loc) + float(r.param_scale) * math.exp(float(r.param_s) ** 2 / 2.0)
+        for r in di.itertuples()
+    }
 
 
 def published_demand(scenario: str, mode: str) -> pd.Series:
     """Published MC-mean demand per material (tonnes) for the chosen mode.
 
-    Each row of material_demand_by_scenario.csv is a 3-year bucket total.
-    cumulative -> sum buckets; peak2035 -> the year==2035 bucket.
+    material_demand_by_scenario.csv is on the PCHIP annual grid (one row per
+    year, mean == mean_annual). cumulative -> sum of annual values;
+    peak2035 -> the annual 2035 value.
     """
     d = pd.read_csv(DEMAND_FILE)
     d = d[d["scenario"] == scenario]
@@ -166,10 +194,13 @@ def _additions(scenario: str, mode: str) -> dict:
 def compute_split(scenario: str = REFERENCE_SCENARIO,
                   mode: str = "cumulative",
                   verbose: bool = True) -> pd.DataFrame:
-    """Long DataFrame: material, family, tech, demand_t (rescaled to published).
+    """Long DataFrame: material, family, tech, demand_t.
 
-    Technology shares come from the deterministic mean-intensity decomposition;
-    each material's total is pinned to the published MC mean for the mode.
+    Technology shares come from decomposing with the fitted-lognormal mean
+    intensities the MC samples, so by linearity of expectation the
+    decomposition reproduces the published MC-mean totals (validation ratios
+    ~1.00); each material's total is then pinned exactly to the published
+    value to absorb residual sampling noise.
     """
     mean_int = _mean_intensity()
     add_mw = _additions(scenario, mode)
@@ -237,8 +268,8 @@ def active_techs(p: pd.DataFrame, min_share: float = 0.0) -> list:
 def export_shares(mode: str = "cumulative") -> Path:
     """Write the decomposition (tonnes + % share per material-tech) to CSV.
 
-    Traceability export for manuscript Figure 4 claims (claims_registry.yaml
-    F4a-F4c): every number in the figure caption/prose traces to this file.
+    Traceability export for manuscript Figure S1 claims (claims_registry.yaml
+    IDs F4a-F4c): every number in the figure caption/prose traces to this file.
     """
     df = compute_split(mode=mode)
     tot = df.groupby("material")["demand_t"].transform("sum")

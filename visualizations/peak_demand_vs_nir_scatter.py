@@ -36,6 +36,7 @@ from src.scenario_config import REFERENCE_SCENARIO  # noqa: E402
 from feature_engineering import (  # noqa: E402
     load_mcs2025_world_data,
     _mcs2025_country_production,
+    _production_unit_factor_to_kt,
     MCS2025_COMMODITY_MAP,
     EXCLUDED_FROM_CRITICALITY,
 )
@@ -45,6 +46,34 @@ from feature_engineering import (  # noqa: E402
 # and returns tonnes (patched 2026-05-21), so the local helper is no
 # longer needed.
 _country_production_tonnes = _mcs2025_country_production
+
+
+def _world_total_tonnes(prod_sheet, risk_name):
+    """Global production in metric tonnes for one risk-sheet material: the
+    mean of the reported years (2023 and est. 2024) of the "World total
+    (rounded)" row in the TYPE-resolved production sheet that Figure 5 and
+    Table S9 consume (supply_chain_analysis.load_data). Using the same sheet
+    guarantees one denominator per material across the paper (tellurium
+    (944 + 980)/2 = 962 t). Falls back to the sum of per-country year means
+    when no world-total row exists. Sheet values are kt; returns tonnes.
+    """
+    sub = prod_sheet[prod_sheet["material"] == risk_name]
+    if sub.empty:
+        return 0.0
+    ycols = [c for c in prod_sheet.columns if str(c).startswith("production_")]
+    for label in ("World total (rounded)", "Global"):
+        wt = sub[sub["country"] == label]
+        if not wt.empty:
+            vals = pd.to_numeric(wt[ycols].values.ravel(), errors="coerce")
+            vals = vals[~pd.isna(vals)]
+            vals = vals[vals > 0]
+            if len(vals):
+                return float(np.mean(vals)) * 1000.0
+    rest = sub[~sub["country"].isin(
+        ["World total (rounded)", "Global", "Other", "Other Countries"])]
+    arr = rest[ycols].apply(lambda c: pd.to_numeric(c, errors="coerce"))
+    row_means = arr.mean(axis=1).dropna()
+    return float(row_means.sum()) * 1000.0 if len(row_means) else 0.0
 
 DEMAND_BY_SCENARIO_CSV = BASE_DIR / "outputs" / "data" / "material_demand_by_scenario.csv"
 DEFAULT_SCENARIO = REFERENCE_SCENARIO
@@ -130,44 +159,38 @@ def load_peak_demand(scenario=DEFAULT_SCENARIO):
 
 
 def load_global_production():
-    """Sum per-country MCS 2025 production per demand-material name.
+    """Global production per demand-material, on the paper-wide convention.
 
-    Per-element rare earth override (2026-05-27): the upstream
-    MCS2025_COMMODITY_MAP collapses every REE element to the aggregate
-    "Rare earths" 390 kt REO total, which makes Y, Nd, Pr, Dy, Tb all
-    plot against the same denominator and badly understates per-element
-    supply stress. The override below swaps in the canonical per-element
-    production values from supply_tiers_shared.RE_ELEMENT_DATA (DOE 2023
-    Critical Materials Assessment Appendix A for Nd/Pr/Dy/Tb; USGS MCS
-    multi-vintage median for Y; Gadium dropped because it has zero demand
-    in the simulation per technology_mapping CIGS=0%). Values are tonnes
-    ELEMENT content, matching DOE 2023 §4.3 convention.
+    Non-REE materials divide by the mean of the reported years (2023, est.
+    2024) of the TYPE-resolved USGS world-total row — the identical sheet
+    and arithmetic behind Figure 5 and Table S9 (supply_chain_analysis.
+    load_data + the get_global_kt convention in supply_tiers_shared), so
+    each material has exactly one global-production denominator in the
+    paper.
+
+    Per-element rare earth override: USGS collapses every REE element to
+    the aggregate "Rare earths" REO total, which would put Y, Nd, Pr, Dy,
+    Tb against one shared denominator and badly understate per-element
+    supply stress. RE_ELEMENT_DATA (DOE 2023 Critical Materials Assessment
+    Appendix A for Nd/Pr/Dy/Tb; USGS MCS multi-vintage median for Y;
+    Gadolinium dropped for zero demand) supplies the same per-element
+    values used in Figure 5 and Table S6, in tonnes ELEMENT content.
     """
-    world_df = load_mcs2025_world_data()
-    rows = []
-    for demand_name, mcs_commodity in MCS2025_COMMODITY_MAP.items():
-        # Skip REE elements here; they're filled from RE_ELEMENT_DATA below.
-        if demand_name in REE_AGGREGATE:
-            continue
-        sub = _country_production_tonnes(world_df, mcs_commodity)
-        if not sub.empty:
-            rows.append((demand_name, float(sub["p"].sum()), mcs_commodity))
+    from supply_chain_analysis import load_data  # noqa: E402
+    from config import DEMAND_TO_RISK  # noqa: E402
+    _, risk = load_data()
+    prod_sheet = risk["production"]
 
-    # Also pick up any commodity not in MCS2025_COMMODITY_MAP whose name
-    # matches the demand-material directly (Aluminum, Cement, Lead, etc.).
-    # For materials whose CSV commodity name differs from the demand name
-    # (Steel / Iron and Steel, Magnesium / Magnesium metal), the explicit
-    # mapping in EXTRA_COMMODITY_MAP takes priority over the direct match.
-    seen = {r[0] for r in rows}
+    rows = []
     demand_materials = pd.read_csv(DEMAND_BY_SCENARIO_CSV,
                                     usecols=["material"])["material"].unique()
     for mat in demand_materials:
-        if mat in seen or mat in REE_AGGREGATE:
+        if mat in REE_AGGREGATE:
             continue
-        mcs_name = EXTRA_COMMODITY_MAP.get(mat, mat)
-        sub = _country_production_tonnes(world_df, mcs_name)
-        if not sub.empty:
-            rows.append((mat, float(sub["p"].sum()), mcs_name))
+        risk_name = DEMAND_TO_RISK.get(mat, mat)
+        tot = _world_total_tonnes(prod_sheet, risk_name)
+        if tot > 0:
+            rows.append((mat, tot, risk_name))
 
     # Per-element REE override (DOE 2023 App A + USGS Y).
     # Import here to avoid circular-import surprises at module load.

@@ -396,7 +396,7 @@ class TestOutputFilesExist:
         assert len(df) > 0, f"{path.name} is empty"
 
     def test_material_features(self):
-        # Per-material supply-chain features consumed by Figure 7, written by
+        # Per-material supply-chain features consumed by Figure 6, written by
         # supply_chain/build_material_features.py.
         path = ROOT / "outputs" / "data" / "material_features.csv"
         assert path.exists(), f"Missing: {path}"

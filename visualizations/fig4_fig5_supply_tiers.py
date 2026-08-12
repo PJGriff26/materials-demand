@@ -30,14 +30,12 @@ INVENTORY:
     to supply_tiers_variants.plot_option3a_midcase(split=True). Each figure
     stacks panel a (peak-annual-demand vs production ratio + share bars)
     over panel b (cumulative-demand vs reserves ratio + share bars).
-    2026-08-07 (PI request): V1 x-axis labels reworded to "US peak annual
-    demand / US cumulative demand" phrasing in both the shipped split path
-    (supply_tiers_variants.PANEL_TITLES) and the legacy --legacy-colored
-    V1 f-strings here; V2 (supply-over-demand) labels unchanged.
-    2026-08-07 numbering cleanup: docstring/help updated to the current
-    Fig 4/5 numbering; --legacy-colored variants now write to
-    fig4_fig5_variants/ (was fig5_4panel_variants/) with fig4_fig5__ stems.
-    No rendering changes.
+    V1 x-axis labels use the "US peak annual demand / US cumulative demand"
+    phrasing in both the shipped split path (supply_tiers_variants.
+    PANEL_TITLES) and the legacy --legacy-colored V1 f-strings here.
+    Per-element REE rows keep their DOE 2023 global production totals as
+    published (the withheld-US injection pass skips them). Legacy variants
+    write to fig4_fig5_variants/ with fig4_fig5__ stems.
 END_INVENTORY
 """
 
@@ -569,22 +567,11 @@ def build_records(re_mode="aggregate"):
     # Reserve sourcing shares (for stacked bars)
     df["reserve_shares_grouped"] = [res_shares.get(df.loc[m, "risk_name"], {g: 0 for g in GROUP_ORDER}) for m in df.index]
 
-    # Yttrium import-share alias (Panel A & B mix bars). Census Bureau publishes
-    # Y under its own HTS code, so Y's import_shares_grouped comes back as
-    # ~75% Low risk + 23% China — visibly different from the other four
-    # per-element REEs (Nd/Pr/Dy/Tb), which share the "Rare Earths" aggregate
-    # at ~35% Low risk + 61% China. Until a per-element REE import-source
-    # series is available, force Y to inherit the aggregate so the REE block
-    # reads as a contiguous supply-stress story rather than a bar with a
-    # different palette dropped at the bottom.
-    if "Yttrium" in df.index:
-        donor = next((m for m in df.index
-                      if df.loc[m, "risk_name"] == "Rare Earths"
-                      and df.loc[m, "import_shares_grouped"]), None)
-        if donor is not None:
-            df.at["Yttrium", "import_shares_grouped"] = dict(
-                df.loc[donor, "import_shares_grouped"]
-            )
+    # Yttrium keeps its own Census HTS import mix (~75% Low risk, 23% China),
+    # which differs visibly from the four elements on the "Rare Earths"
+    # aggregate (~35% Low risk, 61% China). Y trades under its own HTS code,
+    # so the measured series is the citable one; Table S5 notes the
+    # element-specific basis.
 
     # Cross-panel consistency pass: reconcile Panel A's us_prod_t (from the
     # aggregate salient sheet) with Panel C's prod_shares_grouped (from the
@@ -601,11 +588,19 @@ def build_records(re_mode="aggregate"):
         shares = df.loc[mat, "prod_shares_grouped"]
         if not isinstance(shares, dict):
             continue
+        # Skip per-element REE rows: the DOE 2023 global totals already
+        # include US production, and their share bars are processing-stage
+        # decompositions with no mining slice to reconcile.
+        if df.loc[mat, "us_prod_source"] == "re_per_element":
+            continue
         us_share_existing = shares.get("US domestic", 0) or 0
         gl_p = df.loc[mat, "global_prod_t"] or 0
-        # Only inject when US is genuinely missing from Panel C (existing
-        # share < 0.5%) AND aggregate us_prod is material (> 1 t/yr).
-        if us_share_existing < 0.005 and us_p > 1000 and gl_p > 0:
+        # Only inject when the US is genuinely absent from the per-country
+        # data (withheld values -> zero share) AND aggregate us_prod is
+        # material (> 1,000 t/yr). A small-but-reported US share means the
+        # world total already contains US production; injecting would
+        # double-count it (caught for Nickel, 0.33% share).
+        if us_share_existing <= 0.0 and us_p > 1000 and gl_p > 0:
             true_global = gl_p + us_p
             us_share_new = us_p / true_global
             scale = gl_p / true_global   # = 1 − us_share_new
@@ -706,10 +701,9 @@ def _mat_labels_with_flags(mat_order, df, panel):
 
     Previously appended a ⊕ glyph to Panel A labels for materials whose
     us_prod_t was back-estimated from the USGS Form 72 identity. Removed
-    because the glyph rendered as tofu (□) under some font fallbacks.
-    Disclosure of the Form 72 back-estimation method now lives in the
-    figure caption / methods text. Function retained for call-site
-    stability.
+    because the glyph rendered as tofu (□) under some font fallbacks; the
+    back-estimation (Silicon only) is disclosed in SI Table S5. Function
+    retained for call-site stability.
     """
     return list(mat_order)
 
@@ -1458,8 +1452,8 @@ def plot_4panel(df, mat_order, output_path, framing="demand-over-supply",
     # The dual-semantic row banners (Census vs USGS) and the legend carry
     # the minimum information needed to read the figure standalone.
 
-    # Back-estimation footnote removed 2026-04-29 — Form 72 back-estimation
-    # disclosure now lives in the figure caption / methods text rather than
+    # Back-estimation footnote removed 2026-04-29 — the Form 72
+    # back-estimation (Silicon only) is disclosed in SI Table S5 rather than
     # an in-figure glyph (which had tofu-rendering issues in some font
     # fallbacks and lacked a footer on the alt-variants poster).
 

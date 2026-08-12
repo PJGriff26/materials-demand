@@ -71,7 +71,9 @@ def _usgs_world_to_kt(value, unit_str, reserve_notes=None):
     is the canonical case: UNIT_MEAS="thousand metric tons" (production),
     RESERVE_NOTES="Iron Content, million metric tons" (reserves). Reading
     only UNIT_MEAS underreports iron-content reserves by 1000× and put
-    Steel above the global-reserves line in fig5 panel D (audit 2026-04-29).
+    Steel above the global-reserves line in the cumulative-demand-vs-reserves
+    panel of the global supply-tier figure, now Figure 5 (audit 2026-04-29,
+    then panel D of the combined 4-panel figure).
 
     Recognized units (in either column):
       million metric tons                              → ×1000
@@ -1270,10 +1272,11 @@ if __name__ == "__main__":
     # render the alternate supply-chain views and is not invoked by
     # reproduce.py (the canonical supply-tier figures come from
     # fig4_fig5_supply_tiers.py). When run standalone, route output to the
-    # fig5_supply_chain/current/ subdirectory of the manuscript figure dir.
+    # supply_chain_charts/current/ subdirectory of the manuscript figure dir
+    # (numbering-neutral name; was fig5_supply_chain/ under the old scheme).
     # If another caller imports these functions, it can set
     # FIGURES_MANUSCRIPT_DIR before calling them.
-    FIGURES_MANUSCRIPT_DIR = FIGURES_MANUSCRIPT_DIR / "fig5_supply_chain" / "current"
+    FIGURES_MANUSCRIPT_DIR = FIGURES_MANUSCRIPT_DIR / "supply_chain_charts" / "current"
     FIGURES_MANUSCRIPT_DIR.mkdir(parents=True, exist_ok=True)
 
     print("Loading data...")

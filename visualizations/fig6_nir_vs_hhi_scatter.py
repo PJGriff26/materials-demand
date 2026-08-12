@@ -22,15 +22,9 @@ INVENTORY:
   description: >
     Supply-risk scatter placing each demand-bearing material in the NIR-by-HHI
     plane; marker area encodes the share of global production that US peak
-    annual demand would represent. 2026-08-07 PI revision: all text enlarged
-    ~2 pt (axis labels, ticks, in-plot material annotations, both legends);
-    y-axis label renamed "Production HHI" -> "Herfindahl–Hirschman Index";
-    both legend titles left-aligned over their entries; size-legend title
-    reworded to "US peak annual demand ÷ global production (%)" (entry labels
-    were already percentages and are unchanged). Same-day follow-up: legend
-    paddings (labelspacing/handletextpad) made dynamic — scaled by
-    11pt/_LEG_FONT so physical legend spacing stays constant under any future
-    font-size change (the 11->13 pt bump had inflated the gaps ~18%).
+    annual demand would represent. Both in-axes legends share a left edge
+    with left-aligned titles; legend paddings scale with 11pt/_LEG_FONT so
+    the physical spacing is invariant to the legend font size.
 END_INVENTORY
 """
 
@@ -266,10 +260,8 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
     _fig_w, _fig_h = _FULL_W, _FULL_H
     _F = 1.35 if docx else 1.0   # print variant: text-only enlargement
 
-    # Reserve a little more right-hand legend room under --docx, because the
-    # enlarged legend labels are physically wider on the same canvas.
-    # 2026-08-07: non-docx right margin pulled 0.78 -> 0.74 — the ~2 pt text
-    # bump made the legend entries/titles wide enough to clip at 0.78.
+    # Right margins leave room for the two in-axes legends; any tighter and
+    # the legend titles clip at the canvas edge.
     _MARGINS = dict(left=0.08, right=(0.75 if docx else 0.74),
                     top=0.93, bottom=0.10)
 
@@ -331,8 +323,6 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
     ax.set_xlim(-4, 104)
     ax.set_ylim(-0.04, 1.08)
     ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:.0f}%"))
-    # Review item C27: larger axis/tick text for on-page legibility.
-    # 2026-08-07 PI revision: all text roles bumped a further ~2 pt.
     ax.set_xlabel("Net Import Reliance", fontsize=15 * _F)
     ax.set_ylabel("Herfindahl–Hirschman Index", fontsize=15 * _F)
     ax.tick_params(axis="both", labelsize=14 * _F)
@@ -358,11 +348,8 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
                markersize=10 * _F, label=LEGEND_LABELS.get(cls, cls))
         for cls, col in CLASS_COLORS.items()
     ]
-    # Legend paddings (labelspacing/handletextpad) are in font-height units,
-    # so enlarging the entry font would inflate every physical gap with it.
-    # Dynamic compensation: paddings were visually calibrated at 11 pt; the
-    # _PAD factor rescales them so the PHYSICAL spacing is invariant to
-    # whatever _LEG_FONT is set to.
+    # Legend paddings are in font-height units; _PAD rescales them so the
+    # physical spacing stays fixed as _LEG_FONT changes (calibrated at 11 pt).
     _LEG_FONT = 13            # legend entry size (title is +1)
     _PAD = 11.0 / _LEG_FONT   # padding calibration was done at 11 pt
     leg1 = ax.legend(
@@ -427,8 +414,7 @@ def plot_scatter(df, out_dir, scale="log", docx=False):
     if docx:
         from matplotlib.legend import Legend as _Legend
 
-        # 2026-08-07 PI revision: every role bumped ~2 pt (was 12/12/10/
-        # 8.5/8.5/8.0) to enlarge on-page text; relative hierarchy kept.
+        # Absolute print-size roles (pt); hierarchy mirrors the screen render.
         _SUP = 14.0       # (no suptitle in this fig; kept for parity)
         _AXTITLE = 14.0   # axis title ("Supply risk scatter ...")
         _AXLABEL = 12.0   # x/y axis labels

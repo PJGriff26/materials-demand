@@ -135,7 +135,7 @@ RE_ELEMENT_DATA = {
     # = 12,500 / 1.270 = 9,840 t Y element, rounded to 10,000 t element
     # content for consistency with the DOE 2023 element-content unit
     # convention. US production reported as "NA" by USGS in every
-    # vintage (NIR=100%); use 0 here per PJ instruction 2026-05-26.
+    # vintage (NIR=100%), so US production is set to 0.
     "Yttrium":      {"global_t": 10_000, "us_t":     0},  # USGS MCS 2023/2024/2026 multi-vintage median (10-15 kt Y2O3 -> 10 kt Y element rounded)
 }
 
@@ -159,7 +159,9 @@ def country_to_group(country, crc_lookup):
     entry fall back to OECD membership (Low risk) or, failing that, Moderate risk
     (a conservative default for unclassified or data-sparse sources).
     """
-    if country == "United States": return "US domestic"
+    # Prefix match: USGS labels the cement row "United States (includes
+    # Puerto Rico)". No other country name begins with "United States".
+    if country.startswith("United States"): return "US domestic"
     if country == "China": return "China"
     crc_val = crc_lookup.get(country)
     if crc_val is not None: return CRC_GROUPS.get(crc_val, "Moderate risk")

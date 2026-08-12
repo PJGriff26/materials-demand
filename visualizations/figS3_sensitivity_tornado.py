@@ -236,7 +236,7 @@ def plot(input_csv: Path, output_path: Path,
          timebase: str = "pooled",
          annual_grid: bool = False,
          docx: bool = False) -> None:
-    """Build and save the manuscript Figure 4 sensitivity tornado.
+    """Build and save the manuscript Figure S3 sensitivity tornado.
 
     Reads the per-scenario demand CSV, computes per-cell scenario and
     intensity ranges, aggregates them by material class, and draws the
@@ -364,10 +364,15 @@ def plot(input_csv: Path, output_path: Path,
         if timebase == "cumulative"
         else "Annual demand change vs"
     )
+    # Label the actual year set averaged over: the annual grid covers every
+    # year 2027-2050; the 3-yr-bucket CSV pools the 8 NREL reporting years
+    # 2029-2050 (2026 excluded — zero additions by construction).
+    year_span = ("2027–2050" if annual_grid
+                 else "reporting years 2029–2050")
     xlabel_suffix = (
-        "(%, 2027–2050 cumulative)"
+        f"(%, {year_span} cumulative)"
         if timebase == "cumulative"
-        else "(%, 2027–2050 average)"
+        else f"(%, {year_span} average)"
     )
     ax.set_xlabel(
         f"{xlabel_prefix} {baseline_cfg['short']} {xlabel_suffix}",
@@ -521,7 +526,7 @@ def plot(input_csv: Path, output_path: Path,
 
 
 def main() -> None:
-    """Parse command-line arguments and render Figure 4.
+    """Parse command-line arguments and render Figure S3.
 
     With no flags, reads the default demand CSV and writes
     outputs/figures/manuscript/figS3_sensitivity_tornado.png. When --output
