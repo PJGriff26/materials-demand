@@ -92,8 +92,8 @@ readable official sources (see `data_provenance.md`):
 
 `feature_engineering.py` assembles these into the per-material feature table;
 `build_material_features.py` writes the subset (`import_dependency`,
-`production_hhi`, …) that Figure 7 consumes; `supply_chain_analysis.py` produces
-the reserve-adequacy and CRC-sourcing quantities behind Figures 5 and 6.
+`production_hhi`, …) that Figure 6 consumes; `supply_chain_analysis.py` produces
+the reserve-adequacy and CRC-sourcing quantities behind Figures 4 and 5.
 
 ## 7. Scenarios and uncertainty reporting
 
@@ -101,7 +101,7 @@ Four scenarios are highlighted throughout: Mid_Case (reference), Net-Zero by 203
 (`Mid_Case_100by2035`), Net-Zero by 2050 (`Mid_Case_95by2050`), and No-IRA
 (`Mid_Case_No_IRA`). Two distinct uncertainty sources are reported separately:
 the spread *across* the 61 scenarios, and the within-scenario 95% Monte Carlo
-intensity interval. Figure 4 decomposes demand uncertainty into these two
+intensity interval. Figure S3 decomposes demand uncertainty into these two
 sources by material class.
 
 ## 8. Materials

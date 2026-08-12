@@ -37,17 +37,17 @@ DOI [10.5066/P13XCP3R](https://doi.org/10.5066/P13XCP3R). Subfolders:
 - `industry_trends/MCS2025_Fig2_Net_Import_Reliance.csv`: published US net
   import reliance figure.
 
-Parsed by `supply_chain/usgs_mcs2025_loader.py`; used by Figures 5, 6, 7.
+Parsed by `supply_chain/usgs_mcs2025_loader.py`; used by Figures 4, 5, 6.
 
 **`data/oecd_crc/oecd_crc_2026.csv`**: OECD Country Risk Classification,
 January 2026 release. Country risk tiers used to color the sourcing panels of
-Figures 5 and 6. Source: OECD, Country Risk Classification of the Participants to
+Figures 4 and 5. Source: OECD, Country Risk Classification of the Participants to
 the Arrangement on Officially Supported Export Credits.
 
 **`data/census_trade/import_shares_cache.json`**: US import-partner shares by
 HTS code (averaged over 2020–2023), retrieved from the US Census Bureau
 International Trade API and cached. Used by `supply_chain/census_import_shares.py`
-to attribute imports to partner countries (Figures 5/6 sourcing panels). The
+to attribute imports to partner countries (Figures 4/5 sourcing panels). The
 cache ships so the figures reproduce offline; delete it to force a live refresh
 (requires `requests` and network access).
 
@@ -68,7 +68,7 @@ deterministically.
   parameters, with `fit_summary.csv` and `cv_borrowing_report.csv` recording the
   fit diagnostics and the small-sample CV-borrowing decisions.
 - `material_features.csv`: per-material supply-chain features (NIR, HHI, …),
-  written by `supply_chain/build_material_features.py`; consumed by Figure 7.
+  written by `supply_chain/build_material_features.py`; consumed by Figure 6.
 - `table1_peak_demand.{csv,md}`: Table 1.
 - `../simulation_report.txt`: a human-readable summary of the simulation run.
 

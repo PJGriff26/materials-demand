@@ -39,7 +39,7 @@ pip install -r requirements.txt
 python reproduce.py
 ```
 
-`reproduce.py` writes the seven figures to `outputs/figures/manuscript/` and
+`reproduce.py` writes the nine figures (1-6, S1-S3) to `outputs/figures/manuscript/` and
 Table 1 to `outputs/data/table1_peak_demand.{csv,md}` in well under a minute,
 using the precomputed Monte Carlo output that ships in `outputs/data/`.
 
@@ -105,12 +105,12 @@ materials_demand_submission/
 │   ├── census_import_shares.py                 cached Census import-partner shares
 │   ├── feature_engineering.py                  per-material features (NIR, HHI, …)
 │   ├── supply_chain_analysis.py               reserve adequacy + CRC sourcing
-│   └── build_material_features.py             write material_features.csv (for Fig 7)
+│   └── build_material_features.py             write material_features.csv (for Fig 6)
 ├── visualizations/         Figure + table generators (see table above)
 ├── data/                   Raw inputs (all peer-reviewed or official; see docs/data_provenance.md)
 ├── outputs/
 │   ├── data/               Precomputed Monte Carlo results + Table 1
-│   └── figures/manuscript/ The seven figures
+│   └── figures/manuscript/ The nine figures (1-6, S1-S3)
 ├── tests/                  pytest suite (unit + end-to-end)
 └── docs/                   METHODS.md, data_provenance.md, figure_map.md
 ```
